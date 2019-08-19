@@ -3,8 +3,9 @@ import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.12
 
 Rectangle {
-    width: 363
-    height: 628
+    id: rectangle
+    width: 360
+    height: 640
     color: "#ffffff"
     property alias emailButton: emailButton
     property alias googleButton: googleButton
@@ -32,28 +33,61 @@ Rectangle {
 
     Button {
         id: googleButton
-        x: 31
         y: 419
-        width: 296
-        height: 50
+        height: 36
         text: qsTr("Continue with Google")
+        font.weight: Font.Medium
+        padding: 8
+        bottomPadding: 8
+        topPadding: 8
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        font.pointSize: 14
+        display: AbstractButton.TextBesideIcon
         spacing: 4
-        anchors.bottomMargin: 31
+        anchors.bottomMargin: 16
         anchors.bottom: emailButton.top
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
     }
 
     Button {
         id: emailButton
         x: 41
-        y: 493
-        width: 296
-        height: 50
+        y: 516
+        height: 36
         text: qsTr("Continue with E-mail")
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 80
+        flat: false
+        font.weight: Font.Medium
+        font.bold: false
+        font.family: "Arial"
+        padding: 8
+        anchors.bottom: textArea.top
+        anchors.bottomMargin: 16
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        font.pointSize: 14
         anchors.left: parent.left
-        anchors.leftMargin: 34
+        anchors.leftMargin: 16
+    }
+
+    Text {
+        id: element
+        x: 16
+        y: 597
+        width: 328
+        height: 32
+        color: "#99000000"
+        text: qsTr("By creating an account you agree to our Terms of Use and Privacy Policy.")
+        font.family: "Arial"
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        wrapMode: Text.WordWrap
+        font.pixelSize: 12
     }
 }
+
+/*##^## Designer {
+    D{i:1;anchors_x:124;anchors_y:158}D{i:5;anchors_height:32;anchors_width:328;anchors_x:16;anchors_y:597}
+}
+ ##^##*/
