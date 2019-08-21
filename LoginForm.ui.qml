@@ -35,7 +35,7 @@ Rectangle {
 
     Button {
         id: googleButton
-        text: qsTr("Button")
+        text: qsTr("Continue with Button")
         y: 419
         height: 36
 
