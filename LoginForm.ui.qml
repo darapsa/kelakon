@@ -53,7 +53,6 @@ Rectangle {
         font.bold: false
         font.family: "Arial"
         padding: 8
-        anchors.bottom: textArea.top
         anchors.bottomMargin: 16
         anchors.right: parent.right
         anchors.rightMargin: 16
