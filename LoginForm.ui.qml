@@ -64,22 +64,34 @@ Rectangle {
 
     Button {
         id: emailButton
+        text: qsTr("Button")
         x: 41
         y: 516
         height: 36
-        text: qsTr("Continue with E-mail")
-        flat: false
-        font.weight: Font.Medium
-        font.bold: false
-        font.family: "Arial"
-        padding: 8
-        anchors.bottom: textArea.top
+
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
         anchors.right: parent.right
         anchors.rightMargin: 16
-        font.pointSize: 14
-        anchors.left: parent.left
-        anchors.leftMargin: 16
+
+        contentItem: Text {
+            color: "#6d22e9"
+            font: control.font
+            text: "Continue with E-Mail"
+            font.pointSize: 14
+            font.family: "Google Sans"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
+            color: "#fff"
+            border.color: "#6d22e9"
+            border.width: 1
+            radius: 6
+        }
     }
 
     Text {
