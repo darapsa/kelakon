@@ -7,17 +7,19 @@ Rectangle {
     width: 360
     height: 640
     color: "#ffffff"
-    property alias emailButton: emailButton
     property alias googleButton: googleButton
-    border.width: 0
+    property alias emailButton: emailButton
 
     Label {
-        x: 124
-        y: 158
-        width: 74
-        height: 28
         text: qsTr("kelakon")
-        font.pointSize: 16
+        font.family: "Google Sans"
+        font.pointSize: 24
+        color: "#000000"
+
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        anchors.top: parent.top
+        anchors.topMargin: 16
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
     }
