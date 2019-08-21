@@ -95,14 +95,18 @@ Rectangle {
     }
 
     Text {
-        id: element
-        x: 16
+        id: disclaimer
         y: 597
-        width: 328
         height: 32
         color: "#99000000"
         text: qsTr("By creating an account you agree to our Terms of Use and Privacy Policy.")
-        font.family: "Arial"
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 16
+        font.family: "Google Sans"
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
@@ -110,7 +114,10 @@ Rectangle {
     }
 }
 
+
+
+
 /*##^## Designer {
-    D{i:1;anchors_x:124;anchors_y:158}D{i:5;anchors_height:32;anchors_width:328;anchors_x:16;anchors_y:597}
+    D{i:1;anchors_x:124;anchors_y:158}
 }
  ##^##*/
