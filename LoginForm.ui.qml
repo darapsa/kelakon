@@ -35,22 +35,31 @@ Rectangle {
 
     Button {
         id: googleButton
+        text: qsTr("Button")
         y: 419
         height: 36
-        text: qsTr("Continue with Google")
-        font.weight: Font.Medium
-        padding: 8
-        bottomPadding: 8
-        topPadding: 8
+
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
-        font.pointSize: 14
-        display: AbstractButton.TextBesideIcon
-        spacing: 4
         anchors.bottomMargin: 16
         anchors.bottom: emailButton.top
+
+        contentItem: Text {
+            color: "#FFF"
+            font: control.font
+            text: "Continue with Google"
+            font.pointSize: 14
+            font.family: "Google Sans"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
+            color: "#6d22e9"
+            radius: 6
+        }
     }
 
     Button {
