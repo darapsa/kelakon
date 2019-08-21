@@ -47,9 +47,8 @@ Rectangle {
         anchors.bottom: emailButton.top
 
         contentItem: Text {
+            text: googleButton.text
             color: "#FFF"
-            font: control.font
-            text: "Continue with Google"
             font.pointSize: 14
             font.family: "Google Sans"
             horizontalAlignment: Text.AlignHCenter
@@ -64,7 +63,7 @@ Rectangle {
 
     Button {
         id: emailButton
-        text: qsTr("Button")
+        text: qsTr("Continue with E-Mail")
         x: 41
         y: 516
         height: 36
@@ -77,9 +76,8 @@ Rectangle {
         anchors.rightMargin: 16
 
         contentItem: Text {
+            text: emailButton.text
             color: "#6d22e9"
-            font: control.font
-            text: "Continue with E-Mail"
             font.pointSize: 14
             font.family: "Google Sans"
             horizontalAlignment: Text.AlignHCenter
