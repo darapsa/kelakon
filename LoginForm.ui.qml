@@ -7,17 +7,19 @@ Rectangle {
     width: 360
     height: 640
     color: "#ffffff"
-    property alias emailButton: emailButton
     property alias googleButton: googleButton
-    border.width: 0
+    property alias emailButton: emailButton
 
     Label {
-        x: 124
-        y: 158
-        width: 74
-        height: 28
         text: qsTr("kelakon")
-        font.pointSize: 16
+        font.family: "Google Sans"
+        font.pointSize: 24
+        color: "#000000"
+
+        verticalAlignment: Text.AlignVCenter
+        horizontalAlignment: Text.AlignHCenter
+        anchors.top: parent.top
+        anchors.topMargin: 16
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
     }
@@ -33,52 +35,77 @@ Rectangle {
 
     Button {
         id: googleButton
+        text: qsTr("Button")
         y: 419
         height: 36
-        text: qsTr("Continue with Google")
-        font.weight: Font.Medium
-        padding: 8
-        bottomPadding: 8
-        topPadding: 8
+
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
-        font.pointSize: 14
-        display: AbstractButton.TextBesideIcon
-        spacing: 4
         anchors.bottomMargin: 16
         anchors.bottom: emailButton.top
+
+        contentItem: Text {
+            color: "#FFF"
+            font: control.font
+            text: "Continue with Google"
+            font.pointSize: 14
+            font.family: "Google Sans"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
+            color: "#6d22e9"
+            radius: 6
+        }
     }
 
     Button {
         id: emailButton
+        text: qsTr("Button")
         x: 41
         y: 516
         height: 36
-        text: qsTr("Continue with E-mail")
-        flat: false
-        font.weight: Font.Medium
-        font.bold: false
-        font.family: "Arial"
-        padding: 8
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
         anchors.right: parent.right
         anchors.rightMargin: 16
-        font.pointSize: 14
-        anchors.left: parent.left
-        anchors.leftMargin: 16
+
+        contentItem: Text {
+            color: "#6d22e9"
+            font: control.font
+            text: "Continue with E-Mail"
+            font.pointSize: 14
+            font.family: "Google Sans"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
+            color: "#fff"
+            border.color: "#6d22e9"
+            border.width: 1
+            radius: 6
+        }
     }
 
     Text {
-        id: element
-        x: 16
+        id: disclaimer
         y: 597
-        width: 328
         height: 32
         color: "#99000000"
         text: qsTr("By creating an account you agree to our Terms of Use and Privacy Policy.")
-        font.family: "Arial"
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 16
+        font.family: "Google Sans"
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         wrapMode: Text.WordWrap
@@ -86,7 +113,10 @@ Rectangle {
     }
 }
 
+
+
+
 /*##^## Designer {
-    D{i:1;anchors_x:124;anchors_y:158}D{i:5;anchors_height:32;anchors_width:328;anchors_x:16;anchors_y:597}
+    D{i:1;anchors_x:124;anchors_y:158}
 }
  ##^##*/
