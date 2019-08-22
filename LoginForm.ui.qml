@@ -42,7 +42,8 @@ Rectangle {
             elide: Text.ElideRight
         }
         background: Rectangle {
-            color: "#6d22e9"
+            opacity: enabled ? 1.0 : 0.3
+            color: googleButton.down ? "#6d22e9" : "#4F12DA"
             radius: 6
         }
     }
