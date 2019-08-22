@@ -4,6 +4,11 @@
         <file>Login.qml</file>
         <file>LoginForm.ui.qml</file>
         <file>kelakon-logo.png</file>
+<<<<<<< HEAD
         <file>onboarding-1.png</file>
+=======
+	<file>pages/Email.qml</file>
+	<file>pages/EmailForm.ui.qml</file>
+>>>>>>> 2679bcec2d5938125634d970f025518c42498628
     </qresource>
 </RCC>
