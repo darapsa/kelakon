@@ -10,20 +10,6 @@ Rectangle {
     property alias googleButton: googleButton
     property alias emailButton: emailButton
 
-    Label {
-        text: qsTr("kelakon")
-        font.family: "Google Sans"
-        font.pointSize: 24
-        color: "#000000"
-
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
-        anchors.top: parent.top
-        anchors.topMargin: 16
-        anchors.horizontalCenterOffset: 0
-        anchors.horizontalCenter: parent.horizontalCenter
-    }
-
     RowLayout {
         x: 34
         y: 419
@@ -35,7 +21,7 @@ Rectangle {
 
     Button {
         id: googleButton
-        text: qsTr("Button")
+        text: qsTr("Continue with Button")
         y: 419
         height: 36
 
@@ -47,9 +33,8 @@ Rectangle {
         anchors.bottom: emailButton.top
 
         contentItem: Text {
+            text: googleButton.text
             color: "#FFF"
-            font: control.font
-            text: "Continue with Google"
             font.pointSize: 14
             font.family: "Google Sans"
             horizontalAlignment: Text.AlignHCenter
@@ -64,7 +49,7 @@ Rectangle {
 
     Button {
         id: emailButton
-        text: qsTr("Button")
+        text: qsTr("Continue with E-Mail")
         x: 41
         y: 516
         height: 36
@@ -76,9 +61,8 @@ Rectangle {
         anchors.rightMargin: 16
 
         contentItem: Text {
+            text: emailButton.text
             color: "#6d22e9"
-            font: control.font
-            text: "Continue with E-Mail"
             font.pointSize: 14
             font.family: "Google Sans"
             horizontalAlignment: Text.AlignHCenter
@@ -111,12 +95,24 @@ Rectangle {
         wrapMode: Text.WordWrap
         font.pixelSize: 12
     }
+
+    Image {
+        id: logotext
+        x: 139
+        width: 100
+        height: 24
+        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.top: parent.top
+        anchors.topMargin: 16
+        fillMode: Image.PreserveAspectFit
+        source: "kelakon-logo.png"
+    }
 }
 
 
 
 
 /*##^## Designer {
-    D{i:1;anchors_x:124;anchors_y:158}
+    D{i:9;anchors_width:100;anchors_x:139;anchors_y:93}
 }
  ##^##*/
