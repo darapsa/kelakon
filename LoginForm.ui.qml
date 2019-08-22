@@ -10,7 +10,7 @@ Rectangle {
     property alias googleButton: googleButton
     property alias emailButton: emailButton
 
-    RowLayout {
+    ColumnLayout {
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
@@ -18,6 +18,28 @@ Rectangle {
         anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
         spacing: 16
+
+        Button {
+            id: googleButton
+            text: qsTr("Continue with Google")
+            height: 36
+            Layout.fillWidth: true
+
+            contentItem: Text {
+                text: googleButton.text
+                color: "#FFF"
+                font.pointSize: 14
+                font.family: "Google Sans"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            background: Rectangle {
+                opacity: enabled ? 1.0 : 0.3
+                color: googleButton.down ? "#6d22e9" : "#4F12DA"
+                radius: 6
+            }
+        }
 
         Button {
             id: emailButton
@@ -39,28 +61,6 @@ Rectangle {
                 color: emailButton.down ? "#6d22e9" : "#ffffff"
                 border.color: "#6d22e9"
                 border.width: 1
-                radius: 6
-            }
-        }
-
-        Button {
-            id: googleButton
-            text: qsTr("Continue with Google")
-            height: 36
-            Layout.fillWidth: true
-
-            contentItem: Text {
-                text: googleButton.text
-                color: "#FFF"
-                font.pointSize: 14
-                font.family: "Google Sans"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-            background: Rectangle {
-                opacity: enabled ? 1.0 : 0.3
-                color: googleButton.down ? "#6d22e9" : "#4F12DA"
                 radius: 6
             }
         }
