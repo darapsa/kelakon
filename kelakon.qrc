@@ -4,5 +4,6 @@
         <file>Login.qml</file>
         <file>LoginForm.ui.qml</file>
         <file>kelakon-logo.png</file>
+        <file>onboarding-1.png</file>
     </qresource>
 </RCC>

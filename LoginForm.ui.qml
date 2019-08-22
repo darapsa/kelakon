@@ -96,4 +96,22 @@ Rectangle {
         fillMode: Image.PreserveAspectFit
         source: "kelakon-logo.png"
     }
+
+    Image {
+        id: image
+        height: 172
+        anchors.right: parent.right
+        anchors.rightMargin: 94
+        anchors.left: parent.left
+        anchors.leftMargin: 94
+        anchors.top: parent.top
+        anchors.topMargin: 72
+        source: "onboarding-1.png"
+        fillMode: Image.PreserveAspectFit
+    }
 }
+
+/*##^## Designer {
+    D{i:10;anchors_width:100;anchors_x:130;anchors_y:69}
+}
+ ##^##*/
