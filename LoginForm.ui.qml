@@ -54,7 +54,6 @@ Rectangle {
         x: 41
         y: 516
         height: 36
-
         anchors.left: parent.left
         anchors.leftMargin: 16
         anchors.bottom: disclaimer.top
