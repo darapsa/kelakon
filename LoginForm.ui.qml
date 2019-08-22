@@ -99,19 +99,40 @@ Rectangle {
 
     Image {
         id: image
-        height: 172
-        anchors.right: parent.right
-        anchors.rightMargin: 94
-        anchors.left: parent.left
-        anchors.leftMargin: 94
+        x: 130
+        width: 258
+        height: 258
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: parent.top
-        anchors.topMargin: 72
+        anchors.topMargin: 98
         source: "onboarding-1.png"
         fillMode: Image.PreserveAspectFit
     }
+
+    Text {
+        id: onboarding_text_1
+        text: qsTr("Achieve more today, chill tomorrow.")
+        wrapMode: Text.WordWrap
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.top: image.bottom
+        anchors.topMargin: 32
+        font.pointSize: 24
+        font.family: "Google Sans"
+        font.weight: Font.Medium
+    }
 }
 
+
+
+
+
+
+
+
 /*##^## Designer {
-    D{i:10;anchors_width:100;anchors_x:130;anchors_y:69}
+    D{i:10;anchors_width:100;anchors_x:130;anchors_y:69}D{i:11;anchors_x:16;anchors_y:272}
 }
  ##^##*/
