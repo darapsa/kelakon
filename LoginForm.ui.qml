@@ -37,7 +37,8 @@ Rectangle {
                 elide: Text.ElideRight
             }
             background: Rectangle {
-                color: "#fff"
+                opacity: enabled ? 0.3 : 1
+                color: emailButton.down ? "#6d22e9" : "#ffffff"
                 border.color: "#6d22e9"
                 border.width: 1
                 radius: 6
