@@ -11,70 +11,64 @@ Rectangle {
     property alias emailButton: emailButton
 
     RowLayout {
-        x: 34
-        y: 419
-        width: googleButton.width
-        height: googleButton.height
-        anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
-    }
-
-    Button {
-        id: googleButton
-        text: qsTr("Continue with Button")
-        y: 419
-        height: 36
-
+        anchors.left: parent.left
         anchors.right: parent.right
+        anchors.leftMargin: 16
         anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
-        anchors.bottomMargin: 16
-        anchors.bottom: emailButton.top
-
-        contentItem: Text {
-            text: googleButton.text
-            color: "#FFF"
-            font.pointSize: 14
-            font.family: "Google Sans"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            elide: Text.ElideRight
-        }
-        background: Rectangle {
-            opacity: enabled ? 1.0 : 0.3
-            color: googleButton.down ? "#6d22e9" : "#4F12DA"
-            radius: 6
-        }
-    }
-
-    Button {
-        id: emailButton
-        text: qsTr("Continue with E-Mail")
-        x: 41
-        y: 516
-        height: 36
-        anchors.left: parent.left
-        anchors.leftMargin: 16
         anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
-        anchors.right: parent.right
-        anchors.rightMargin: 16
 
-        contentItem: Text {
-            text: emailButton.text
-            color: "#6d22e9"
-            font.pointSize: 14
-            font.family: "Google Sans"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            elide: Text.ElideRight
+        Button {
+            id: emailButton
+            text: qsTr("Continue with E-Mail")
+            height: 36
+            anchors.left: parent.left
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+
+            contentItem: Text {
+                text: emailButton.text
+                color: "#6d22e9"
+                font.pointSize: 14
+                font.family: "Google Sans"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            background: Rectangle {
+                color: "#fff"
+                border.color: "#6d22e9"
+                border.width: 1
+                radius: 6
+            }
         }
-        background: Rectangle {
-            color: "#fff"
-            border.color: "#6d22e9"
-            border.width: 1
-            radius: 6
+
+        Button {
+            id: googleButton
+            text: qsTr("Continue with Button")
+            y: 419
+            height: 36
+
+            anchors.right: parent.right
+            anchors.left: parent.left
+            anchors.bottom: emailButton.top
+            anchors.bottomMargin: 16
+
+            contentItem: Text {
+                text: googleButton.text
+                color: "#FFF"
+                font.pointSize: 14
+                font.family: "Google Sans"
+                horizontalAlignment: Text.AlignHCenter
+                verticalAlignment: Text.AlignVCenter
+                elide: Text.ElideRight
+            }
+            background: Rectangle {
+                opacity: enabled ? 1.0 : 0.3
+                color: googleButton.down ? "#6d22e9" : "#4F12DA"
+                radius: 6
+            }
         }
     }
 
@@ -109,11 +103,3 @@ Rectangle {
         source: "kelakon-logo.png"
     }
 }
-
-
-
-
-/*##^## Designer {
-    D{i:9;anchors_width:100;anchors_x:139;anchors_y:93}
-}
- ##^##*/
