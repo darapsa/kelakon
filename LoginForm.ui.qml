@@ -11,21 +11,19 @@ Rectangle {
     property alias emailButton: emailButton
 
     RowLayout {
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.left: parent.left
         anchors.right: parent.right
-        anchors.leftMargin: 16
         anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
         anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
+        spacing: 16
 
         Button {
             id: emailButton
             text: qsTr("Continue with E-Mail")
             height: 36
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.bottom: parent.bottom
+            Layout.fillWidth: true
 
             contentItem: Text {
                 text: emailButton.text
@@ -48,13 +46,8 @@ Rectangle {
         Button {
             id: googleButton
             text: qsTr("Continue with Google")
-            y: 419
             height: 36
-
-            anchors.right: parent.right
-            anchors.left: parent.left
-            anchors.bottom: emailButton.top
-            anchors.bottomMargin: 16
+            Layout.fillWidth: true
 
             contentItem: Text {
                 text: googleButton.text
