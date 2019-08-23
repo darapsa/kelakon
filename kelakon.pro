@@ -1,6 +1,15 @@
 QT += quickcontrols2
 
+HEADERS += \
+	rtclient.h \
+	networkworker.hxx
+
 SOURCES += \
-    main.cxx
+	rtclient.c \
+	networkworker.cxx \
+	main.cxx
 
 RESOURCES += kelakon.qrc
+
+LIBS += \
+	-lcurl
