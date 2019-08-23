@@ -11,5 +11,12 @@ SOURCES += \
 
 RESOURCES += kelakon.qrc
 
+android-* {
+	INCLUDEPATH += $$(ANDROID_STANDALONE_TOOLCHAIN)/usr/include
+	LIBS += -L$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib
+	ANDROID_EXTRA_LIBS += \
+		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libcurl.so
+}
+
 LIBS += \
 	-lcurl
