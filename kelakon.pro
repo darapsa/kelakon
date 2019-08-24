@@ -15,6 +15,8 @@ android {
 	INCLUDEPATH += $$(ANDROID_STANDALONE_TOOLCHAIN)/usr/include
 	LIBS += -L$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib
 	ANDROID_EXTRA_LIBS += \
+		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libcrypto.so \
+		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libssl.so \
 		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libcurl.so
 }
 
