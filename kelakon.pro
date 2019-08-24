@@ -11,13 +11,13 @@ SOURCES += \
 
 RESOURCES += kelakon.qrc
 
-android {
-	INCLUDEPATH += $$(ANDROID_STANDALONE_TOOLCHAIN)/usr/include
-	LIBS += -L$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib
+contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
+	INCLUDEPATH += /usr/local/arm-linux-androideabi/sysroot/usr/include
+	LIBS += -L/usr/local/arm-linux-androideabi/sysroot/usr/lib
 	ANDROID_EXTRA_LIBS += \
-		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libcrypto.so \
-		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libssl.so \
-		$$(ANDROID_STANDALONE_TOOLCHAIN)/usr/lib/libcurl.so
+		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcrypto.so \
+		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libssl.so \
+		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcurl.so
 }
 
 LIBS += \
