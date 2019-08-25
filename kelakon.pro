@@ -12,7 +12,7 @@ SOURCES += \
 RESOURCES += kelakon.qrc
 
 contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
-	INCLUDEPATH += /usr/local/arm-linux-androideabi/sysroot/usr/include
+	QMAKE_CFLAGS += -I/usr/local/arm-linux-androideabi/sysroot/usr/include
 	LIBS += -L/usr/local/arm-linux-androideabi/sysroot/usr/lib
 	ANDROID_EXTRA_LIBS += \
 		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcrypto.so \
