@@ -31,3 +31,7 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
 		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libssl.so \
 		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcurl.so
 }
+
+android {
+	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+}
