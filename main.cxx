@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 	QGuiApplication app(argc, argv);
 	QQmlApplicationEngine engine;
 
-	Kelakon::NetworkWorker worker{};
+	NetworkWorker worker{};
 	QThread thread;
 	worker.moveToThread(&thread);
 
