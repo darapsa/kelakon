@@ -1,17 +1,18 @@
 QT += quickcontrols2
 
 HEADERS += \
-	rtclient.h \
 	networkworker.hxx
 
 SOURCES += \
-	rtclient.c \
 	networkworker.cxx \
 	main.cxx
 
 RESOURCES += kelakon.qrc
 
+INCLUDEPATH += $$PWD/rtclient
+
 LIBS += \
+	$$PWD/rtclient/librtclient.a \
 	-lcurl
 
 contains(ANDROID_TARGET_ARCH,arm64-v8a) {
