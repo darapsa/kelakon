@@ -26,21 +26,18 @@ Rectangle {
     RowLayout {
         x: 34
         y: 411
+        id: buttonLayout
         width: loginButton.width
         height: loginButton.height
         anchors.bottom: passwordTextField.top
+        anchors.bottomMargin: 16
         anchors.horizontalCenter: parent.horizontalCenter
-
-        Label {
-            id: prefixLabel
-            text: "+62"
-        }
 
         TextField {
             id: emailTextField
             width: 303
             Layout.fillWidth: true
-            placeholderText: "812345678"
+            placeholderText: "E-mail"
         }
     }
 
@@ -51,9 +48,10 @@ Rectangle {
         width: loginButton.width
         height: loginButton.height
         anchors.bottom: loginButton.top
+        anchors.bottomMargin: 16
         anchors.horizontalCenter: parent.horizontalCenter
         echoMode: TextInput.Password
-        placeholderText: qsTr("Kata Sandi")
+        placeholderText: qsTr("Password")
     }
 
     Button {
