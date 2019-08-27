@@ -1,10 +1,12 @@
 QT += quickcontrols2
 
 HEADERS += \
-	networkworker.hxx
+	networkworker.hxx \
+	user.hxx
 
 SOURCES += \
 	networkworker.cxx \
+	user.cxx \
 	main.cxx
 
 RESOURCES += kelakon.qrc
