@@ -15,12 +15,21 @@ Rectangle {
     property alias laterButton: laterButton
 
     Label {
-        x: 124
-        y: 177
-        width: 116
-        height: 17
-        text: qsTr("E-mail")
-        anchors.horizontalCenter: parent.horizontalCenter
+        x: 16
+        y: 398
+        color: "#2b2626"
+        text: qsTr("Continue with E-Mail")
+        font.weight: Font.Bold
+        wrapMode: Text.WordWrap
+        anchors.bottom: buttonLayout.top
+        anchors.bottomMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.right: parent.right
+        anchors.rightMargin: 88
+
+        font.family: "Google Sans"
+        font.pointSize: 34
     }
 
     RowLayout {
