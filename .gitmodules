@@ -1,0 +1,3 @@
+[submodule "rtclient"]
+	path = rtclient
+	url = ssh://darapsa.co.id/usr/local/git/rtclient.git
