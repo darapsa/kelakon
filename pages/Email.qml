@@ -6,13 +6,7 @@ EmailForm {
 
     loginButton {
         onClicked: {
-            appWindow.logIn("62" + phoneTextField.text, passwordTextField.text)
-        }
-    }
-
-    laterButton {
-        onClicked: {
-            stackView.pop()
+            appWindow.logIn("62" + phoneTextField.text)
         }
     }
 }
