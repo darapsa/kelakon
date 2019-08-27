@@ -10,7 +10,6 @@ Rectangle {
     border.width: 0
 
     property alias emailTextField: emailTextField
-    property alias passwordTextField: passwordTextField
     property alias loginButton: loginButton
     Label {
         x: 16
@@ -19,7 +18,7 @@ Rectangle {
         text: qsTr("Continue with E-Mail")
         font.weight: Font.Bold
         wrapMode: Text.WordWrap
-        anchors.bottom: buttonLayout.top
+        anchors.bottom: emailTextField.top
         anchors.bottomMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
@@ -30,35 +29,27 @@ Rectangle {
         font.pointSize: 34
     }
 
-    RowLayout {
-        x: 34
-        y: 411
-        id: buttonLayout
-        width: loginButton.width
-        height: loginButton.height
-        anchors.bottom: passwordTextField.top
-        anchors.bottomMargin: 16
-        anchors.horizontalCenter: parent.horizontalCenter
-
-        TextField {
-            id: emailTextField
-            width: 303
-            Layout.fillWidth: true
-            placeholderText: "E-mail"
-        }
-    }
-
     TextField {
-        id: passwordTextField
-        x: 34
-        y: 468
-        width: loginButton.width
-        height: loginButton.height
+        id: emailTextField
+        y: 501
+        font.pointSize: 16
         anchors.bottom: loginButton.top
         anchors.bottomMargin: 16
-        anchors.horizontalCenter: parent.horizontalCenter
-        echoMode: TextInput.Password
-        placeholderText: qsTr("Password")
+        font.family: "Google Sans"
+        Layout.fillWidth: true
+        placeholderText: qsTr("E-mail")
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        Layout.maximumHeight: 56
+
+        background: Rectangle {
+            color: emailTextField.enabled ? "#f4f4f4" : "#353637"
+            anchors.verticalCenter: parent.verticalCenter
+            implicitHeight: 56
+            radius: 6
+        }
     }
 
     Button {
@@ -92,3 +83,11 @@ Rectangle {
         }
     }
 }
+
+
+
+
+/*##^## Designer {
+    D{i:2;anchors_x:16}
+}
+ ##^##*/

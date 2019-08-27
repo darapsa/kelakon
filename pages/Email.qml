@@ -6,7 +6,7 @@ EmailForm {
 
     loginButton {
         onClicked: {
-            appWindow.logIn("62" + phoneTextField.text, passwordTextField.text)
+            appWindow.logIn("62" + phoneTextField.text)
         }
     }
 }
