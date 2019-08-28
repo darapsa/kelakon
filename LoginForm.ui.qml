@@ -15,6 +15,7 @@ Rectangle {
         id: googleButton
         text: qsTr("Continue with Google")
         font.family: "Google Sans"
+        font.capitalization: Font.MixedCase
         anchors.bottom: emailButton.top
         anchors.bottomMargin: 8
         anchors.right: parent.right
@@ -31,6 +32,7 @@ Rectangle {
         text: qsTr("Continue with E-Mail")
         flat: true
         font.family: "Google Sans"
+        font.capitalization: Font.MixedCase
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
