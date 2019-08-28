@@ -35,6 +35,14 @@ Rectangle {
                 id: backButton
                 display: AbstractButton.IconOnly
                 anchors.fill: parent
+                icon.name: "back-icon"
+                icon.source: "/assets/arrow-back-24px.svg"
+                icon.height: navIconBg.height
+                icon.width: navIconBg.width
+                icon.color: transparent
+
+                background: Rectangle {
+                }
             }
         }
     }
