@@ -9,8 +9,8 @@ Rectangle {
     color: "#fff"
     border.width: 0
 
-    property alias emailTextField: emailTextField
-    property alias loginButton: loginButton
+    property alias passTextField: passTextField
+    property alias createPassButton: createPassButton
 
     Rectangle {
         id: appBar
@@ -49,7 +49,7 @@ Rectangle {
         lineHeight: 1
         font.weight: Font.Bold
         wrapMode: Text.WordWrap
-        anchors.bottom: emailTextField.top
+        anchors.bottom: passTextField.top
         anchors.bottomMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
@@ -64,7 +64,7 @@ Rectangle {
         id: passTextField
         y: 501
         font.pointSize: 16
-        anchors.bottom: loginButton.top
+        anchors.bottom: createPassButton.top
         anchors.bottomMargin: 16
         font.family: "Google Sans"
         Layout.fillWidth: true
