@@ -11,6 +11,35 @@ Rectangle {
 
     property alias emailTextField: emailTextField
     property alias loginButton: loginButton
+
+    Rectangle {
+        id: appBar
+        height: 56
+        color: "#ffffff"
+        anchors.top: parent.top
+        anchors.topMargin: 0
+        anchors.right: parent.right
+        anchors.rightMargin: 0
+        anchors.left: parent.left
+        anchors.leftMargin: 0
+
+        Rectangle {
+            id: navIconBg
+            width: 24
+            height: 24
+            anchors.left: parent.left
+            anchors.leftMargin: 16
+            anchors.verticalCenter: parent.verticalCenter
+
+            Image {
+                id: image
+                anchors.fill: parent
+                source: "../assets/arrow-back-24px.svg"
+                fillMode: Image.PreserveAspectFit
+            }
+        }
+    }
+
     Label {
         x: 16
         y: 398
@@ -87,7 +116,8 @@ Rectangle {
 
 
 
+
 /*##^## Designer {
-    D{i:2;anchors_x:16}
+    D{i:3;anchors_height:100;anchors_width:100}D{i:2;anchors_height:24;anchors_width:24}
 }
  ##^##*/
