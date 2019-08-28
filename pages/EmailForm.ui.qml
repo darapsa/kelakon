@@ -80,6 +80,7 @@ Rectangle {
         id: loginButton
         text: qsTr("Next")
         font.family: "Google Sans"
+        font.capitalization: Font.MixedCase
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.bottom: parent.bottom
