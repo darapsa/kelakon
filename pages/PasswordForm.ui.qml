@@ -61,7 +61,7 @@ Rectangle {
     }
 
     TextField {
-        id: emailTextField
+        id: passTextField
         y: 501
         font.pointSize: 16
         anchors.bottom: loginButton.top
@@ -74,9 +74,10 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 16
         Layout.maximumHeight: 56
+        echoMode: TextInput.Password
 
         background: Rectangle {
-            color: emailTextField.enabled ? "#f4f4f4" : "#353637"
+            color: passTextField.enabled ? "#f4f4f4" : "#353637"
             anchors.verticalCenter: parent.verticalCenter
             implicitHeight: 56
             radius: 6
