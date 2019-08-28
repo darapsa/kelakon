@@ -83,6 +83,7 @@ Rectangle {
         y: 278
         text: qsTr("Confirm password")
         font.family: "Google Sans"
+        font.capitalization: Font.MixedCase
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.bottom: parent.bottom
