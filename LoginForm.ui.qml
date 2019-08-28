@@ -29,6 +29,7 @@ Rectangle {
     Button {
         id: emailButton
         text: qsTr("Continue with E-Mail")
+        flat: true
         font.family: "Google Sans"
         anchors.right: parent.right
         anchors.rightMargin: 16
@@ -100,6 +101,9 @@ Rectangle {
         font.weight: Font.Medium
     }
 }
+
+
+
 /*##^## Designer {
     D{i:4;anchors_width:100;anchors_x:130;anchors_y:69}D{i:5;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
 }
