@@ -10,5 +10,6 @@
         <file>assets/arrow-back-24px.svg</file>
         <file>pages/Password.qml</file>
         <file>pages/PasswordForm.ui.qml</file>
+        <file>qtquickcontrols2.conf</file>
     </qresource>
 </RCC>
