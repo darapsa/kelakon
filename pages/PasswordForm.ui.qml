@@ -4,8 +4,6 @@ import QtQuick.Controls 2.12
 
 Rectangle {
     id: rectangle
-    width: 363
-    height: 628
     color: "#fff"
     border.width: 0
 
@@ -114,3 +112,8 @@ Rectangle {
         }
     }
 }
+
+/*##^## Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+ ##^##*/
