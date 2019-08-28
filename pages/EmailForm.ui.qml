@@ -23,30 +23,20 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 0
 
-        Rectangle {
-            id: navIconBg
-            width: 24
-            height: 24
-            anchors.left: parent.left
-            anchors.leftMargin: 16
+        Button {
+            id: backButton
             anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 8
+            display: AbstractButton.IconOnly
+            icon.name: "back-icon"
+            icon.source: "/assets/arrow-back-24px.svg"
+            icon.color: "transparent"
 
-            Button {
-                id: backButton
-                display: AbstractButton.IconOnly
-                anchors.fill: parent
-                icon.name: "back-icon"
-                icon.source: "/assets/arrow-back-24px.svg"
-                icon.height: navIconBg.height
-                icon.width: navIconBg.width
-                icon.color: transparent
-
-                background: Rectangle {
-                }
+            background: Rectangle {
             }
         }
     }
-
     Label {
         x: 16
         y: 398
@@ -121,11 +111,3 @@ Rectangle {
         }
     }
 }
-
-
-
-
-/*##^## Designer {
-    D{i:3;anchors_x:24;anchors_y:0}D{i:2;anchors_height:24;anchors_width:24}
-}
- ##^##*/
