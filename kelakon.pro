@@ -1,4 +1,6 @@
-QT += quickcontrols2
+QT += \
+	quickcontrols2 \
+	svg
 
 HEADERS += \
 	networkworker.hxx \
