@@ -89,7 +89,7 @@ Rectangle {
         y: 278
         width: 296
         height: 36
-        text: qsTr("Masuk")
+        text: qsTr("Next")
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.bottom: parent.bottom
@@ -114,8 +114,6 @@ Rectangle {
         }
     }
 }
-
-
 
 
 
