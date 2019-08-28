@@ -2,6 +2,8 @@ QT += \
 	quickcontrols2 \
 	svg
 
+debug: DEFINES += DEBUG
+
 HEADERS += \
 	networkworker.hxx \
 	user.hxx
