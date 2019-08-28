@@ -1,6 +1,7 @@
 import QtQuick 2.12
 import QtQuick.Layouts 1.3
 import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
 
 Rectangle {
     id: rectangle
@@ -14,28 +15,14 @@ Rectangle {
         id: googleButton
         text: qsTr("Continue with Google")
         anchors.bottom: emailButton.top
-        anchors.bottomMargin: 16
+        anchors.bottomMargin: 8
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
-        height: 36
         Layout.fillWidth: true
-
-        contentItem: Text {
-            text: googleButton.text
-            color: "#FFF"
-            font.pointSize: 14
-            font.family: "Google Sans"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            elide: Text.ElideRight
-        }
-        background: Rectangle {
-            opacity: enabled ? 1.0 : 0.3
-            color: googleButton.down ? "#6d22e9" : "#4F12DA"
-            radius: 6
-        }
+        highlighted: true
+        Material.accent: Material.primary
     }
 
     Button {
@@ -47,25 +34,8 @@ Rectangle {
         anchors.leftMargin: 16
         anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
-        height: 36
         Layout.fillWidth: true
-
-        contentItem: Text {
-            text: emailButton.text
-            color: "#6d22e9"
-            font.pointSize: 14
-            font.family: "Google Sans"
-            horizontalAlignment: Text.AlignHCenter
-            verticalAlignment: Text.AlignVCenter
-            elide: Text.ElideRight
-        }
-        background: Rectangle {
-            opacity: enabled ? 0.3 : 1
-            color: emailButton.down ? "#6d22e9" : "#ffffff"
-            border.color: "#6d22e9"
-            border.width: 1
-            radius: 6
-        }
+        Material.foreground: Material.primary
     }
 
     Text {
@@ -136,9 +106,7 @@ Rectangle {
 
 
 
-
-
 /*##^## Designer {
-    D{i:8;anchors_width:100;anchors_x:130;anchors_y:69}D{i:9;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
+    D{i:4;anchors_width:100;anchors_x:130;anchors_y:69}D{i:5;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
 }
  ##^##*/
