@@ -21,18 +21,20 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 0
 
-        Rectangle {
-            id: navIconBg
-            width: 24
-            height: 24
-            anchors.left: parent.left
-            anchors.leftMargin: 16
+        Button {
+            id: backButton
             anchors.verticalCenter: parent.verticalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 8
+            display: AbstractButton.IconOnly
+            icon.name: "back-icon"
+            icon.source: "/assets/arrow-back-24px.svg"
+            icon.color: "transparent"
 
-            Button {
-                id: backButton
-                display: AbstractButton.IconOnly
-                anchors.fill: parent
+            background: Rectangle {
+                opacity: enabled ? 1.0 : 0.3
+                color: backButton.down ? "#ddd" : "#fff"
+                radius: 6
             }
         }
     }
