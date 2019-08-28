@@ -31,11 +31,11 @@ Rectangle {
             anchors.leftMargin: 16
             anchors.verticalCenter: parent.verticalCenter
 
-            Image {
-                id: image
+            Button {
+                id: backButton
+                display: AbstractButton.IconOnly
                 anchors.fill: parent
-                source: "../assets/arrow-back-24px.svg"
-                fillMode: Image.PreserveAspectFit
+                icon: ("arrow-back-24px.svg")
             }
         }
     }
@@ -45,6 +45,8 @@ Rectangle {
         y: 398
         color: "#2b2626"
         text: qsTr("Continue with E-Mail")
+        font.letterSpacing: 0.25
+        lineHeight: 1
         font.weight: Font.Bold
         wrapMode: Text.WordWrap
         anchors.bottom: emailTextField.top
@@ -117,7 +119,8 @@ Rectangle {
 
 
 
+
 /*##^## Designer {
-    D{i:3;anchors_height:100;anchors_width:100}D{i:2;anchors_height:24;anchors_width:24}
+    D{i:3;anchors_x:24;anchors_y:0}D{i:2;anchors_height:24;anchors_width:24}
 }
  ##^##*/
