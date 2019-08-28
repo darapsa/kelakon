@@ -14,6 +14,7 @@ Rectangle {
     Button {
         id: googleButton
         text: qsTr("Continue with Google")
+        font.family: "Google Sans"
         anchors.bottom: emailButton.top
         anchors.bottomMargin: 8
         anchors.right: parent.right
@@ -28,6 +29,7 @@ Rectangle {
     Button {
         id: emailButton
         text: qsTr("Continue with E-Mail")
+        font.family: "Google Sans"
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
@@ -98,14 +100,6 @@ Rectangle {
         font.weight: Font.Medium
     }
 }
-
-
-
-
-
-
-
-
 /*##^## Designer {
     D{i:4;anchors_width:100;anchors_x:130;anchors_y:69}D{i:5;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
 }
