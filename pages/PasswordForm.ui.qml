@@ -35,7 +35,6 @@ Rectangle {
                 id: backButton
                 display: AbstractButton.IconOnly
                 anchors.fill: parent
-                icon: ("arrow-back-24px.svg")
             }
         }
     }
