@@ -8,5 +8,7 @@
         <file>pages/Email.qml</file>
         <file>pages/EmailForm.ui.qml</file>
         <file>assets/arrow-back-24px.svg</file>
+        <file>pages/Password.qml</file>
+        <file>pages/PasswordForm.ui.qml</file>
     </qresource>
 </RCC>
