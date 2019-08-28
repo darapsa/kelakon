@@ -10,59 +10,61 @@ Rectangle {
     property alias googleButton: googleButton
     property alias emailButton: emailButton
 
-    ColumnLayout {
+    Button {
+        id: googleButton
+        text: qsTr("Continue with Google")
+        anchors.bottom: emailButton.top
+        anchors.bottomMargin: 16
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        height: 36
+        Layout.fillWidth: true
+
+        contentItem: Text {
+            text: googleButton.text
+            color: "#FFF"
+            font.pointSize: 14
+            font.family: "Google Sans"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
+            opacity: enabled ? 1.0 : 0.3
+            color: googleButton.down ? "#6d22e9" : "#4F12DA"
+            radius: 6
+        }
+    }
+
+    Button {
+        id: emailButton
+        text: qsTr("Continue with E-Mail")
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
         anchors.bottom: disclaimer.top
         anchors.bottomMargin: 16
-        spacing: 16
+        height: 36
+        Layout.fillWidth: true
 
-        Button {
-            id: googleButton
-            text: qsTr("Continue with Google")
-            height: 36
-            Layout.fillWidth: true
-
-            contentItem: Text {
-                text: googleButton.text
-                color: "#FFF"
-                font.pointSize: 14
-                font.family: "Google Sans"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-            background: Rectangle {
-                opacity: enabled ? 1.0 : 0.3
-                color: googleButton.down ? "#6d22e9" : "#4F12DA"
-                radius: 6
-            }
+        contentItem: Text {
+            text: emailButton.text
+            color: "#6d22e9"
+            font.pointSize: 14
+            font.family: "Google Sans"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
         }
-
-        Button {
-            id: emailButton
-            text: qsTr("Continue with E-Mail")
-            height: 36
-            Layout.fillWidth: true
-
-            contentItem: Text {
-                text: emailButton.text
-                color: "#6d22e9"
-                font.pointSize: 14
-                font.family: "Google Sans"
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
-            background: Rectangle {
-                opacity: enabled ? 0.3 : 1
-                color: emailButton.down ? "#6d22e9" : "#ffffff"
-                border.color: "#6d22e9"
-                border.width: 1
-                radius: 6
-            }
+        background: Rectangle {
+            opacity: enabled ? 0.3 : 1
+            color: emailButton.down ? "#6d22e9" : "#ffffff"
+            border.color: "#6d22e9"
+            border.width: 1
+            radius: 6
         }
     }
 
@@ -99,12 +101,14 @@ Rectangle {
 
     Image {
         id: image
-        x: 130
-        width: 258
-        height: 258
-        anchors.horizontalCenter: parent.horizontalCenter
-        anchors.top: parent.top
-        anchors.topMargin: 98
+        anchors.top: logotext.bottom
+        anchors.topMargin: 56
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.bottom: onboarding_text_1.top
+        anchors.bottomMargin: 16
         source: "onboarding-1.png"
         fillMode: Image.PreserveAspectFit
     }
@@ -112,13 +116,13 @@ Rectangle {
     Text {
         id: onboarding_text_1
         text: qsTr("Achieve more today, chill tomorrow.")
+        anchors.bottom: googleButton.top
+        anchors.bottomMargin: 16
         wrapMode: Text.WordWrap
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
-        anchors.top: image.bottom
-        anchors.topMargin: 32
         font.pointSize: 24
         font.family: "Google Sans"
         font.weight: Font.Medium
@@ -132,7 +136,9 @@ Rectangle {
 
 
 
+
+
 /*##^## Designer {
-    D{i:10;anchors_width:100;anchors_x:130;anchors_y:69}D{i:11;anchors_x:16;anchors_y:272}
+    D{i:8;anchors_width:100;anchors_x:130;anchors_y:69}D{i:9;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
 }
  ##^##*/
