@@ -7,6 +7,7 @@ Rectangle {
     color: "#fff"
     border.width: 0
 
+    property alias backButton: backButton
     property alias emailTextField: emailTextField
     property alias loginButton: loginButton
 

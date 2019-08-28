@@ -5,6 +5,12 @@ EmailForm {
 	width: stackView.width
 	height: stackView.height
 
+	backButton {
+		onClicked: {
+			stackView.pop()
+		}
+	}
+
 	loginButton {
 		onClicked: {
 			User.emailAddress = emailTextField.text
