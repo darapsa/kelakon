@@ -2,7 +2,7 @@
 #include <QQmlApplicationEngine>
 #include <QThread>
 #include "user.hxx"
-#include "networkworker.hxx"
+#include "worker.hxx"
 
 int main(int argc, char* argv[])
 {
@@ -10,7 +10,7 @@ int main(int argc, char* argv[])
 	QGuiApplication app(argc, argv);
 	QQmlApplicationEngine engine;
 
-	NetworkWorker worker{};
+	Worker worker{};
 	QThread thread;
 	worker.moveToThread(&thread);
 

@@ -5,11 +5,11 @@ QT += \
 debug: DEFINES += DEBUG
 
 HEADERS += \
-	networkworker.hxx \
+	worker.hxx \
 	user.hxx
 
 SOURCES += \
-	networkworker.cxx \
+	worker.cxx \
 	user.cxx \
 	main.cxx
 
