@@ -78,7 +78,7 @@ Rectangle {
         echoMode: TextInput.Password
     }
 
-    Button {
+    RoundButton {
         id: createPassButton
         x: 34
         y: 278
