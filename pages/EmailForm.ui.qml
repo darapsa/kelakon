@@ -76,11 +76,11 @@ Rectangle {
         font.family: "Google Sans"
         font.capitalization: Font.MixedCase
         anchors.right: parent.right
-        anchors.rightMargin: 16
+        anchors.rightMargin: 8
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 16
+        anchors.bottomMargin: 8
         anchors.left: parent.left
-        anchors.leftMargin: 16
+        anchors.leftMargin: 8
         highlighted: true
         Material.background: Material.primary
     }

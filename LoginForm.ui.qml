@@ -19,9 +19,9 @@ Rectangle {
         anchors.bottom: emailButton.top
         anchors.bottomMargin: 8
         anchors.right: parent.right
-        anchors.rightMargin: 16
+        anchors.rightMargin: 8
         anchors.left: parent.left
-        anchors.leftMargin: 16
+        anchors.leftMargin: 8
         Layout.fillWidth: true
         highlighted: true
         Material.background: Material.primary
@@ -34,11 +34,11 @@ Rectangle {
         font.family: "Google Sans"
         font.capitalization: Font.MixedCase
         anchors.right: parent.right
-        anchors.rightMargin: 16
+        anchors.rightMargin: 8
         anchors.left: parent.left
-        anchors.leftMargin: 16
+        anchors.leftMargin: 8
         anchors.bottom: disclaimer.top
-        anchors.bottomMargin: 16
+        anchors.bottomMargin: 8
         Layout.fillWidth: true
         Material.foreground: Material.primary
     }
@@ -103,6 +103,8 @@ Rectangle {
         font.weight: Font.Medium
     }
 }
+
+
 
 
 
