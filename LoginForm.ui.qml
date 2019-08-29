@@ -11,7 +11,7 @@ Rectangle {
     property alias googleButton: googleButton
     property alias emailButton: emailButton
 
-    Button {
+    RoundButton {
         id: googleButton
         text: qsTr("Continue with Google")
         font.family: "Google Sans"
@@ -27,7 +27,7 @@ Rectangle {
         Material.background: Material.primary
     }
 
-    Button {
+    RoundButton {
         id: emailButton
         text: qsTr("Continue with E-Mail")
         flat: true
