@@ -5,12 +5,14 @@ QT += \
 debug: DEFINES += DEBUG
 
 HEADERS += \
-	networkworker.hxx \
-	user.hxx
+	user.hxx \
+	worker.hxx \
+	controller.hxx
 
 SOURCES += \
-	networkworker.cxx \
 	user.cxx \
+	worker.cxx \
+	controller.cxx \
 	main.cxx
 
 RESOURCES += kelakon.qrc
