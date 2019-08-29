@@ -8,6 +8,7 @@ Rectangle {
     color: "#fff"
     border.width: 0
 
+    property alias backButton: backButton
     property alias passTextField: passTextField
     property alias createPassButton: createPassButton
 
