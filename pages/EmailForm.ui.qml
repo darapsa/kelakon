@@ -76,7 +76,7 @@ Rectangle {
         Layout.maximumHeight: 56
     }
 
-    Button {
+    RoundButton {
         id: loginButton
         text: qsTr("Next")
         font.family: "Google Sans"
