@@ -91,7 +91,7 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 16
         highlighted: true
-        Material.accent: Material.primary
+        Material.background: Material.primary
     }
 }
 

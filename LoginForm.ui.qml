@@ -24,7 +24,7 @@ Rectangle {
         anchors.leftMargin: 16
         Layout.fillWidth: true
         highlighted: true
-        Material.accent: Material.primary
+        Material.background: Material.primary
     }
 
     Button {
