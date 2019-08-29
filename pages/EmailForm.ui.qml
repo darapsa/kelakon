@@ -23,21 +23,15 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 0
 
-        Button {
+        RoundButton {
             id: backButton
+            flat: true
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
-            anchors.leftMargin: 8
             display: AbstractButton.IconOnly
             icon.name: "back-icon"
             icon.source: "/assets/arrow-back-24px.svg"
             icon.color: "transparent"
-
-            background: Rectangle {
-                opacity: enabled ? 1.0 : 0.3
-                color: backButton.down ? "#ddd" : "#fff"
-                radius: 6
-            }
         }
     }
     Label {
