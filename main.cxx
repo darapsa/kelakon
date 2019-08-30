@@ -12,13 +12,14 @@ int main(int argc, char* argv[])
 	qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.user", 0, 1, "User", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
 		Q_UNUSED(engine)
 		Q_UNUSED(scriptEngine)
-
-		User* user = new User{};
-		return user;
+		return new User{};
+	});
+	qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.rtclient", 0, 1, "RTClient", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
+		Q_UNUSED(engine)
+		Q_UNUSED(scriptEngine)
+		return new Controller{};
 	});
 	engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-
-	Controller controller{};
 
 	return app.exec();
 }

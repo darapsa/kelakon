@@ -10,6 +10,10 @@ class Controller : public QObject
 	public:
 		Controller();
 		~Controller();
+		Q_INVOKABLE void logIn(QString const& name, QString const& password);
+
+	signals:
+		void credentialsObtained(QString const& name, QString const& password);
 
 	private:
 		QThread thread;
