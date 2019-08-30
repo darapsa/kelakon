@@ -3,8 +3,6 @@
 
 #include <QObject>
 
-struct rt_user;
-
 class User : public QObject
 {
 	Q_OBJECT
@@ -33,8 +31,6 @@ class User : public QObject
 			m_isLoggedIn{isLoggedIn}
 		{}
 		~User() {}
-
-		Q_INVOKABLE void update(rt_user* user);
 
 		QString const& name() const { return m_name; }
 		QString const& emailAddress() const { return m_emailAddress; }
