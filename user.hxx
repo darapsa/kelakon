@@ -6,7 +6,7 @@
 class User : public QObject
 {
 	Q_OBJECT
-	Q_PROPERTY(QString name READ name)
+	Q_PROPERTY(QString name READ name WRITE setName NOTIFY nameChanged)
 	Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
 	Q_PROPERTY(QString emailAddress READ emailAddress WRITE setEmailAddress NOTIFY emailAddressChanged)
 	Q_PROPERTY(QString organization READ organization WRITE setOrganization NOTIFY organizationChanged)
