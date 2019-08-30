@@ -7,6 +7,7 @@ class User : public QObject
 {
 	Q_OBJECT
 	Q_PROPERTY(QString name READ name)
+	Q_PROPERTY(QString password READ password WRITE setPassword NOTIFY passwordChanged)
 	Q_PROPERTY(QString emailAddress READ emailAddress WRITE setEmailAddress NOTIFY emailAddressChanged)
 	Q_PROPERTY(QString organization READ organization WRITE setOrganization NOTIFY organizationChanged)
 	Q_PROPERTY(QString realName READ realName WRITE setRealName NOTIFY realNameChanged)
@@ -33,6 +34,7 @@ class User : public QObject
 		~User() {}
 
 		QString const& name() const { return m_name; }
+		QString const& password() const { return m_password; }
 		QString const& emailAddress() const { return m_emailAddress; }
 		QString const& organization() const { return m_organization; }
 		QString const& realName() const { return m_realName; }
@@ -52,6 +54,7 @@ class User : public QObject
 		bool isLoggedIn() const { return m_isLoggedIn; }
 
 		void setName(QString const& name);
+		void setPassword(QString const& password);
 		void setEmailAddress(QString const& emailAddress);
 		void setOrganization(QString const& organization);
 		void setRealName(QString const& realName);
@@ -72,6 +75,7 @@ class User : public QObject
 
 	signals:
 		void nameChanged();
+		void passwordChanged();
 		void emailAddressChanged();
 		void organizationChanged();
 		void realNameChanged();
@@ -92,6 +96,7 @@ class User : public QObject
 
 	private:
 		QString m_name;
+		QString m_password;
 		QString m_emailAddress;
 		QString m_organization;
 		QString m_realName;

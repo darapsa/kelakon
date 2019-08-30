@@ -8,6 +8,14 @@ void User::setName(QString const& name)
 	}
 }
 
+void User::setPassword(QString const& password)
+{
+	if (m_password != password) {
+		m_password = password;
+		emit passwordChanged();
+	}
+}
+
 void User::setEmailAddress(QString const& emailAddress)
 {
 	if (m_emailAddress != emailAddress) {

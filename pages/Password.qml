@@ -9,4 +9,10 @@ PasswordForm {
             stackView.pop()
         }
     }
+
+    createPassButton {
+	    onClicked: {
+		    User.password = passTextField.text
+	    }
+    }
 }
