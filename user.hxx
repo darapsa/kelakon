@@ -2,7 +2,8 @@
 #define USER_HXX
 
 #include <QObject>
-#include "rtuser.h"
+
+struct rt_user;
 
 class User : public QObject
 {
@@ -33,23 +34,25 @@ class User : public QObject
 		{}
 		~User() {}
 
-		QString const name() const { return QString{m_user.name}; }
-		QString const emailAddress() const { return QString{m_user.emailaddress}; }
-		QString const organization() const { return QString{m_user.organization}; }
-		QString const realName() const { return QString{m_user.realname}; }
-		QString const nickName() const { return QString{m_user.nickname}; }
-		QString const lang() const { return QString{m_user.lang}; }
-		QString const homePhone() const { return QString{m_user.homephone}; }
-		QString const workPhone() const { return QString{m_user.workphone}; }
-		QString const mobilePhone() const { return QString{m_user.mobilephone}; }
-		QString const pagerPhone() const { return QString{m_user.pagerphone}; }
-		QString const address1() const { return QString{m_user.address1}; }
-		QString const address2() const { return QString{m_user.address2}; }
-		QString const city() const { return QString{m_user.city}; }
-		QString const state() const { return QString{m_user.state}; }
-		QString const zip() const { return QString{m_user.zip}; }
-		QString const country() const { return QString{m_user.country}; }
-		QString const timeZone() const { return QString{m_user.timezone}; }
+		Q_INVOKABLE void update(rt_user* user);
+
+		QString const& name() const { return m_name; }
+		QString const& emailAddress() const { return m_emailAddress; }
+		QString const& organization() const { return m_organization; }
+		QString const& realName() const { return m_realName; }
+		QString const& nickName() const { return m_nickName; }
+		QString const& lang() const { return m_lang; }
+		QString const& homePhone() const { return m_homePhone; }
+		QString const& workPhone() const { return m_workPhone; }
+		QString const& mobilePhone() const { return m_mobilePhone; }
+		QString const& pagerPhone() const { return m_pagerPhone; }
+		QString const& address1() const { return m_address1; }
+		QString const& address2() const { return m_address2; }
+		QString const& city() const { return m_city; }
+		QString const& state() const { return m_state; }
+		QString const& zip() const { return m_zip; }
+		QString const& country() const { return m_country; }
+		QString const& timeZone() const { return m_timeZone; }
 		bool isLoggedIn() const { return m_isLoggedIn; }
 
 		void setName(QString const& name);
@@ -92,7 +95,23 @@ class User : public QObject
 		void loggedInChanged();
 
 	private:
-		rt_user m_user;
+		QString m_name;
+		QString m_emailAddress;
+		QString m_organization;
+		QString m_realName;
+		QString m_nickName;
+		QString m_lang;
+		QString m_homePhone;
+		QString m_workPhone;
+		QString m_mobilePhone;
+		QString m_pagerPhone;
+		QString m_address1;
+		QString m_address2;
+		QString m_city;
+		QString m_state;
+		QString m_zip;
+		QString m_country;
+		QString m_timeZone;
 		bool m_isLoggedIn;
 };
 
