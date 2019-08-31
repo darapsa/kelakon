@@ -84,7 +84,6 @@ Rectangle {
         anchors.left: parent.left
         anchors.leftMargin: 16
         Layout.maximumHeight: 56
-        echoMode: TextInput.Password
     }
 
     RoundButton {
