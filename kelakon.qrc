@@ -11,5 +11,7 @@
         <file>pages/Password.qml</file>
         <file>pages/PasswordForm.ui.qml</file>
         <file>qtquickcontrols2.conf</file>
+        <file>pages/ExistingLogin.qml</file>
+        <file>pages/ExistingLoginForm.ui.qml</file>
     </qresource>
 </RCC>
