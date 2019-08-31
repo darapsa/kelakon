@@ -1,52 +1,18 @@
-#include "rtuser.h"
 #include "user.hxx"
-
-void User::update(rt_user* user)
-{
-	if (m_isLoggedIn) {
-		setName(QString{user->name});
-		setEmailAddress(QString{user->emailaddress});
-		setOrganization(QString{user->organization});
-		setRealName(QString{user->realname});
-		setNickName(QString{user->nickname});
-		setLang(QString{user->lang});
-		setHomePhone(QString{user->homephone});
-		setWorkPhone(QString{user->workphone});
-		setMobilePhone(QString{user->mobilephone});
-		setPagerPhone(QString{user->pagerphone});
-		setAddress1(QString{user->address1});
-		setAddress2(QString{user->address2});
-		setCity(QString{user->city});
-		setState(QString{user->state});
-		setZip(QString{user->zip});
-		setCountry(QString{user->country});
-		setTimeZone(QString{user->timezone});
-	} else {
-		setName("");
-		setEmailAddress("");
-		setOrganization("");
-		setRealName("");
-		setNickName("");
-		setLang("");
-		setHomePhone("");
-		setWorkPhone("");
-		setMobilePhone("");
-		setPagerPhone("");
-		setAddress1("");
-		setAddress2("");
-		setCity("");
-		setState("");
-		setZip("");
-		setCountry("");
-		setTimeZone("");
-	}
-}
 
 void User::setName(QString const& name)
 {
 	if (m_name != name) {
 		m_name = name;
 		emit nameChanged();
+	}
+}
+
+void User::setPassword(QString const& password)
+{
+	if (m_password != password) {
+		m_password = password;
+		emit passwordChanged();
 	}
 }
 

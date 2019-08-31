@@ -17,10 +17,10 @@ SOURCES += \
 
 RESOURCES += kelakon.qrc
 
-INCLUDEPATH += $$PWD/rtclient
+INCLUDEPATH += $$PWD/librtclient
 
 LIBS += \
-	$$PWD/rtclient/librtclient.a \
+	$$PWD/librtclient/librtclient.a \
 	-lcurl
 
 contains(ANDROID_TARGET_ARCH,arm64-v8a) {
