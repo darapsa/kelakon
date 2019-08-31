@@ -13,5 +13,7 @@
         <file>qtquickcontrols2.conf</file>
         <file>pages/ExistingLogin.qml</file>
         <file>pages/ExistingLoginForm.ui.qml</file>
+        <file>pages/ConfirmPassword.qml</file>
+        <file>pages/ConfirmPasswordForm.ui.qml</file>
     </qresource>
 </RCC>
