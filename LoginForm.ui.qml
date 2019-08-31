@@ -77,11 +77,11 @@ Rectangle {
     Image {
         id: image
         anchors.top: logotext.bottom
-        anchors.topMargin: 56
+        anchors.topMargin: 48
         anchors.right: parent.right
-        anchors.rightMargin: 16
+        anchors.rightMargin: 56
         anchors.left: parent.left
-        anchors.leftMargin: 16
+        anchors.leftMargin: 56
         anchors.bottom: onboarding_text_1.top
         anchors.bottomMargin: 16
         source: "onboarding-1.png"
@@ -107,8 +107,7 @@ Rectangle {
 
 
 
-
 /*##^## Designer {
-    D{i:4;anchors_width:100;anchors_x:130;anchors_y:69}D{i:5;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
+    D{i:5;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
 }
  ##^##*/
