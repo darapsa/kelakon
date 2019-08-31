@@ -7,7 +7,11 @@ Rectangle {
     id: rectangle
     color: "#fff"
 
+<<<<<<< HEAD
     property alias enterFullName: enterFullName
+=======
+    property alias backButton: backButton
+>>>>>>> 58ed74cd70d6de558b8d9cb77844e95b5f72b341
 
     ToolBar {
         id: toolbar
@@ -29,6 +33,7 @@ Rectangle {
             spacing: 8
 
             ToolButton {
+		    id: backButton
                 icon.name: "back-icon"
                 icon.source: "/assets/arrow-back-24px.svg"
                 icon.color: "transparent"
