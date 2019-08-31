@@ -37,15 +37,15 @@ Rectangle {
 
     Label {
         x: 16
-        y: 398
+        y: 232
         color: "#2b2626"
         text: qsTr("Create password")
+        anchors.bottom: userEmail.top
+        anchors.bottomMargin: 16
         font.letterSpacing: 0.25
         lineHeight: 1
         font.weight: Font.Bold
         wrapMode: Text.WordWrap
-        anchors.bottom: passTextField.top
-        anchors.bottomMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
         anchors.right: parent.right
@@ -53,6 +53,30 @@ Rectangle {
 
         font.family: "Google Sans"
         font.pointSize: 34
+    }
+
+    Rectangle {
+        id: userEmail
+        height: 48
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.bottom: passTextField.top
+        anchors.bottomMargin: 16
+
+        Label {
+            anchors.right: parent.right
+            anchors.rightMargin: 16
+            anchors.left: parent.left
+            anchors.leftMargin: 16
+            anchors.verticalCenter: parent.verticalCenter
+
+            text: qsTr("your@email.com")
+            font.family: "Google Sans"
+            font.pointSize: 16
+            color: "#99000000"
+        }
     }
 
     TextField {
