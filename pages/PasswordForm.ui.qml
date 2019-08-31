@@ -67,7 +67,7 @@ Rectangle {
         anchors.bottomMargin: 16
 
         Label {
-		id: emailAddressLabel
+            id: emailAddressLabel
             anchors.right: parent.right
             anchors.rightMargin: 16
             anchors.left: parent.left
@@ -102,7 +102,7 @@ Rectangle {
         id: createPassButton
         x: 34
         y: 278
-        text: qsTr("Confirm password")
+        text: qsTr("Next")
         font.family: "Google Sans"
         font.capitalization: Font.MixedCase
         anchors.right: parent.right
