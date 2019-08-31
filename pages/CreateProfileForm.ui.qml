@@ -7,6 +7,8 @@ Rectangle {
     id: rectangle
     color: "#fff"
 
+    property alias backButton: backButton
+
     ToolBar {
         height: 48
         anchors.top: parent.top
@@ -25,6 +27,7 @@ Rectangle {
             anchors.fill: parent
 
             ToolButton {
+		    id: backButton
                 icon.name: "back-icon"
                 icon.source: "/assets/arrow-back-24px.svg"
                 icon.color: "transparent"
