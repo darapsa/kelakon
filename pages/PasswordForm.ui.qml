@@ -11,6 +11,7 @@ Rectangle {
     property alias backButton: backButton
     property alias passTextField: passTextField
     property alias createPassButton: createPassButton
+    property alias emailAddressLabel: emailAddressLabel
 
     Rectangle {
         id: appBar
@@ -66,6 +67,7 @@ Rectangle {
         anchors.bottomMargin: 16
 
         Label {
+		id: emailAddressLabel
             anchors.right: parent.right
             anchors.rightMargin: 16
             anchors.left: parent.left

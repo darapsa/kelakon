@@ -12,9 +12,11 @@ PasswordForm {
     }
 
     createPassButton {
-	    onClicked: {
-		    User.password = passTextField.text
-		    RTClient.logIn(User.emailAddress, User.password)
-	    }
+        onClicked: {
+            User.password = passTextField.text
+            RTClient.logIn(User.emailAddress, User.password)
+        }
     }
+
+    emailAddressLabel.text: User.emailAddress
 }
