@@ -12,18 +12,14 @@ Rectangle {
 
     ToolBar {
         id: toolbar
-        height: 48
+        height: 56
+        font.family: "Google Sans"
         anchors.top: parent.top
         anchors.topMargin: 0
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
-        background: rectangle
-
-        Rectangle {
-            color: "#fff"
-        }
 
         RowLayout {
             anchors.fill: parent
@@ -33,11 +29,12 @@ Rectangle {
                 id: backButton
                 icon.name: "back-icon"
                 icon.source: "/assets/arrow-back-24px.svg"
-                icon.color: "transparent"
+                icon.color: "#FFFFFF"
             }
             Label {
                 id: title
                 text: qsTr("Create Profile")
+                wrapMode: Text.WordWrap
                 font.family: "Google Sans"
                 font.pointSize: 20
                 elide: Label.ElideRight
@@ -47,9 +44,6 @@ Rectangle {
             }
             ToolButton {
             }
-        }
-        Rectangle {
-            color: "transparent"
         }
     }
     Rectangle {
@@ -127,6 +121,8 @@ Rectangle {
             flat: true
             display: AbstractButton.IconOnly
             icon.name: "camera-icon"
+            icon.source: "/assets/photo_camera_24px.svg"
+            icon.color: "#6D22E9"
         }
     }
 }
@@ -135,7 +131,7 @@ Rectangle {
 
 
 /*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:8;anchors_height:48;anchors_y:143}
-D{i:10;anchors_y:322}D{i:12;anchors_y:54}
+    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:6;anchors_height:48;anchors_y:143}
+D{i:8;anchors_y:322}D{i:10;anchors_y:54}
 }
  ##^##*/
