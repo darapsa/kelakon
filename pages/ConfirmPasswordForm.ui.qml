@@ -9,7 +9,7 @@ Rectangle {
     border.width: 0
 
     property alias backButton: backButton
-    property alias passTextField: confirmPassTextField
+    property alias confirmPassTextField: confirmPassTextField
     property alias confirmPassButton: confirmPassButton
     property alias emailAddressLabel: emailAddressLabel
 
@@ -58,12 +58,13 @@ Rectangle {
 
     Rectangle {
         id: userEmail
+        y: 292
         height: 48
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
-        anchors.bottom: passTextField.top
+        anchors.bottom: confirmPassTextField.top
         anchors.bottomMargin: 16
 
         Label {
