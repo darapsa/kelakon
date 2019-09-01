@@ -20,6 +20,7 @@ Rectangle {
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
+        background: rectangle
 
         RowLayout {
             anchors.fill: parent
@@ -29,12 +30,13 @@ Rectangle {
                 id: backButton
                 icon.name: "back-icon"
                 icon.source: "/assets/arrow-back-24px.svg"
-                icon.color: "#FFFFFF"
+                icon.color: "#000000"
             }
             Label {
                 id: title
                 text: qsTr("Create Profile")
                 wrapMode: Text.WordWrap
+                color: "#000"
                 font.family: "Google Sans"
                 font.pointSize: 20
                 elide: Label.ElideRight
