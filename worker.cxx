@@ -4,7 +4,7 @@
 Worker::Worker(QObject* parent) :
 	QObject{parent}
 {
-	rtclient_init();
+	rtclient_init("https://darapsa.co.id/rt");
 }
 
 void Worker::logIn(QString const& name, QString const& password)
