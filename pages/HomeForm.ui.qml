@@ -69,9 +69,9 @@ Rectangle {
             CheckBox {
                 id: taskItem
                 text: qsTr("Task name")
+                font.weight: Font.Medium
                 font.family: "Google Sans"
                 font.pointSize: 16
-                font.weight: medium
                 checked: true
                 width: parent.width
                 height: parent.height
@@ -93,9 +93,9 @@ Rectangle {
             CheckBox {
                 id: taskItem2
                 text: qsTr("Another task name")
+                font.weight: Font.Medium
                 font.family: "Google Sans"
                 font.pointSize: 16
-                font.weight: medium
                 checked: false
                 width: parent.width
                 height: parent.height
