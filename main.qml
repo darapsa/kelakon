@@ -11,11 +11,16 @@ ApplicationWindow {
 
     Material.accent: Material.DeepPurple
 
+    Drawer {
+        id: drawer
+        width: 0.8 * appWindow.width
+        height: appWindow.height
+    }
+
     StackView {
         id: stackView
         anchors.fill : parent
 
         initialItem: Login {}
     }
-
 }
