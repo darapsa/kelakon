@@ -5,7 +5,7 @@ import QtQuick.Controls.Material 2.12
 
 Rectangle {
 
-    property alias backButton: menuButton
+    property alias menuButton: menuButton
 
     ToolBar {
         id: toolbar
