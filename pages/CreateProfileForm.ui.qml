@@ -36,6 +36,7 @@ Rectangle {
             Label {
                 id: title
                 text: qsTr("Create Profile")
+                font.weight: Font.Medium
                 wrapMode: Text.WordWrap
                 color: "#000"
                 font.family: "Google Sans"
