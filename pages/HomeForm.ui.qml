@@ -28,7 +28,7 @@ Rectangle {
 
             ToolButton {
                 id: menuButton
-                icon.name: "back-icon"
+                icon.name: "menu-icon"
                 icon.source: "/assets/menu-24px.svg"
                 highlighted: true
             }
