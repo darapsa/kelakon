@@ -7,6 +7,10 @@ Rectangle {
     id: rectangle
 
     property alias menuButton: menuButton
+    property alias taskList: taskList
+    property alias taskList2: taskList2
+    property alias taskItem: taskItem
+    property alias taskItem2: taskItem2
 
     ToolBar {
         id: toolbar
@@ -50,20 +54,52 @@ Rectangle {
         }
     }
 
-    Pane {
-        id: dismissableCard
+    Rectangle {
+        id: taskList
         height: 72
-        anchors.top: toolbar.bottom
-        anchors.topMargin: 16
+        color: "#ffffff"
         anchors.right: parent.right
-        anchors.rightMargin: 16
+        anchors.rightMargin: 0
         anchors.left: parent.left
-        anchors.leftMargin: 16
+        anchors.leftMargin: 0
+        anchors.top: toolbar.bottom
+        anchors.topMargin: 8
 
-        background: Rectangle {
-            color: "#F0E6FC"
-            border.color: "#D6C3F8"
-            radius: 6
+        GridLayout {
+            CheckBox {
+                id: taskItem
+                text: qsTr("Task name")
+                font.family: "Google Sans"
+                font.pointSize: 16
+                font.weight: medium
+                checked: true
+                width: parent.width
+                height: parent.height
+            }
+        }
+    }
+    Rectangle {
+        id: taskList2
+        height: 72
+        color: "#ffffff"
+        anchors.right: parent.right
+        anchors.rightMargin: 0
+        anchors.left: parent.left
+        anchors.leftMargin: 0
+        anchors.top: taskList.bottom
+        anchors.topMargin: 0
+
+        GridLayout {
+            CheckBox {
+                id: taskItem2
+                text: qsTr("Another task name")
+                font.family: "Google Sans"
+                font.pointSize: 16
+                font.weight: medium
+                checked: false
+                width: parent.width
+                height: parent.height
+            }
         }
     }
 }
@@ -72,6 +108,6 @@ Rectangle {
 
 
 /*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:7;anchors_width:200;anchors_x:0;anchors_y:62}
+    D{i:0;autoSize:true;height:480;width:640}D{i:7;anchors_width:534;anchors_x:8;anchors_y:62}
 }
  ##^##*/
