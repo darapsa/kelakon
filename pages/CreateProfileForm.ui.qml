@@ -9,6 +9,7 @@ Rectangle {
 
     property alias enterFullName: enterFullName
     property alias backButton: backButton
+    property alias skipButton: skipButton
 
     ToolBar {
         id: toolbar
@@ -45,6 +46,14 @@ Rectangle {
                 Layout.fillWidth: true
             }
             ToolButton {
+                id: skipButton
+                text: qsTr("Skip")
+                font.weight: Font.Medium
+                display: AbstractButton.TextOnly
+                font.family: "Google Sans"
+                font.pointSize: 14
+                font.capitalization: Font.MixedCase
+                highlighted: true
             }
         }
     }
