@@ -17,7 +17,9 @@ Rectangle {
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
-        background: rectangle
+        background: Rectangle {
+            color: "#FFF"
+        }
 
         RowLayout {
             anchors.fill: parent

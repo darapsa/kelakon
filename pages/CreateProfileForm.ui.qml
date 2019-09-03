@@ -21,7 +21,9 @@ Rectangle {
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
-        background: rectangle
+        background: Rectangle {
+            color: "#fff"
+        }
 
         RowLayout {
             anchors.fill: parent
@@ -142,7 +144,7 @@ Rectangle {
 
 
 /*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:6;anchors_height:48;anchors_y:143}
-D{i:8;anchors_y:322}D{i:10;anchors_y:54}
+    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:7;anchors_height:48;anchors_y:143}
+D{i:9;anchors_y:322}D{i:11;anchors_y:54}
 }
  ##^##*/
