@@ -4,6 +4,7 @@ import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
 Rectangle {
+    id: rectangle
 
     property alias menuButton: menuButton
 
@@ -48,12 +49,29 @@ Rectangle {
             }
         }
     }
+
+    Pane {
+        id: dismissableCard
+        height: 72
+        anchors.top: toolbar.bottom
+        anchors.topMargin: 16
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+
+        background: Rectangle {
+            color: "#F0E6FC"
+            border.color: "#D6C3F8"
+            radius: 6
+        }
+    }
 }
 
 
 
 
 /*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}
+    D{i:0;autoSize:true;height:480;width:640}D{i:7;anchors_width:200;anchors_x:0;anchors_y:62}
 }
  ##^##*/
