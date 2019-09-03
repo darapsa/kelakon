@@ -18,5 +18,8 @@
         <file>pages/CreateProfile.qml</file>
         <file>pages/CreateProfileForm.ui.qml</file>
         <file>assets/photo_camera_24px.svg</file>
+        <file>pages/Home.qml</file>
+        <file>pages/HomeForm.ui.qml</file>
+        <file>assets/menu-24px.svg</file>
     </qresource>
 </RCC>

@@ -9,4 +9,9 @@ CreateProfileForm {
 			stackView.pop()
 		}
 	}
+    skipButton {
+        onClicked: {
+            stackView.push("qrc:/pages/Home.qml")
+        }
+    }
 }
