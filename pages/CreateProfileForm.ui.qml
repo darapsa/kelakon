@@ -30,7 +30,7 @@ Rectangle {
                 id: backButton
                 icon.name: "back-icon"
                 icon.source: "/assets/arrow-back-24px.svg"
-                icon.color: "#000000"
+                highlighted: true
             }
             Label {
                 id: title
