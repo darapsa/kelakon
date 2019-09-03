@@ -12,26 +12,30 @@ Rectangle {
     property alias passTextField: passTextField
     property alias createPassButton: loginButton
 
-    Rectangle {
-        id: appBar
+    ToolBar {
+        id: toolbar
         height: 56
-        color: "#ffffff"
+        font.family: "Google Sans"
         anchors.top: parent.top
         anchors.topMargin: 0
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
+        background: Rectangle {
+            color: "#FFF"
+        }
 
-        RoundButton {
-            id: backButton
-            flat: true
-            anchors.verticalCenter: parent.verticalCenter
-            anchors.left: parent.left
-            display: AbstractButton.IconOnly
-            icon.name: "back-icon"
-            icon.source: "/assets/arrow-back-24px.svg"
-            icon.color: "transparent"
+        RowLayout {
+            anchors.fill: parent
+            spacing: 8
+
+            ToolButton {
+                id: backButton
+                icon.name: "back-icon"
+                icon.source: "/assets/arrow-back-24px.svg"
+                highlighted: true
+            }
         }
     }
 
@@ -57,6 +61,7 @@ Rectangle {
 
     Rectangle {
         id: userEmail
+        y: 299
         height: 48
         anchors.right: parent.right
         anchors.rightMargin: 16
@@ -81,9 +86,9 @@ Rectangle {
 
     TextField {
         id: passTextField
-        y: 501
+        y: 362
         font.pointSize: 16
-        anchors.bottom: createPassButton.top
+        anchors.bottom: loginButton.top
         anchors.bottomMargin: 16
         font.family: "Google Sans"
         Layout.fillWidth: true
