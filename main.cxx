@@ -9,14 +9,12 @@ int main(int argc, char* argv[])
 	QGuiApplication app(argc, argv);
 	QQmlApplicationEngine engine;
 
-	auto typeId = qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.user", 0, 1, "User", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
+	qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.user", 0, 1, "User", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
 		Q_UNUSED(engine)
 		Q_UNUSED(scriptEngine)
 		return new User{};
 	});
-	auto user = engine.singletonInstance<User*>(typeId);
-	Q_UNUSED(user)
-	typeId = qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.rtclient", 0, 1, "RTClient", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
+	auto typeId = qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.rtclient", 0, 1, "RTClient", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
 		Q_UNUSED(engine)
 		Q_UNUSED(scriptEngine)
 		return new Controller{};
