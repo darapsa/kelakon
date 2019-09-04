@@ -8,9 +8,6 @@ Rectangle {
 
     property alias menuButton: menuButton
     property alias taskList: taskList
-    property alias taskList2: taskList2
-    property alias taskItem: taskItem
-    property alias taskItem2: taskItem2
 
     ToolBar {
         id: toolbar
@@ -54,10 +51,9 @@ Rectangle {
         }
     }
 
-    Rectangle {
+    RowLayout {
         id: taskList
         height: 72
-        color: "#ffffff"
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
@@ -65,41 +61,27 @@ Rectangle {
         anchors.top: toolbar.bottom
         anchors.topMargin: 8
 
-        GridLayout {
-            CheckBox {
-                id: taskItem
-                text: qsTr("Task name")
-                font.weight: Font.Medium
-                font.family: "Google Sans"
-                font.pointSize: 16
-                checked: true
-                width: parent.width
-                height: parent.height
-            }
+        RoundButton {
+            id: checkBox
+            flat: true
+            icon.name: "check-box-icon"
+            icon.source: "/assets/check-box-outline-24px.svg"
+            icon.color: "#99000000"
         }
-    }
-    Rectangle {
-        id: taskList2
-        height: 72
-        color: "#ffffff"
-        anchors.right: parent.right
-        anchors.rightMargin: 0
-        anchors.left: parent.left
-        anchors.leftMargin: 0
-        anchors.top: taskList.bottom
-        anchors.topMargin: 0
-
-        GridLayout {
-            CheckBox {
-                id: taskItem2
-                text: qsTr("Another task name")
-                font.weight: Font.Medium
-                font.family: "Google Sans"
-                font.pointSize: 16
-                checked: false
-                width: parent.width
-                height: parent.height
-            }
+        Label {
+            id: taskLabel
+            text: qsTr("Task number 1")
+            font.weight: Font.Medium
+            font.pointSize: 16
+            Layout.fillWidth: true
+            font.family: "Google Sans"
+        }
+        RoundButton {
+            id: taskDetailNavigate
+            flat: true
+            icon.name: "chevron-right-icon"
+            icon.source: "/assets/chevron-right-24px.svg"
+            icon.color: "#99000000"
         }
     }
 }
@@ -107,7 +89,11 @@ Rectangle {
 
 
 
+
+
+
+
 /*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:7;anchors_width:534;anchors_x:8;anchors_y:62}
+    D{i:0;autoSize:true;height:480;width:640}
 }
  ##^##*/
