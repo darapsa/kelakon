@@ -68,6 +68,7 @@ Rectangle {
             id: checkBox
             height: 54
             text: qsTr("This is a task title")
+            padding: 8
             rightPadding: 16
             leftPadding: 16
             bottomPadding: 16
@@ -76,7 +77,7 @@ Rectangle {
             font.family: "Google Sans"
             font.pointSize: 16
             font.weight: Font.Medium
-            spacing: 16
+            spacing: 24
         }
         RoundButton {
             id: chevronRight
@@ -116,6 +117,8 @@ Rectangle {
         icon.source: "/assets/add-24px.svg"
     }
 }
+
+
 
 
 
