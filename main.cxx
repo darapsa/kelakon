@@ -7,8 +7,8 @@ int main(int argc, char* argv[])
 {
 	QGuiApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 	QGuiApplication app(argc, argv);
-	QQmlApplicationEngine engine;
 
+	QQmlApplicationEngine engine;
 	qmlRegisterSingletonType<User>("id.co.darapsa.kelakon.user", 0, 1, "User", [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
 		Q_UNUSED(engine)
 		Q_UNUSED(scriptEngine)
