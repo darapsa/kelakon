@@ -8,6 +8,8 @@ Rectangle {
 
     property alias menuButton: menuButton
     property alias taskList: taskList
+    property alias chevronRight: chevronRight
+    property alias checkBox: checkBox
 
     ToolBar {
         id: toolbar
@@ -54,30 +56,30 @@ Rectangle {
     RowLayout {
         id: taskList
         height: 72
+        anchors.top: toolbar.bottom
+        anchors.topMargin: 8
         anchors.right: parent.right
         anchors.rightMargin: 0
         anchors.left: parent.left
         anchors.leftMargin: 0
-        anchors.top: toolbar.bottom
-        anchors.topMargin: 8
+        spacing: 8
 
-        RoundButton {
+        CheckBox {
             id: checkBox
-            flat: true
-            icon.name: "check-box-icon"
-            icon.source: "/assets/check-box-outline-24px.svg"
-            icon.color: "#99000000"
-        }
-        Label {
-            id: taskLabel
-            text: qsTr("Task number 1")
-            font.weight: Font.Medium
-            font.pointSize: 16
+            height: 54
+            text: qsTr("This is a task title")
+            rightPadding: 16
+            leftPadding: 16
+            bottomPadding: 16
+            topPadding: 16
             Layout.fillWidth: true
             font.family: "Google Sans"
+            font.pointSize: 16
+            font.weight: Font.Medium
+            spacing: 16
         }
         RoundButton {
-            id: taskDetailNavigate
+            id: chevronRight
             flat: true
             icon.name: "chevron-right-icon"
             icon.source: "/assets/chevron-right-24px.svg"
@@ -85,10 +87,6 @@ Rectangle {
         }
     }
 }
-
-
-
-
 
 
 
