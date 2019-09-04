@@ -86,6 +86,35 @@ Rectangle {
             icon.color: "#99000000"
         }
     }
+
+    RoundButton {
+        id: roundButton
+        width: 144
+        spacing: 8
+        height: 64
+
+        text: qsTr("New task")
+        padding: 16
+        font.capitalization: Font.MixedCase
+        font.family: "Google Sans"
+        font.pointSize: 16
+        font.weight: Font.Medium
+
+        rightPadding: 24
+        leftPadding: 16
+        bottomPadding: 16
+        topPadding: 16
+        autoExclusive: false
+        focusPolicy: Qt.NoFocus
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 16
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        highlighted: true
+
+        icon.name: "add-icon"
+        icon.source: "/assets/add-24px.svg"
+    }
 }
 
 
