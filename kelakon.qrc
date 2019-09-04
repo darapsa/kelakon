@@ -21,5 +21,7 @@
         <file>pages/Home.qml</file>
         <file>pages/HomeForm.ui.qml</file>
         <file>assets/menu-24px.svg</file>
+        <file>assets/check-box-outline-24px.svg</file>
+        <file>assets/chevron-right-24px.svg</file>
     </qresource>
 </RCC>
