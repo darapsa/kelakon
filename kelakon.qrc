@@ -14,7 +14,6 @@
         <file>pages/ExistingLogin.qml</file>
         <file>pages/ExistingLoginForm.ui.qml</file>
         <file>pages/ConfirmPassword.qml</file>
-        <file>pages/ConfirmPasswordForm.ui.qml</file>
         <file>pages/CreateProfile.qml</file>
         <file>pages/CreateProfileForm.ui.qml</file>
         <file>assets/photo_camera_24px.svg</file>

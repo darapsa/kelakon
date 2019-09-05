@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import QtQuick.Layouts 1.3
+import QtQuick.Layouts 1.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
@@ -9,6 +9,8 @@ Rectangle {
     border.width: 0
 
     property alias backButton: backButton
+    property alias instructionLabel: instructionLabel
+    property alias userEmail: userEmail
     property alias passTextField: passTextField
     property alias createPassButton: createPassButton
     property alias emailAddressLabel: emailAddressLabel
@@ -41,6 +43,7 @@ Rectangle {
     }
 
     Label {
+        id: instructionLabel
         x: 16
         y: 232
         color: "#2b2626"
