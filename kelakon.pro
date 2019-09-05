@@ -7,12 +7,14 @@ debug: DEFINES += DEBUG
 HEADERS += \
 	user.hxx \
 	worker.hxx \
-	controller.hxx
+	controller.hxx \
+	tasklist.hxx
 
 SOURCES += \
 	user.cxx \
 	worker.cxx \
 	controller.cxx \
+	tasklist.cxx \
 	main.cxx
 
 RESOURCES += kelakon.qrc
