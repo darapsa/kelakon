@@ -10,12 +10,9 @@ PasswordForm {
 		}
 	}
 
-	instructionLabel.text: qsTr("Create password")
 	emailAddressLabel.text: User.emailAddress
-	passTextField.placeholderText: qsTr("Password")
 
 	createPassButton {
-		text: qsTr("Next")
 		onClicked: {
 			User.password = passTextField.text
 			stackView.push("qrc:/pages/ConfirmPassword.qml")
