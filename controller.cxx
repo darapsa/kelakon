@@ -1,18 +1,15 @@
 #include "worker.hxx"
 #include "controller.hxx"
 
-Controller::Controller()
+Controller::Controller(QObject* parent) :
+	QObject{parent}
 {
 	Worker* worker = new Worker{};
 	worker->moveToThread(&thread);
 	connect(&thread, &QThread::finished, worker, &QObject::deleteLater);
-	connect(this, &Controller::credentialsObtained, worker, &Worker::logIn);
+	connect(parent, SIGNAL(logIn(QString, QString)),
+			worker, SLOT(logIn(QString, QString)));
 	thread.start();
-}
-
-void Controller::logIn(QString const& name, QString const& password)
-{
-	emit credentialsObtained(name, password);
 }
 
 Controller::~Controller()
