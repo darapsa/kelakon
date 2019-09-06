@@ -4,7 +4,6 @@ import QtQuick.Controls.Material 2.12
 import QtQuick.Layouts 1.3
 
 ListView {
-<<<<<<< HEAD
     width: 362
     spacing: 12
     property alias menuButton: menuButton
@@ -85,14 +84,4 @@ ListView {
             icon.source: "/assets/add-24px.svg"
         }
     }
-=======
-	width: 362
-	spacing: 12
-
-	Rectangle {
-		id: rectangle
-		anchors.fill: parent
-		z: -1
-	}
->>>>>>> 7331461b29097c08fcdd557461aedb78cfe243d1
 }
