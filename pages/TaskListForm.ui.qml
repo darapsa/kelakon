@@ -11,7 +11,7 @@ ListView {
     Rectangle {
         id: rectangle
         anchors.fill: parent
-	z: -1
+        z: -1
 
         ToolBar {
             id: toolbar
@@ -51,7 +51,6 @@ ListView {
                     Layout.fillWidth: true
                 }
                 ToolButton {
-                    anchors.right: parent.right
                 }
             }
         }
