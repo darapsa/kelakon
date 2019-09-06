@@ -14,10 +14,10 @@ QVariant TaskList::data(QModelIndex const& index, int role) const
 
 	auto task = tasks[row];
 	switch (role) {
-		case Task::IdRole:
-			return task.id;
-		case Task::SubjectRole:
-			return task.subject;
+		case IdRole:
+			return task.id();
+		case SubjectRole:
+			return task.subject();
 		default:
 			return QVariant();
 	}
@@ -26,8 +26,8 @@ QVariant TaskList::data(QModelIndex const& index, int role) const
 QHash<int, QByteArray> TaskList::roleNames() const
 {
 	return QHash<int, QByteArray>{
-		{Task::IdRole, "id"},
-		{Task::SubjectRole, "subject"}
+		{IdRole, "id"},
+		{SubjectRole, "subject"}
 	};
 }
 

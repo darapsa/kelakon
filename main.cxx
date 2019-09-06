@@ -1,7 +1,9 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QtQml>
 #include "user.hxx"
 #include "controller.hxx"
+#include "tasklist.hxx"
 
 int main(int argc, char* argv[])
 {
@@ -21,6 +23,8 @@ int main(int argc, char* argv[])
 
 	auto appWindow = rootObjects[0];
 	Controller controller{appWindow};
+	TaskList taskList;
+	engine.rootContext()->setContextProperty("taskList", &taskList);
 
 	return app.exec();
 }

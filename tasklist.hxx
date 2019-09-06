@@ -3,14 +3,19 @@
 
 #include <QAbstractListModel>
 
-struct Task
+class Task
 {
-	enum TaskRoles {
-		IdRole = Qt::UserRole + 1,
-		SubjectRole
-	};
-	QString id;
-	QString subject;
+	public:
+		Task(unsigned int id, QString subject) :
+			m_id{id},
+			m_subject{subject}
+		{}
+		unsigned int id() const { return m_id; }
+		QString const& subject() const { return m_subject; }
+
+	private:
+		unsigned int m_id;
+		QString m_subject;
 };
 
 class TaskList : public QAbstractListModel
@@ -19,7 +24,14 @@ class TaskList : public QAbstractListModel
 	Q_PROPERTY(int rowCount READ rowCount NOTIFY rowCountChanged)
 
 	public:
-		explicit TaskList(QObject* parent = nullptr) : QAbstractListModel{parent} {}
+		enum TaskRoles {
+			IdRole = Qt::UserRole + 1,
+			SubjectRole
+		};
+		explicit TaskList(QObject* parent = nullptr) : QAbstractListModel{parent}
+		{
+			addTask(Task{1, "Task 1"});
+		}
 		int rowCount(QModelIndex const& parent = QModelIndex()) const Q_DECL_OVERRIDE;
 		QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
