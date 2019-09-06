@@ -11,11 +11,5 @@ TaskListForm {
 		checkBox.text: subject
 	}
 
-	menuButton {
-		onClicked: {
-			drawer.visible = !drawer.visible
-		}
-	}
-
 	ScrollBar.vertical: ScrollBar {}
 }

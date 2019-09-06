@@ -11,7 +11,7 @@ CreateProfileForm {
 	}
     skipButton {
         onClicked: {
-            stackView.push("qrc:/pages/TaskList.qml")
+            stackView.push("qrc:/pages/Home.qml")
         }
     }
 }
