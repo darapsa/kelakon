@@ -8,7 +8,7 @@ RowLayout {
 
     id: task
     width: fillWidth
-    height: 72
+    height: 54
     anchors.topMargin: 8
     anchors.right: parent.right
     anchors.rightMargin: 0
@@ -18,13 +18,13 @@ RowLayout {
 
     CheckBox {
         id: checkBox
-        height: 54
         text: qsTr("This is a task title")
         padding: 8
         rightPadding: 16
         leftPadding: 16
         bottomPadding: 16
         topPadding: 16
+        Layout.fillHeight: true
         Layout.fillWidth: true
         font.family: "Google Sans"
         font.pointSize: 16
