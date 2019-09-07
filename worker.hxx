@@ -8,12 +8,12 @@ class Worker : public QObject
 	Q_OBJECT
 
 	public:
-		explicit Worker(QObject* parent = nullptr);
-		virtual ~Worker();
+		Worker();
+		~Worker();
 
 	public slots:
 		void logIn(QString const& name, QString const& password);
-		void getTaskList();
+		void search(QString const& owner);
 };
 
 #endif // WORKER_HXX
