@@ -1,6 +1,4 @@
-#include <QQmlApplicationEngine>
 #include "rtclient.h"
-#include "user.hxx"
 #include "worker.hxx"
 
 Worker::Worker()
