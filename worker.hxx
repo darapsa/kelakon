@@ -13,6 +13,7 @@ class Worker : public QObject
 
 	public slots:
 		void logIn(QString const& name, QString const& password);
+		void getTaskList();
 };
 
 #endif // WORKER_HXX
