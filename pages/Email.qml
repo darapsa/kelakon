@@ -1,20 +1,13 @@
 import QtQuick 2.12
-import id.co.darapsa.kelakon.user 0.1
+import KelakonUser 0.1
 
 EmailForm {
 	width: stackView.width
 	height: stackView.height
+	backButton.onClicked: stackView.pop()
 
-	backButton {
-		onClicked: {
-			stackView.pop()
-		}
-	}
-
-	loginButton {
-		onClicked: {
-			User.emailAddress = emailTextField.text
-			stackView.push("qrc:/pages/Password.qml")
-		}
+	loginButton.onClicked: {
+		User.emailAddress = emailTextField.text
+		stackView.push("qrc:/pages/Password.qml")
 	}
 }
