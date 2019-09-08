@@ -4,7 +4,7 @@
 
 Controller::Controller(QObject* parent) : QObject{parent}
 {
-	Worker* worker = new Worker;
+	auto worker = new Worker;
 	worker->moveToThread(&thread);
 	connect(&thread, &QThread::finished, worker, &QObject::deleteLater);
 
