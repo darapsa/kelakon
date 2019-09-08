@@ -1,6 +1,4 @@
-QT += \
-	quickcontrols2 \
-	svg
+QT += quickcontrols2
 
 *-g++: QMAKE_CXXFLAGS += -std=gnu++17
 *-clang: QMAKE_CXXFLAGS += -std=c++17
@@ -46,6 +44,7 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
 }
 
 android {
+	QT += svg
 	DISTFILES += android/AndroidManifest.xml
 	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 }
