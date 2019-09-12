@@ -3,8 +3,6 @@ import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
 ApplicationWindow {
-	property alias login: login
-
 	id: appWindow
 	width: 360
 	height: 640
@@ -18,6 +16,8 @@ ApplicationWindow {
 	}
 
 	StackView {
+		property alias login: login
+
 		id: stackView
 		anchors.fill : parent
 
