@@ -9,8 +9,10 @@ Worker::Worker()
 void Worker::logIn(QString const& name, QString const& password)
 {
 	rtclient_login(name.toLatin1().constData(), password.toLatin1().constData());
-	auto user = rtclient_userget(name.toLatin1().constData());
-	rtclient_userfree(user);
+	struct rt_user *user = NULL;
+	rtclient_userget(&user, name.toLatin1().constData());
+	if (user)
+		rtclient_userfree(user);
 }
 
 void Worker::search(QString const& owner)
