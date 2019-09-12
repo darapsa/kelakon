@@ -2,7 +2,7 @@ import QtQuick 2.12
 
 LoginForm {
 	signal logIn(string name, string password)
-	function createProfile() {
+	function pushProfile() {
 		stackView.push("qrc:/pages/CreateProfile.qml")
 	}
 
