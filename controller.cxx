@@ -12,7 +12,9 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto engine = dynamic_cast<QQmlApplicationEngine*>(parent);
 	auto rootObjects = engine->rootObjects();
 	auto appWindow = rootObjects[0];
-	connect(appWindow, SIGNAL(logIn(QString, QString)),
+
+	auto loginView = appWindow->findChild<QObject*>("login");
+	connect(loginView, SIGNAL(logIn(QString, QString)),
 			worker, SLOT(logIn(QString, QString)));
 
 	auto user = engine->singletonInstance<User*>(User::typeId);

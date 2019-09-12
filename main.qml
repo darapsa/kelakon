@@ -3,13 +3,13 @@ import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
 ApplicationWindow {
+	property alias login: login
+
 	id: appWindow
 	width: 360
 	height: 640
 	visible: true
 	Material.accent: Material.DeepPurple
-
-	signal logIn(string name, string password)
 
 	Drawer {
 		id: drawer
@@ -21,6 +21,8 @@ ApplicationWindow {
 		id: stackView
 		anchors.fill : parent
 
-		initialItem: Login {}
+		initialItem: Login {
+			id: login
+		}
 	}
 }
