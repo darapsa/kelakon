@@ -174,7 +174,9 @@ void User::update(rt_user* user)
 	if (user) {
 		m_id = user->id;
 		m_emailAddress = user->emailaddress;
+		emit emailAddressChanged();
 		m_realName = user->realname;
+		emit realNameChanged();
 		m_nickName = user->nickname;
 		m_gecos = user->gecos;
 		m_organization = user->organization;

@@ -7,9 +7,10 @@ Rectangle {
     id: rectangle
     color: "#fff"
 
-    property alias enterFullName: enterFullName
     property alias backButton: backButton
     property alias skipButton: skipButton
+    property alias emailAddressLabel: emailAddressLabel
+    property alias enterFullName: enterFullName
 
     ToolBar {
         id: toolbar
