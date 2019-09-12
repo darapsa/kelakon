@@ -5,7 +5,10 @@ CreateProfileForm {
 	width: stackView.width
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
-	skipButton.onClicked: stackView.push("qrc:/pages/Home.qml")
+	skipButton.onClicked: {
+		login.search(User.name)
+		stackView.push("qrc:/pages/Home.qml")
+	}
 	emailAddressLabel.text: User.emailAddress
 	enterFullName.text: User.realName
 }

@@ -17,6 +17,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	connect(loginView, SIGNAL(logIn(QString, QString)),
 			worker, SLOT(logIn(QString, QString)));
 	connect(worker, SIGNAL(logged(rt_user*)), loginView, SLOT(pushProfile()));
+	connect(loginView, SIGNAL(search(QString)), worker, SLOT(search(QString)));
 
 	auto user = engine->singletonInstance<User*>(User::typeId);
 	connect(worker, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
