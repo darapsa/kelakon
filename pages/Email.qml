@@ -7,10 +7,8 @@ EmailForm {
 	backButton.onClicked: stackView.pop()
 
 	emailTextField.onTextChanged: {
-		if (!emailTextField.text)
-			loginButton.enabled = false
-		else if (!loginButton.enabled)
-			loginButton.enabled = true
+		if (!emailTextField.text || !loginButton.enabled)
+			loginButton.enabled = !loginButton.enabled
 	}
 
 	loginButton.onClicked: {
