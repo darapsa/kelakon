@@ -11,10 +11,9 @@ PasswordForm {
 
 	passTextField {
 		placeholderText: qsTr("Re-enter Password")
-		onTextChanged: {
+		onTextChanged:
 			if (!passTextField.text || !createPassButton.enabled)
 				createPassButton.enabled = !createPassButton.enabled
-		}
 	}
 
 	createPassButton {
