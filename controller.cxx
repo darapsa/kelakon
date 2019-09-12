@@ -9,7 +9,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	worker->moveToThread(&thread);
 	connect(&thread, &QThread::finished, worker, &QObject::deleteLater);
 
-	auto engine = dynamic_cast<QQmlApplicationEngine*>(parent);
+	auto engine = static_cast<QQmlApplicationEngine*>(parent);
 	auto rootObjects = engine->rootObjects();
 	auto appWindow = rootObjects[0];
 
