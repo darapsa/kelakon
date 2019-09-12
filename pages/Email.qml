@@ -6,6 +6,13 @@ EmailForm {
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
 
+	emailTextField.onTextChanged: {
+		if (!emailTextField.text)
+			loginButton.enabled = false
+		else if (!loginButton.enabled)
+			loginButton.enabled = true
+	}
+
 	loginButton.onClicked: {
 		User.name = emailTextField.text
 		stackView.push("qrc:/pages/Password.qml")

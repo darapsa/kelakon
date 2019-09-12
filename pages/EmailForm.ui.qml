@@ -78,6 +78,7 @@ Rectangle {
     RoundButton {
         id: loginButton
         text: qsTr("Next")
+        enabled: false
         font.family: "Google Sans"
         font.capitalization: Font.MixedCase
         anchors.right: parent.right
