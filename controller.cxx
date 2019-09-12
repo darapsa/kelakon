@@ -16,10 +16,10 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto loginView = appWindow->findChild<QObject*>("login");
 	connect(loginView, SIGNAL(logIn(QString, QString)),
 			worker, SLOT(logIn(QString, QString)));
+	connect(worker, SIGNAL(logged(rt_user*)), loginView, SLOT(createProfile()));
 
 	auto user = engine->singletonInstance<User*>(User::typeId);
-	connect(worker, SIGNAL(logged(rt_user*))
-			, user, SLOT(update(rt_user*)));
+	connect(worker, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
 
 	thread.start();
 }

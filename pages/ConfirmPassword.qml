@@ -18,9 +18,6 @@ PasswordForm {
 
 	createPassButton {
 		text: qsTr("Confirm password")
-		onClicked: {
-			login.logIn(User.name, User.password)
-			stackView.push("qrc:/pages/CreateProfile.qml")
-		}
+		onClicked: login.logIn(User.name, User.password)
 	}
 }
