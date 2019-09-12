@@ -1,5 +1,6 @@
 #include <QQmlApplicationEngine>
 #include "worker.hxx"
+#include "user.hxx"
 #include "controller.hxx"
 
 Controller::Controller(QObject* parent) : QObject{parent}
@@ -13,6 +14,10 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto appWindow = rootObjects[0];
 	connect(appWindow, SIGNAL(logIn(QString, QString)),
 			worker, SLOT(logIn(QString, QString)));
+
+	auto user = engine->singletonInstance<User*>(User::typeId);
+	connect(worker, SIGNAL(logged(rt_user*))
+			, user, SLOT(update(rt_user*)));
 
 	thread.start();
 }

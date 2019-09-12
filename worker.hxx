@@ -14,6 +14,9 @@ class Worker : public QObject
 	public slots:
 		void logIn(QString const& name, QString const& password);
 		void search(QString const& owner);
+
+	signals:
+		void logged(struct rt_user* user);
 };
 
 #endif // WORKER_HXX
