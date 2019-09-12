@@ -6,9 +6,9 @@
 class Task
 {
 	public:
-		Task(unsigned int id, QString subject) :
-			m_id{id},
-			m_subject{subject}
+		Task(unsigned int id, QString subject)
+			: m_id{id}
+			, m_subject{subject}
 		{}
 		unsigned int id() const { return m_id; }
 		QString const& subject() const { return m_subject; }
@@ -28,10 +28,8 @@ class TaskList : public QAbstractListModel
 			IdRole = Qt::UserRole + 1,
 			SubjectRole
 		};
-		explicit TaskList(QObject* parent = nullptr) : QAbstractListModel{parent}
-		{
-			addTask(Task{1, "Task 1"});
-		}
+		explicit TaskList(QObject* parent = nullptr)
+			: QAbstractListModel{parent} {}
 		int rowCount(QModelIndex const& parent = QModelIndex()) const Q_DECL_OVERRIDE;
 		QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
