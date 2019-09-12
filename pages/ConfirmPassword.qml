@@ -8,11 +8,13 @@ PasswordForm {
 	userEmail.y: 292
 	instructionLabel.text: qsTr("Re-Enter password")
 	emailAddressLabel.text: User.name
-	passTextField.placeholderText: qsTr("Re-enter Password")
 
-	passTextField.onTextChanged: {
-		if (!passTextField.text || !createPassButton.enabled)
-			createPassButton.enabled = !createPassButton.enabled
+	passTextField {
+		placeholderText: qsTr("Re-enter Password")
+		onTextChanged: {
+			if (!passTextField.text || !createPassButton.enabled)
+				createPassButton.enabled = !createPassButton.enabled
+		}
 	}
 
 	createPassButton {
