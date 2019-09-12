@@ -7,9 +7,7 @@ TaskListForm {
 	delegate: TaskForm {
 		width: parent.width
 		height: task.height
-
 		checkBox.text: subject
 	}
-
 	ScrollBar.vertical: ScrollBar {}
 }
