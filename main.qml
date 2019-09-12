@@ -9,7 +9,7 @@ ApplicationWindow {
 	visible: true
 	Material.accent: Material.DeepPurple
 
-	signal logIn(string emailAddress, string password)
+	signal logIn(string name, string password)
 
 	Drawer {
 		id: drawer

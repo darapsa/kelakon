@@ -7,7 +7,7 @@ EmailForm {
 	backButton.onClicked: stackView.pop()
 
 	loginButton.onClicked: {
-		User.emailAddress = emailTextField.text
+		User.name = emailTextField.text
 		stackView.push("qrc:/pages/Password.qml")
 	}
 }

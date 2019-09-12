@@ -7,13 +7,13 @@ PasswordForm {
 	backButton.onClicked: stackView.pop()
 	userEmail.y: 292
 	instructionLabel.text: qsTr("Re-Enter password")
-	emailAddressLabel.text: User.emailAddress
+	emailAddressLabel.text: User.name
 	passTextField.placeholderText: qsTr("Re-enter Password")
 
 	createPassButton {
 		text: qsTr("Confirm password")
 		onClicked: {
-			appWindow.logIn(User.emailAddress, User.password)
+			appWindow.logIn(User.name, User.password)
 			stackView.push("qrc:/pages/CreateProfile.qml")
 		}
 	}

@@ -5,7 +5,7 @@ PasswordForm {
 	width: stackView.width
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
-	emailAddressLabel.text: User.emailAddress
+	emailAddressLabel.text: User.name
 
 	createPassButton.onClicked: {
 		User.password = passTextField.text
