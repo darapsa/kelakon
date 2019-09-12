@@ -110,6 +110,7 @@ Rectangle {
         x: 34
         y: 278
         text: qsTr("Next")
+        enabled: false
         font.family: "Google Sans"
         font.capitalization: Font.MixedCase
         anchors.right: parent.right

@@ -7,6 +7,11 @@ PasswordForm {
 	backButton.onClicked: stackView.pop()
 	emailAddressLabel.text: User.name
 
+	passTextField.onTextChanged: {
+		if (!passTextField.text || !createPassButton.enabled)
+			createPassButton.enabled = !createPassButton.enabled
+	}
+
 	createPassButton.onClicked: {
 		User.password = passTextField.text
 		stackView.push("qrc:/pages/ConfirmPassword.qml")

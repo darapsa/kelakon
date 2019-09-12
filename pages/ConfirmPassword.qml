@@ -10,6 +10,11 @@ PasswordForm {
 	emailAddressLabel.text: User.name
 	passTextField.placeholderText: qsTr("Re-enter Password")
 
+	passTextField.onTextChanged: {
+		if (!passTextField.text || !createPassButton.enabled)
+			createPassButton.enabled = !createPassButton.enabled
+	}
+
 	createPassButton {
 		text: qsTr("Confirm password")
 		onClicked: {
