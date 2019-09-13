@@ -24,7 +24,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto user = engine->singletonInstance<User*>(User::typeId);
 	connect(worker, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
 
-	auto taskList = engine->singletonInstance<TaskList*>(TaskList::typeId);
+	taskList = new TaskList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
 	connect(worker, SIGNAL(foundTasks(rt_ticketlist*))
 			, taskList, SLOT(addTasks(rt_ticketlist*)));
@@ -36,4 +36,5 @@ Controller::~Controller()
 {
 	thread.quit();
 	thread.wait();
+	delete taskList;
 }

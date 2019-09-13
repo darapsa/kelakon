@@ -13,6 +13,7 @@ class Controller : public QObject
 
 	private:
 		QThread thread;
+		class TaskList* taskList;
 };
 
 #endif // CONTROLLER_HXX
