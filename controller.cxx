@@ -21,7 +21,14 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	connect(worker, SIGNAL(logged(rt_user*)), loginView, SLOT(pushProfile()));
 	connect(loginView, SIGNAL(search(QString)), worker, SLOT(search(QString)));
 
-	auto user = engine->singletonInstance<User*>(User::typeId);
+	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"
+			, [](QQmlEngine *engine,
+				QJSEngine *scriptEngine) -> QObject* {
+			Q_UNUSED(engine)
+			Q_UNUSED(scriptEngine)
+			return new User;
+			});
+	auto user = engine->singletonInstance<User*>(typeId);
 	connect(worker, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
 
 	taskList = new TaskList;

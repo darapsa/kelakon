@@ -1,7 +1,5 @@
 QT += quickcontrols2
 
-*-g++: QMAKE_CXXFLAGS += -std=gnu++17
-*-clang: QMAKE_CXXFLAGS += -std=c++17
 debug: DEFINES += DEBUG
 
 HEADERS += \

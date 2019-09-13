@@ -57,7 +57,6 @@ class User : public QObject
 			, m_loggedIn{false}
 			{}
 		~User() {}
-		inline static int typeId;
 
 		QString const& id() const { return m_id; }
 		QString const& name() const { return m_name; }
