@@ -1,3 +1,6 @@
+#ifdef DEBUG
+#include <QDebug>
+#endif // DEBUG
 #include "rtclient.h"
 #include "worker.hxx"
 
@@ -19,7 +22,18 @@ void Worker::search(QString const& owner)
 	QString query{"Owner='"};
 	query.append(owner);
 	query.append("'");
-	rtclient_search(query.toLatin1().constData());
+	rt_ticketlist *tasks = NULL;
+	rtclient_search(&tasks, query.toLatin1().constData());
+	if (tasks) {
+#ifdef DEBUG
+		for (unsigned short i = 0; i < tasks->length; i++) {
+			auto task = tasks->tickets[i];
+			qDebug() << "Task: " << task;
+			if (task) free(task);
+		}
+#endif // DEBUG
+		free(tasks);
+	}
 }
 
 Worker::~Worker()
