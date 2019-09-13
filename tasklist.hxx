@@ -2,19 +2,16 @@
 #define TASKLIST_HXX
 
 #include <QAbstractListModel>
+#include "rtticket.h"
 
 class Task
 {
 	public:
-		Task(unsigned int id, QString subject)
-			: m_id{id}
-			, m_subject{subject}
+		Task(QString subject) : m_subject{subject}
 		{}
-		unsigned int id() const { return m_id; }
 		QString const& subject() const { return m_subject; }
 
 	private:
-		unsigned int m_id;
 		QString m_subject;
 };
 
@@ -25,11 +22,14 @@ class TaskList : public QAbstractListModel
 
 	public:
 		enum TaskRoles {
-			IdRole = Qt::UserRole + 1,
-			SubjectRole
+			SubjectRole = Qt::UserRole + 1,
 		};
+
 		explicit TaskList(QObject* parent = nullptr)
 			: QAbstractListModel{parent} {}
+		~TaskList() {}
+		inline static int typeId;
+
 		int rowCount(QModelIndex const& parent = QModelIndex()) const Q_DECL_OVERRIDE;
 		QVariant data(const QModelIndex& index, int role = Qt::DisplayRole) const Q_DECL_OVERRIDE;
 
@@ -37,11 +37,15 @@ class TaskList : public QAbstractListModel
 		QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
 
 	signals:
+		void didAddProducts();
 		void rowCountChanged();
 
 	private:
 		QList<Task> tasks;
 		void addTask(Task const& task);
+
+	private slots:
+		void addTasks(rt_ticketlist* taskList);
 };
 
 #endif // TASKLIST_HXX

@@ -14,8 +14,6 @@ QVariant TaskList::data(QModelIndex const& index, int role) const
 
 	auto task = tasks[row];
 	switch (role) {
-		case IdRole:
-			return task.id();
 		case SubjectRole:
 			return task.subject();
 		default:
@@ -26,7 +24,6 @@ QVariant TaskList::data(QModelIndex const& index, int role) const
 QHash<int, QByteArray> TaskList::roleNames() const
 {
 	return QHash<int, QByteArray>{
-		{IdRole, "id"},
 		{SubjectRole, "subject"}
 	};
 }
@@ -37,4 +34,14 @@ void TaskList::addTask(Task const& task)
 	tasks << task;
 	endInsertRows();
 	emit rowCountChanged();
+}
+
+void TaskList::addTasks(rt_ticketlist* taskList)
+{
+	for (unsigned int i = 0; i < taskList->length; i++) {
+		auto task = taskList->tickets[i];
+		addTask(Task{task});
+		free(task);
+	}
+	free(taskList);
 }

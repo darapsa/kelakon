@@ -17,6 +17,7 @@ class Worker : public QObject
 
 	signals:
 		void logged(struct rt_user* user);
+		void foundTasks(struct rt_ticketlist* list);
 };
 
 #endif // WORKER_HXX

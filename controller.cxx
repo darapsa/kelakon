@@ -1,6 +1,8 @@
 #include <QQmlApplicationEngine>
+#include <QtQml>
 #include "worker.hxx"
 #include "user.hxx"
+#include "tasklist.hxx"
 #include "controller.hxx"
 
 Controller::Controller(QObject* parent) : QObject{parent}
@@ -21,6 +23,11 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	auto user = engine->singletonInstance<User*>(User::typeId);
 	connect(worker, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
+
+	auto taskList = engine->singletonInstance<TaskList*>(TaskList::typeId);
+	engine->rootContext()->setContextProperty("taskList", taskList);
+	connect(worker, SIGNAL(foundTasks(rt_ticketlist*))
+			, taskList, SLOT(addTasks(rt_ticketlist*)));
 
 	thread.start();
 }
