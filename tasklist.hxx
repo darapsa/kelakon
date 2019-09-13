@@ -37,7 +37,6 @@ class TaskList : public QAbstractListModel
 		QHash<int, QByteArray> roleNames() const Q_DECL_OVERRIDE;
 
 	signals:
-		void didAddProducts();
 		void rowCountChanged();
 
 	private:
