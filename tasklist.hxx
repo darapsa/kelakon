@@ -2,7 +2,6 @@
 #define TASKLIST_HXX
 
 #include <QAbstractListModel>
-#include "rtticket.h"
 
 class Task
 {
@@ -43,7 +42,7 @@ class TaskList : public QAbstractListModel
 		void addTask(Task const& task);
 
 	private slots:
-		void addTasks(rt_ticketlist* taskList);
+		void addTasks(struct rt_ticketlist* taskList);
 };
 
 #endif // TASKLIST_HXX

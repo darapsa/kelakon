@@ -1,3 +1,4 @@
+#include "rtticket.h"
 #include "tasklist.hxx"
 
 int TaskList::rowCount(QModelIndex const& parent) const
