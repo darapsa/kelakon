@@ -1,7 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include "user.hxx"
-#include "tasklist.hxx"
 #include "controller.hxx"
 
 int main(int argc, char* argv[])
