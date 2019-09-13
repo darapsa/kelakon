@@ -20,7 +20,7 @@ void Worker::search(QString const& owner)
 	query.append(owner);
 	query.append("'");
 	rt_ticketlist* taskList = NULL;
-	rtclient_search(&taskList, query.toLatin1().constData());
+	rtclient_ticketssearch(&taskList, query.toLatin1().constData());
 	if (taskList) emit foundTasks(taskList);
 }
 

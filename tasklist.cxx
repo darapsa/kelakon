@@ -1,4 +1,4 @@
-#include "rtticket.h"
+#include "rtclient.h"
 #include "tasklist.hxx"
 
 int TaskList::rowCount(QModelIndex const& parent) const
@@ -39,10 +39,7 @@ void TaskList::addTask(Task const& task)
 
 void TaskList::addTasks(rt_ticketlist* taskList)
 {
-	for (unsigned int i = 0; i < taskList->length; i++) {
-		auto task = taskList->tickets[i];
-		addTask(Task{task});
-		free(task);
-	}
-	free(taskList);
+	for (unsigned int i = 0; i < taskList->length; i++)
+		addTask(Task{taskList->tickets[i]});
+	rtclient_ticketsfree(taskList);
 }
