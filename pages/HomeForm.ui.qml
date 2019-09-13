@@ -46,13 +46,12 @@ Rectangle {
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
             }
-            ToolButton {
-            }
+            ToolButton {}
         }
     }
 
     TaskList {
-        height: 72
+        height: parent.height
         anchors.top: toolbar.bottom
         anchors.topMargin: 8
         anchors.right: parent.right
