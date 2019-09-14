@@ -1,4 +1,4 @@
-#include "rtclient.h"
+#include <rtclient.h>
 #include "user.hxx"
 
 void User::setId(QString const& id)
