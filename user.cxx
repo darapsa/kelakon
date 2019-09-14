@@ -194,7 +194,7 @@ void User::update(rt_user* user)
 		m_privileged = user->privileged;
 		m_disabled = user->disabled;
 		m_loggedIn = true;
-		rtclient_userfree(user);
+		rtclient_user_free(user);
 	} else {
 		m_id = "";
 		m_name = "";

@@ -41,5 +41,5 @@ void TaskList::addTasks(rt_ticketlist* taskList)
 {
 	for (unsigned int i = 0; i < taskList->length; i++)
 		addTask(Task{taskList->tickets[i]});
-	rtclient_ticketsfree(taskList);
+	rtclient_ticket_freelist(taskList);
 }
