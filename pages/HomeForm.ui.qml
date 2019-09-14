@@ -62,27 +62,16 @@ Rectangle {
 
     RoundButton {
         id: roundButton
-        width: 144
-        spacing: 8
+        width: 64
         height: 64
+        display: AbstractButton.IconOnly
+        spacing: 8
 
-        text: qsTr("New task")
         padding: 16
-        font.capitalization: Font.MixedCase
-        font.family: "Google Sans"
-        font.pointSize: 16
-        font.weight: Font.Medium
-
-        rightPadding: 24
-        leftPadding: 16
-        bottomPadding: 16
-        topPadding: 16
-        autoExclusive: false
-        focusPolicy: Qt.NoFocus
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 16
+        anchors.bottomMargin: 8
         anchors.right: parent.right
-        anchors.rightMargin: 16
+        anchors.rightMargin: 8
         highlighted: true
 
         icon.name: "add-icon"
@@ -90,10 +79,9 @@ Rectangle {
     }
 }
 
-
-
-
-/*##^## Designer {
+/*##^##
+Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/
+
