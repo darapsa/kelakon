@@ -46,7 +46,12 @@ Rectangle {
                 verticalAlignment: Qt.AlignVCenter
                 Layout.fillWidth: true
             }
-            ToolButton {}
+            ToolButton {
+                id: profileButton
+                icon.name: "profile-icon"
+                icon.source: "/assets/profile-24px.svg"
+                highlighted: true
+            }
         }
     }
 
