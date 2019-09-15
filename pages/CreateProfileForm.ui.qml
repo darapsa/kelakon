@@ -64,18 +64,15 @@ Rectangle {
     RowLayout {
         id: userEmail
         height: 56
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: usernameRowLayout.bottom
-        anchors.topMargin: 16
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
+        width: parent.width
         spacing: 8
 
         Image {
             width: 24
             height: 24
-            Layout.leftMargin: 0
+            Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
             source: "../assets/email-24px.svg"
@@ -86,6 +83,7 @@ Rectangle {
             id: emailAddressLabel
             Layout.fillWidth: true
             text: qsTr("your@email.com")
+            Layout.rightMargin: 16
             Layout.leftMargin: 24
             verticalAlignment: Text.AlignVCenter
             font.family: "Google Sans"
@@ -96,17 +94,14 @@ Rectangle {
     RowLayout {
         id: fullnameRowLayout
         height: 56
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: profilePicture.bottom
         anchors.topMargin: 32
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
-
+        width: parent.width
         Image {
             width: 24
             height: 24
-            Layout.leftMargin: 0
+            Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
             source: "../assets/profile-24px.svg"
@@ -115,6 +110,7 @@ Rectangle {
 
         TextField {
             id: enterFullName
+            Layout.rightMargin: 16
             Layout.leftMargin: 24
             font.pointSize: 16
             font.family: "Google Sans"
@@ -126,17 +122,16 @@ Rectangle {
     RowLayout {
         id: usernameRowLayout
         height: 56
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width
+        Layout.alignment: Qt.AlignVCenter
         anchors.top: fullnameRowLayout.bottom
         anchors.topMargin: 16
 
         Image {
             width: 24
             height: 24
-            Layout.leftMargin: 0
+            Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
             source: "../assets/user-24px.svg"
@@ -144,6 +139,7 @@ Rectangle {
         }
 
         TextField {
+            Layout.rightMargin: 16
             Layout.leftMargin: 24
             font.pointSize: 16
             font.family: "Google Sans"
