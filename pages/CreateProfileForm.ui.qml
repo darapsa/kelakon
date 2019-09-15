@@ -61,25 +61,31 @@ Rectangle {
             }
         }
     }
-    Rectangle {
+    RowLayout {
         id: userEmail
-        height: 48
+        height: 56
         anchors.top: profilePicture.bottom
         anchors.topMargin: 16
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
+        spacing: 8
+
+        Image {
+            id: emailIcon
+            width: 24
+            height: 24
+            Layout.alignment: Qt.AlignVCenter
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/email-24px.svg"
+        }
 
         Label {
             id: emailAddressLabel
-            anchors.right: parent.right
-            anchors.rightMargin: 16
-            anchors.left: parent.left
-            anchors.leftMargin: 16
-            anchors.verticalCenter: parent.verticalCenter
 
             text: qsTr("your@email.com")
+            verticalAlignment: Text.AlignVCenter
             font.family: "Google Sans"
             font.pointSize: 16
             color: "#99000000"
@@ -141,11 +147,10 @@ Rectangle {
     }
 }
 
-
-
-
-/*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:7;anchors_height:48;anchors_y:143}
-D{i:9;anchors_y:322}D{i:11;anchors_y:54}
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:10;anchors_y:322}
+D{i:12;anchors_y:54}
 }
- ##^##*/
+##^##*/
+

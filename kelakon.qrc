@@ -30,5 +30,6 @@
         <file>pages/Username.qml</file>
         <file>pages/UsernameForm.ui.qml</file>
         <file>assets/user-24px.svg</file>
+        <file>assets/email-24px.svg</file>
     </qresource>
 </RCC>
