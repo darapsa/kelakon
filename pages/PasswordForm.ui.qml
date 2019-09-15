@@ -66,12 +66,12 @@ Rectangle {
     RowLayout {
         id: userEmail
         height: 56
+        anchors.bottom: passTextFieldLayout.top
+        anchors.bottomMargin: 16
         anchors.horizontalCenterOffset: 0
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width
         spacing: 8
-        anchors.bottom: passTextField.top
-        anchors.bottomMargin: 16
 
         Image {
             width: 24
@@ -95,7 +95,7 @@ Rectangle {
         }
     }
     RowLayout {
-        id: passTextField
+        id: passTextFieldLayout
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: createPassButton.top
         anchors.bottomMargin: 16
@@ -114,6 +114,7 @@ Rectangle {
         }
 
         TextField {
+            id: passTextField
             Layout.rightMargin: 16
             Layout.leftMargin: 24
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
