@@ -63,25 +63,31 @@ Rectangle {
         font.pointSize: 34
     }
 
-    Rectangle {
+    RowLayout {
         id: userEmail
-        height: 48
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
+        height: 56
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width
+        spacing: 8
         anchors.bottom: passTextField.top
         anchors.bottomMargin: 16
 
+        Image {
+            width: 24
+            height: 24
+            Layout.leftMargin: 16
+            Layout.alignment: Qt.AlignVCenter
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/email-24px.svg"
+            antialiasing: true
+        }
+
         Label {
             id: emailAddressLabel
-            anchors.right: parent.right
-            anchors.rightMargin: 16
-            anchors.left: parent.left
-            anchors.leftMargin: 16
-            anchors.verticalCenter: parent.verticalCenter
-
+            Layout.fillWidth: true
             text: qsTr("your@email.com")
+            Layout.leftMargin: 24
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             font.family: "Google Sans"
             font.pointSize: 16
             color: "#99000000"
@@ -124,10 +130,9 @@ Rectangle {
     }
 }
 
-
-
-
-/*##^## Designer {
+/*##^##
+Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/
+
