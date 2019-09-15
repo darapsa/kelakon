@@ -1,3 +1,3 @@
-[submodule "librtclient"]
-	path = librtclient
-	url = git@github.com:darapsa/librtclient.git
+[submodule "qrtclient"]
+	path = qrtclient
+	url = git@github.com:darapsa/qrtclient.git

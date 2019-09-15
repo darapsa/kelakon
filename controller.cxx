@@ -1,15 +1,13 @@
 #include <QQmlApplicationEngine>
 #include <QtQml>
-#include "worker.hxx"
-#include "user.hxx"
-#include "tasklist.hxx"
+#include <qrtclient/user.hxx>
 #include "controller.hxx"
 
 Controller::Controller(QObject* parent) : QObject{parent}
 {
-	auto worker = new Worker;
-	worker->moveToThread(&thread);
-	connect(&thread, &QThread::finished, worker, &QObject::deleteLater);
+	auto client = new RTClient::Client{"https://darapsa.co.id/rt"};
+	client->moveToThread(&thread);
+	connect(&thread, &QThread::finished, client, &QObject::deleteLater);
 
 	auto engine = static_cast<QQmlApplicationEngine*>(parent);
 	auto rootObjects = engine->rootObjects();
@@ -17,10 +15,11 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	auto loginView = appWindow->findChild<QObject*>("login");
 	connect(loginView, SIGNAL(logIn(QString, QString)),
-			worker, SLOT(logIn(QString, QString)));
-	connect(worker, SIGNAL(logged(rt_user*)), loginView, SLOT(pushProfile()));
-	connect(loginView, SIGNAL(search(QString)), worker, SLOT(search(QString)));
+			client, SLOT(logIn(QString, QString)));
+	connect(client, SIGNAL(logged(rt_user*)), loginView, SLOT(pushProfile()));
+	connect(loginView, SIGNAL(search(QString)), client, SLOT(search(QString)));
 
+	using RTClient::User;
 	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"
 			, [](QQmlEngine *engine,
 				QJSEngine *scriptEngine) -> QObject* {
@@ -29,11 +28,11 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			return new User;
 			});
 	auto user = engine->singletonInstance<User*>(typeId);
-	connect(worker, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
+	connect(client, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
 
-	taskList = new TaskList;
+	taskList = new RTClient::TicketList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
-	connect(worker, SIGNAL(foundTasks(rt_ticketlist*))
+	connect(client, SIGNAL(foundTasks(rt_ticketlist*))
 			, taskList, SLOT(addTasks(rt_ticketlist*)));
 
 	thread.start();

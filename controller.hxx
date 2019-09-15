@@ -2,6 +2,8 @@
 #define CONTROLLER_HXX
 
 #include <QThread>
+#include <qrtclient/ticket.hxx>
+#include <qrtclient/client.hxx>
 
 class Controller : public QObject
 {
@@ -13,7 +15,7 @@ class Controller : public QObject
 
 	private:
 		QThread thread;
-		class TaskList* taskList;
+		class RTClient::TicketList* taskList;
 };
 
 #endif // CONTROLLER_HXX

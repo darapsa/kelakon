@@ -1,26 +1,18 @@
 QT += quickcontrols2
 
-debug: DEFINES += DEBUG
-
-HEADERS += \
-	user.hxx \
-	worker.hxx \
-	controller.hxx \
-	tasklist.hxx
+HEADERS += controller.hxx
 
 SOURCES += \
-	user.cxx \
-	worker.cxx \
 	controller.cxx \
-	tasklist.cxx \
 	main.cxx
 
 RESOURCES += kelakon.qrc
 
-INCLUDEPATH += $$PWD/librtclient
+INCLUDEPATH += $$PWD/qrtclient
 
 LIBS += \
-	$$PWD/librtclient/librtclient.a \
+	$$PWD/qrtclient/libqrtclient.a \
+	$$PWD/qrtclient/librtclient/librtclient.a \
 	-lcurl
 
 contains(ANDROID_TARGET_ARCH,arm64-v8a) {
@@ -46,3 +38,5 @@ android {
 	DISTFILES += android/AndroidManifest.xml
 	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 }
+
+debug: DEFINES += DEBUG
