@@ -64,7 +64,7 @@ Rectangle {
     RowLayout {
         id: userEmail
         height: 56
-        anchors.top: profilePicture.bottom
+        anchors.top: usernameRowLayout.bottom
         anchors.topMargin: 16
         anchors.right: parent.right
         anchors.rightMargin: 16
@@ -73,38 +73,84 @@ Rectangle {
         spacing: 8
 
         Image {
-            id: emailIcon
             width: 24
             height: 24
+            Layout.leftMargin: 0
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
             source: "../assets/email-24px.svg"
+            antialiasing: true
         }
 
         Label {
             id: emailAddressLabel
-
+            Layout.fillWidth: true
             text: qsTr("your@email.com")
+            Layout.leftMargin: 24
             verticalAlignment: Text.AlignVCenter
             font.family: "Google Sans"
             font.pointSize: 16
             color: "#99000000"
         }
     }
-
-    TextField {
-        id: enterFullName
-        anchors.top: userEmail.bottom
-        anchors.topMargin: 16
-        font.pointSize: 16
-        font.family: "Google Sans"
-        Layout.fillWidth: true
-        placeholderText: qsTr("Full name")
+    RowLayout {
+        id: fullnameRowLayout
+        height: 56
+        anchors.top: profilePicture.bottom
+        anchors.topMargin: 32
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
-        Layout.maximumHeight: 56
+
+        Image {
+            width: 24
+            height: 24
+            Layout.leftMargin: 0
+            Layout.alignment: Qt.AlignVCenter
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/profile-24px.svg"
+            antialiasing: true
+        }
+
+        TextField {
+            id: enterFullName
+            Layout.leftMargin: 24
+            font.pointSize: 16
+            font.family: "Google Sans"
+            Layout.fillWidth: true
+            placeholderText: qsTr("Full name")
+            Layout.alignment: Qt.AlignVCenter
+        }
+    }
+    RowLayout {
+        id: usernameRowLayout
+        height: 56
+        anchors.right: parent.right
+        anchors.rightMargin: 16
+        anchors.left: parent.left
+        anchors.leftMargin: 16
+        anchors.top: fullnameRowLayout.bottom
+        anchors.topMargin: 16
+
+        Image {
+            width: 24
+            height: 24
+            Layout.leftMargin: 0
+            Layout.alignment: Qt.AlignVCenter
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/user-24px.svg"
+            antialiasing: true
+        }
+
+        TextField {
+            Layout.leftMargin: 24
+            font.pointSize: 16
+            font.family: "Google Sans"
+            Layout.fillWidth: true
+            placeholderText: qsTr("Username")
+            Layout.alignment: Qt.AlignVCenter
+        }
     }
 
     RoundButton {
@@ -149,8 +195,7 @@ Rectangle {
 
 /*##^##
 Designer {
-    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}D{i:10;anchors_y:322}
-D{i:12;anchors_y:54}
+    D{i:0;autoSize:true;height:480;width:640}D{i:1;anchors_width:640}
 }
 ##^##*/
 
