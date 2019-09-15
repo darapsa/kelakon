@@ -63,48 +63,68 @@ Rectangle {
         font.pointSize: 34
     }
 
-    Rectangle {
+    RowLayout {
         id: userEmail
-        height: 48
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
+        height: 56
+        anchors.horizontalCenterOffset: 0
+        anchors.horizontalCenter: parent.horizontalCenter
+        width: parent.width
+        spacing: 8
         anchors.bottom: passTextField.top
         anchors.bottomMargin: 16
 
+        Image {
+            width: 24
+            height: 24
+            Layout.leftMargin: 16
+            Layout.alignment: Qt.AlignVCenter
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/email-24px.svg"
+            antialiasing: true
+        }
+
         Label {
             id: emailAddressLabel
-            anchors.right: parent.right
-            anchors.rightMargin: 16
-            anchors.left: parent.left
-            anchors.leftMargin: 16
-            anchors.verticalCenter: parent.verticalCenter
-
+            Layout.fillWidth: true
             text: qsTr("your@email.com")
+            Layout.leftMargin: 24
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             font.family: "Google Sans"
             font.pointSize: 16
             color: "#99000000"
         }
     }
-
-    TextField {
+    RowLayout {
         id: passTextField
-        y: 501
-        font.pointSize: 16
+        anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: createPassButton.top
         anchors.bottomMargin: 16
-        font.family: "Google Sans"
-        Layout.fillWidth: true
-        placeholderText: qsTr("Password")
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
-        Layout.maximumHeight: 56
-        echoMode: TextInput.Password
-    }
+        width: parent.width
+        spacing: 8
+        height: 56
 
+        Image {
+            width: 24
+            height: 24
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            Layout.leftMargin: 16
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/lock-24px.svg"
+            antialiasing: true
+        }
+
+        TextField {
+            Layout.rightMargin: 16
+            Layout.leftMargin: 24
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            font.pointSize: 16
+            anchors.bottomMargin: 16
+            font.family: "Google Sans"
+            Layout.fillWidth: true
+            placeholderText: qsTr("Password")
+            echoMode: TextInput.Password
+        }
+    }
     RoundButton {
         id: createPassButton
         x: 34
@@ -124,10 +144,9 @@ Rectangle {
     }
 }
 
-
-
-
-/*##^## Designer {
+/*##^##
+Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/
+
