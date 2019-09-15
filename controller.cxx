@@ -33,7 +33,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	taskList = new RTClient::TicketList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
 	connect(client, SIGNAL(foundTasks(rt_ticketlist*))
-			, taskList, SLOT(addTasks(rt_ticketlist*)));
+			, taskList, SLOT(addTickets(rt_ticketlist*)));
 
 	thread.start();
 }
