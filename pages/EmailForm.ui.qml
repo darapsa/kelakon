@@ -50,7 +50,7 @@ Rectangle {
         lineHeight: 1
         font.weight: Font.Bold
         wrapMode: Text.WordWrap
-        anchors.bottom: emailTextField.top
+        anchors.bottom: emailLayout.top
         anchors.bottomMargin: 16
         anchors.left: parent.left
         anchors.leftMargin: 16
@@ -61,20 +61,41 @@ Rectangle {
         font.pointSize: 34
     }
 
-    TextField {
-        id: emailTextField
-        y: 501
-        font.pointSize: 16
+    RowLayout {
+        id: emailLayout
+        anchors.right: parent.right
+        anchors.rightMargin: 0
+        anchors.left: parent.left
+        anchors.leftMargin: 0
         anchors.bottom: loginButton.top
         anchors.bottomMargin: 16
-        font.family: "Google Sans"
-        Layout.fillWidth: true
-        placeholderText: qsTr("Enter your e-mail")
-        anchors.right: parent.right
-        anchors.rightMargin: 16
-        anchors.left: parent.left
-        anchors.leftMargin: 16
-        Layout.maximumHeight: 56
+        width: parent.width
+        height: 56
+        spacing: 8
+
+        Image {
+            width: 24
+            height: 24
+            opacity: 0.54
+            sourceSize.height: 24
+            sourceSize.width: 24
+            Layout.leftMargin: 16
+            Layout.alignment: Qt.AlignVCenter
+            fillMode: Image.PreserveAspectFit
+            source: "../assets/email-24px.svg"
+            antialiasing: true
+        }
+
+        TextField {
+            id: emailTextField
+            Layout.rightMargin: 16
+            Layout.leftMargin: 24
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+            font.pointSize: 16
+            font.family: "Google Sans"
+            Layout.fillWidth: true
+            placeholderText: qsTr("Email")
+        }
     }
 
     RoundButton {

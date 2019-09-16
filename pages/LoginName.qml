@@ -5,7 +5,7 @@ EmailForm {
 	width: stackView.width
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
-    instructionLabel.text: qsTr("Log in")
+    instructionLabel.text: qsTr("Enter your email")
 
 	emailTextField.onTextChanged: {
 		if (!emailTextField.text || !loginButton.enabled)
