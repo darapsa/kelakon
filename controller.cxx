@@ -1,6 +1,7 @@
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <qrtclient/user.hxx>
+#include <qrtclient/client.hxx>
 #include "controller.hxx"
 
 Controller::Controller(QObject* parent) : QObject{parent}
