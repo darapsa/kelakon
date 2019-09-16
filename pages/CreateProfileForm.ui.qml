@@ -65,6 +65,7 @@ Rectangle {
     RowLayout {
         id: userEmail
         height: 56
+        anchors.topMargin: 16
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.top: usernameRowLayout.bottom
         width: parent.width
@@ -83,7 +84,7 @@ Rectangle {
         Label {
             id: emailAddressLabel
             Layout.fillWidth: true
-            text: qsTr("your@email.com")
+            text: qsTr("Your@email.com")
             Layout.rightMargin: 16
             Layout.leftMargin: 24
             verticalAlignment: Text.AlignVCenter
@@ -122,9 +123,9 @@ Rectangle {
     }
     RowLayout {
         id: usernameRowLayout
-        height: 56
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width
+        height: 56
         Layout.alignment: Qt.AlignVCenter
         anchors.top: fullnameRowLayout.bottom
         anchors.topMargin: 16
@@ -140,14 +141,14 @@ Rectangle {
         }
 
         TextField {
-	    id: userNameLabel
+            id: userNameLabel
+            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.rightMargin: 16
             Layout.leftMargin: 24
             font.pointSize: 16
             font.family: "Google Sans"
             Layout.fillWidth: true
             placeholderText: qsTr("Username")
-            Layout.alignment: Qt.AlignVCenter
         }
     }
 
