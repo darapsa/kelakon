@@ -12,30 +12,30 @@ Rectangle {
     property alias emailButton: emailButton
 
     RoundButton {
-        id: googleButton
-        text: qsTr("Continue with Google")
-        font.family: "Google Sans"
-        font.capitalization: Font.MixedCase
-        anchors.bottom: emailButton.top
-        anchors.bottomMargin: 8
+        id: emailButton
+        text: qsTr("Get started")
         anchors.right: parent.right
         anchors.rightMargin: 8
         anchors.left: parent.left
         anchors.leftMargin: 8
+        font.family: "Google Sans"
+        font.capitalization: Font.MixedCase
+        anchors.bottom: googleButton.top
+        anchors.bottomMargin: 8
         Layout.fillWidth: true
         highlighted: true
         Material.background: Material.primary
     }
 
     RoundButton {
-        id: emailButton
-        text: qsTr("Continue with E-Mail")
+        id: googleButton
+        text: qsTr("Log in")
+        anchors.right: parent.right
+        anchors.left: parent.left
         flat: true
         font.family: "Google Sans"
         font.capitalization: Font.MixedCase
-        anchors.right: parent.right
         anchors.rightMargin: 8
-        anchors.left: parent.left
         anchors.leftMargin: 8
         anchors.bottom: disclaimer.top
         anchors.bottomMargin: 8
@@ -91,7 +91,7 @@ Rectangle {
     Text {
         id: onboarding_text_1
         text: qsTr("Achieve more today, chill tomorrow.")
-        anchors.bottom: googleButton.top
+        anchors.bottom: emailButton.top
         anchors.bottomMargin: 16
         wrapMode: Text.WordWrap
         anchors.right: parent.right
@@ -104,10 +104,9 @@ Rectangle {
     }
 }
 
-
-
-
-/*##^## Designer {
+/*##^##
+Designer {
     D{i:5;anchors_height:258;anchors_width:258;anchors_x:51;anchors_y:80}
 }
- ##^##*/
+##^##*/
+
