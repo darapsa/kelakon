@@ -41,11 +41,11 @@ Rectangle {
     }
 
     Label {
-	id: instructionLabel
+        id: instructionLabel
         x: 16
         y: 398
         color: "#2b2626"
-        text: qsTr("Continue with E-Mail")
+        text: qsTr("Sign up")
         font.letterSpacing: 0.25
         lineHeight: 1
         font.weight: Font.Bold
@@ -69,7 +69,7 @@ Rectangle {
         anchors.bottomMargin: 16
         font.family: "Google Sans"
         Layout.fillWidth: true
-        placeholderText: qsTr("E-mail")
+        placeholderText: qsTr("Enter your e-mail")
         anchors.right: parent.right
         anchors.rightMargin: 16
         anchors.left: parent.left
@@ -94,10 +94,9 @@ Rectangle {
     }
 }
 
-
-
-
-/*##^## Designer {
+/*##^##
+Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
- ##^##*/
+##^##*/
+
