@@ -9,6 +9,7 @@ Rectangle {
     border.width: 0
 
     property alias backButton: backButton
+    property alias instructionLabel: instructionLabel
     property alias emailTextField: emailTextField
     property alias loginButton: loginButton
 
@@ -40,6 +41,7 @@ Rectangle {
     }
 
     Label {
+	id: instructionLabel
         x: 16
         y: 398
         color: "#2b2626"

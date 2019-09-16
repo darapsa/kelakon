@@ -9,8 +9,9 @@ Rectangle {
 
     property alias backButton: backButton
     property alias skipButton: skipButton
-    property alias emailAddressLabel: emailAddressLabel
     property alias enterFullName: enterFullName
+    property alias userNameLabel: userNameLabel
+    property alias emailAddressLabel: emailAddressLabel
 
     ToolBar {
         id: toolbar
@@ -139,6 +140,7 @@ Rectangle {
         }
 
         TextField {
+	    id: userNameLabel
             Layout.rightMargin: 16
             Layout.leftMargin: 24
             font.pointSize: 16

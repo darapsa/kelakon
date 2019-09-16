@@ -4,11 +4,12 @@ LoginForm {
 	signal logIn(string name, string password)
 	signal search(string name)
 	function pushProfile() {
-		stackView.push("qrc:/pages/CreateProfile.qml")
+		stackView.push("qrc:/pages/Profile.qml")
 	}
 
 	objectName: "login"
 	width: appWindow.width
 	height: appWindow.height
+	googleButton.onClicked: stackView.push("qrc:/pages/LoginName.qml")
 	emailButton.onClicked: stackView.push("qrc:/pages/Email.qml")
 }

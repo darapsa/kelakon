@@ -32,5 +32,8 @@
         <file>assets/user-24px.svg</file>
         <file>assets/email-24px.svg</file>
         <file>assets/lock-24px.svg</file>
+	<file>pages/LoginName.qml</file>
+	<file>pages/LoginPass.qml</file>
+	<file>pages/Profile.qml</file>
     </qresource>
 </RCC>
