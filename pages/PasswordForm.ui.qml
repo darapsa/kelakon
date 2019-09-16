@@ -76,6 +76,9 @@ Rectangle {
         Image {
             width: 24
             height: 24
+            opacity: 0.54
+            sourceSize.height: 24
+            sourceSize.width: 24
             Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
@@ -106,6 +109,9 @@ Rectangle {
         Image {
             width: 24
             height: 24
+            opacity: 0.54
+            sourceSize.height: 24
+            sourceSize.width: 24
             Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
             Layout.leftMargin: 16
             fillMode: Image.PreserveAspectFit

@@ -74,6 +74,9 @@ Rectangle {
         Image {
             width: 24
             height: 24
+            opacity: 0.54
+            sourceSize.height: 24
+            sourceSize.width: 24
             Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
@@ -103,6 +106,9 @@ Rectangle {
         Image {
             width: 24
             height: 24
+            opacity: 0.54
+            sourceSize.height: 24
+            sourceSize.width: 24
             Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
@@ -133,6 +139,9 @@ Rectangle {
         Image {
             width: 24
             height: 24
+            opacity: 0.54
+            sourceSize.height: 24
+            sourceSize.width: 24
             Layout.leftMargin: 16
             Layout.alignment: Qt.AlignVCenter
             fillMode: Image.PreserveAspectFit
@@ -171,7 +180,6 @@ Rectangle {
 
     Rectangle {
         id: profilePicture
-        x: 220
         width: 80
         height: 80
         color: "#f0e6fc"
