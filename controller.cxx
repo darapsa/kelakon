@@ -17,11 +17,13 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto loginView = appWindow->findChild<QObject*>("login");
 	connect(loginView, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
-	connect(loginView, SIGNAL(signUp(QString, QString, QString, QString))
+	connect(client, SIGNAL(logged(rtclient_user*))
+			, loginView, SLOT(pushProfile()));
+	connect(loginView, SIGNAL(userNew(QString, QString, QString, QString))
 			, client, SLOT(userNew(QString, QString, QString
 					, QString)));
-	connect(client, SIGNAL(logged(rtclient_user*)), loginView, SLOT(pushProfile()));
-	connect(loginView, SIGNAL(search(QString)), client, SLOT(search(QString)));
+	connect(loginView, SIGNAL(ticketSearch(QString))
+			, client, SLOT(ticketSearch(QString)));
 
 	using RTClient::User;
 	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"

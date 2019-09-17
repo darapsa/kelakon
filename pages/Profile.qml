@@ -6,7 +6,7 @@ CreateProfileForm {
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
 	skipButton.onClicked: {
-		login.search(User.name)
+		login.ticketSearch(User.name)
 		stackView.push("qrc:/pages/Home.qml")
 	}
 	enterFullName.text: User.realName
