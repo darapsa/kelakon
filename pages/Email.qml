@@ -12,7 +12,7 @@ EmailForm {
 	}
 
 	loginButton.onClicked: {
-		User.name = emailTextField.text
+		User.emailAddress = emailTextField.text
 		stackView.push("qrc:/pages/Password.qml")
 	}
 }

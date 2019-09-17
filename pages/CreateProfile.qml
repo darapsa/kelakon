@@ -6,9 +6,36 @@ CreateProfileForm {
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
 	skipButton.onClicked: {
-		login.search(User.name)
 		stackView.push("qrc:/pages/Home.qml")
 	}
 	emailAddressLabel.text: User.emailAddress
-	enterFullName.text: User.realName
+	startUsingKelakon.onClicked: {
+		User.name = userNameLabel.text
+		User.realName = enterFullName.text
+		login.signUp(
+			User.name
+			, User.emailAddress
+			, User.realName
+			, ""
+			, ""
+			, 0
+			, 0
+			, ""
+			, true
+			, false
+			, User.password
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, ""
+			, "")
+	}
 }

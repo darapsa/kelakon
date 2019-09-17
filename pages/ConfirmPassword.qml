@@ -12,12 +12,13 @@ PasswordForm {
 	passTextField {
 		placeholderText: qsTr("Re-enter Password")
 		onTextChanged:
-			if (!passTextField.text || !createPassButton.enabled)
-				createPassButton.enabled = !createPassButton.enabled
+			if (passTextField.text == User.password)
+				createPassButton.enabled = true
 	}
 
 	createPassButton {
+		enabled: false
 		text: qsTr("Confirm password")
-		onClicked: login.logIn(User.name, User.password)
+		onClicked: stackView.push("qrc:/pages/CreateProfile.qml")
 	}
 }

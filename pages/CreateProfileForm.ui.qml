@@ -12,6 +12,7 @@ Rectangle {
     property alias enterFullName: enterFullName
     property alias userNameLabel: userNameLabel
     property alias emailAddressLabel: emailAddressLabel
+    property alias startUsingKelakon: startUsingKelakon
 
     ToolBar {
         id: toolbar
