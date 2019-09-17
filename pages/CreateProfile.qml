@@ -12,30 +12,7 @@ CreateProfileForm {
 	startUsingKelakon.onClicked: {
 		User.name = userNameLabel.text
 		User.realName = enterFullName.text
-		login.signUp(
-			User.name
-			, User.emailAddress
-			, User.realName
-			, ""
-			, ""
-			, 0
-			, 0
-			, ""
-			, true
-			, false
-			, User.password
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, ""
-			, "")
+		login.signUp(User.name, User.password, User.emailAddress
+		, User.realName)
 	}
 }

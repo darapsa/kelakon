@@ -17,18 +17,9 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto loginView = appWindow->findChild<QObject*>("login");
 	connect(loginView, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
-	connect(loginView, SIGNAL(signUp(QString, QString, QString, QString
-					, QString, int, int
-					, QString, bool, bool, QString, QString
-					, QString, QString, QString, QString
-					, QString, QString, QString, QString
-					, QString, QString, QString, QString))
-			, client, SLOT(userNew(QString, QString, QString, QString
-					, QString, int, int
-					, QString, bool, bool, QString, QString
-					, QString, QString, QString, QString
-					, QString, QString, QString, QString
-					, QString, QString, QString, QString)));
+	connect(loginView, SIGNAL(signUp(QString, QString, QString, QString))
+			, client, SLOT(userNew(QString, QString, QString
+					, QString)));
 	connect(client, SIGNAL(logged(rt_user*)), loginView, SLOT(pushProfile()));
 	connect(loginView, SIGNAL(search(QString)), client, SLOT(search(QString)));
 
