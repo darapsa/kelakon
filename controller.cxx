@@ -1,7 +1,7 @@
 #include <QQmlApplicationEngine>
 #include <QtQml>
-#include <qrtclient/user.hxx>
 #include <qrtclient/client.hxx>
+#include <qrtclient/user.hxx>
 #include "controller.hxx"
 
 Controller::Controller(QObject* parent) : QObject{parent}
@@ -20,7 +20,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	connect(loginView, SIGNAL(signUp(QString, QString, QString, QString))
 			, client, SLOT(userNew(QString, QString, QString
 					, QString)));
-	connect(client, SIGNAL(logged(rt_user*)), loginView, SLOT(pushProfile()));
+	connect(client, SIGNAL(logged(rtclient_user*)), loginView, SLOT(pushProfile()));
 	connect(loginView, SIGNAL(search(QString)), client, SLOT(search(QString)));
 
 	using RTClient::User;
@@ -32,12 +32,13 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			return new User;
 			});
 	auto user = engine->singletonInstance<User*>(typeId);
-	connect(client, SIGNAL(logged(rt_user*)), user, SLOT(update(rt_user*)));
+	connect(client, SIGNAL(logged(rtclient_user*))
+			, user, SLOT(update(rtclient_user*)));
 
 	taskList = new RTClient::TicketList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
-	connect(client, SIGNAL(foundTickets(rt_ticketlist*))
-			, taskList, SLOT(addTickets(rt_ticketlist*)));
+	connect(client, SIGNAL(foundTickets(rtclient_ticketlist*))
+			, taskList, SLOT(addTickets(rtclient_ticketlist*)));
 
 	thread.start();
 }
