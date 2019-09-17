@@ -8,7 +8,9 @@ SOURCES += \
 
 RESOURCES += kelakon.qrc
 
-INCLUDEPATH += $$PWD/qrtclient
+INCLUDEPATH += \
+	$$PWD/qrtclient \
+	$$PWD/qrtclient/librtclient
 
 LIBS += \
 	$$PWD/qrtclient/libqrtclient.a \
