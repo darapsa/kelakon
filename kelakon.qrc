@@ -2,9 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Login.qml</file>
-        <file>LoginForm.ui.qml</file>
+        <file>larva/features/OnboardingForm.ui.qml</file>
         <file>kelakon-logo.png</file>
-        <file>onboarding-1.png</file>
+        <file>larva/components/images/onboarding-1.png</file>
         <file>pages/Email.qml</file>
         <file>pages/EmailForm.ui.qml</file>
         <file>assets/arrow-back-24px.svg</file>

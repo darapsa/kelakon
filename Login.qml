@@ -1,6 +1,7 @@
 import QtQuick 2.12
+import "larva/features"
 
-LoginForm {
+OnboardingForm {
 	signal logIn(string name, string password)
 	signal userNew(string name, string password, string emailAddress
 	, string realName)
@@ -12,6 +13,7 @@ LoginForm {
 	objectName: "login"
 	width: appWindow.width
 	height: appWindow.height
-	googleButton.onClicked: stackView.push("qrc:/pages/LoginName.qml")
-	emailButton.onClicked: stackView.push("qrc:/pages/Email.qml")
+	logoImage.source: "kelakon-logo.png"
+	registerButton.onClicked: stackView.push("qrc:/pages/Email.qml")
+	loginButton.onClicked: stackView.push("qrc:/pages/LoginName.qml")
 }
