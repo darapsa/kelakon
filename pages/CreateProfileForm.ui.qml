@@ -8,6 +8,7 @@ Rectangle {
     color: "#fff"
 
     property alias backButton: backButton
+    property alias titleLabel: titleLabel
     property alias skipButton: skipButton
     property alias enterFullName: enterFullName
     property alias userNameLabel: userNameLabel
@@ -39,7 +40,7 @@ Rectangle {
                 highlighted: true
             }
             Label {
-                id: title
+                id: titleLabel
                 text: qsTr("Create Profile")
                 font.weight: Font.Medium
                 wrapMode: Text.WordWrap

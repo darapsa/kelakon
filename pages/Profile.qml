@@ -5,6 +5,7 @@ CreateProfileForm {
 	width: stackView.width
 	height: stackView.height
 	backButton.onClicked: stackView.pop()
+	titleLabel.text: qsTr("Edit Profile")
 	skipButton.onClicked: {
 		login.ticketSearch(User.name)
 		stackView.push("qrc:/pages/Home.qml")
