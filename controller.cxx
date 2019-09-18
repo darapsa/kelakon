@@ -19,9 +19,8 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			, client, SLOT(logIn(QString, QString)));
 	connect(client, SIGNAL(logged(rtclient_user*))
 			, loginView, SLOT(pushProfile()));
-	connect(loginView, SIGNAL(userNew(QString, QString, QString, QString))
-			, client, SLOT(userNew(QString, QString, QString
-					, QString)));
+	connect(loginView, SIGNAL(ticketNew(QString, QString))
+			, client, SLOT(ticketNew(QString, QString)));
 	connect(loginView, SIGNAL(ticketSearch(QString))
 			, client, SLOT(ticketSearch(QString)));
 

@@ -3,8 +3,7 @@ import "larva/features"
 
 OnboardingForm {
 	signal logIn(string name, string password)
-	signal userNew(string name, string password, string emailAddress
-	, string realName)
+	signal ticketNew(string queue, string requestor)
 	signal ticketSearch(string name)
 	function pushProfile() {
 		stackView.push("qrc:/pages/Profile.qml")

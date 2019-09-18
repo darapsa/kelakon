@@ -12,7 +12,7 @@ CreateProfileForm {
 	startUsingKelakon.onClicked: {
 		User.name = userNameLabel.text
 		User.realName = enterFullName.text
-		login.userNew(User.name, User.password, User.emailAddress
-		, User.realName)
+		login.ticketNew("Kelakon", User.realName + " <" + User.emailAddress
+		+ ">")
 	}
 }
