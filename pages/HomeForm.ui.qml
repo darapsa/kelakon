@@ -7,6 +7,7 @@ Rectangle {
     id: rectangle
 
     property alias menuButton: menuButton
+    property alias toolbar: toolbar
 
     ToolBar {
         id: toolbar
@@ -53,16 +54,6 @@ Rectangle {
                 highlighted: true
             }
         }
-    }
-
-    TaskList {
-        height: parent.height
-        anchors.top: toolbar.bottom
-        anchors.topMargin: 8
-        anchors.right: parent.right
-        anchors.rightMargin: 0
-        anchors.left: parent.left
-        anchors.leftMargin: 0
     }
 
     RoundButton {

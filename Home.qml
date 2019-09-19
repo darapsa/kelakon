@@ -3,4 +3,8 @@ import "pages"
 
 HomeForm {
 	menuButton.onClicked: drawer.visible = !drawer.visible
+
+	TaskList {
+		anchors.top: toolbar.bottom
+	}
 }

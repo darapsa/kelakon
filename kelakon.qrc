@@ -24,9 +24,9 @@
 		<file>pages/CreateProfileForm.ui.qml</file>
 		<file>Home.qml</file>
 		<file>pages/HomeForm.ui.qml</file>
-		<file>pages/TaskForm.ui.qml</file>
-		<file>pages/TaskList.qml</file>
+		<file>TaskList.qml</file>
 		<file>pages/TaskListForm.ui.qml</file>
+		<file>pages/TaskForm.ui.qml</file>
 		<file>assets/photo_camera_24px.svg</file>
 		<file>assets/menu-24px.svg</file>
 		<file>assets/check-box-outline-24px.svg</file>
