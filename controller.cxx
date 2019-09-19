@@ -14,16 +14,16 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto rootObjects = engine->rootObjects();
 	auto appWindow = rootObjects[0];
 
-	auto loginView = appWindow->findChild<QObject*>("login");
-	connect(loginView, SIGNAL(logIn(QString, QString))
+	auto onboardingView = appWindow->findChild<QObject*>("onboarding");
+	connect(onboardingView, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
 	connect(client, SIGNAL(loggedIn(QString))
 			, client, SLOT(userShow(QString)));
 	connect(client, SIGNAL(userShown(rtclient_user*))
-			, loginView, SLOT(pushProfile()));
-	connect(loginView, SIGNAL(ticketNew(QString, QString))
+			, onboardingView, SLOT(pushProfile()));
+	connect(onboardingView, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
-	connect(loginView, SIGNAL(ticketSearch(QString))
+	connect(onboardingView, SIGNAL(ticketSearch(QString))
 			, client, SLOT(ticketSearch(QString)));
 
 	using RTClient::User;

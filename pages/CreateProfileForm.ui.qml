@@ -12,6 +12,7 @@ Rectangle {
     property alias skipButton: skipButton
     property alias enterFullName: enterFullName
     property alias userNameLabel: userNameLabel
+    property alias emailImage: emailImage
     property alias emailAddressLabel: emailAddressLabel
     property alias startUsingKelakon: startUsingKelakon
 
@@ -74,6 +75,7 @@ Rectangle {
         spacing: 8
 
         Image {
+            id: emailImage
             width: 24
             height: 24
             opacity: 0.54

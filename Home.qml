@@ -1,7 +1,6 @@
 import QtQuick 2.12
+import "pages"
 
 HomeForm {
-	width: stackView.width
-	height: stackView.height
 	menuButton.onClicked: drawer.visible = !drawer.visible
 }

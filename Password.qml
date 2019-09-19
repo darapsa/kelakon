@@ -1,10 +1,14 @@
 import QtQuick 2.12
 import KelakonUser 0.1
+import "pages"
 
 PasswordForm {
-	width: stackView.width
-	height: stackView.height
-	backButton.onClicked: stackView.pop()
+	backButton {
+		icon.source: "larva/components/icons/arrow-back-24px.svg"
+		onClicked: pageView.pop()
+	}
+
+	passImage.source: "larva/components/icons/lock-24px.svg"
 	emailAddressLabel.text: User.name
 
 	passTextField.onTextChanged: {
@@ -14,6 +18,6 @@ PasswordForm {
 
 	createPassButton.onClicked: {
 		User.password = passTextField.text
-		stackView.push("qrc:/pages/ConfirmPassword.qml")
+		pageView.push("ConfirmPassword.qml")
 	}
 }

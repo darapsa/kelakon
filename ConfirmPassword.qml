@@ -1,11 +1,15 @@
 import QtQuick 2.12
 import KelakonUser 0.1
+import "pages"
 
 PasswordForm {
-	width: stackView.width
-	height: stackView.height
-	backButton.onClicked: stackView.pop()
+	backButton {
+		icon.source: "larva/components/icons/arrow-back-24px.svg"
+		onClicked: pageView.pop()
+	}
+
 	userEmail.y: 292
+	passImage.source: "larva/components/icons/lock-24px.svg"
 	instructionLabel.text: qsTr("Re-Enter password")
 	emailAddressLabel.text: User.name
 
@@ -19,6 +23,6 @@ PasswordForm {
 	createPassButton {
 		enabled: false
 		text: qsTr("Confirm password")
-		onClicked: stackView.push("qrc:/pages/CreateProfile.qml")
+		onClicked: pageView.push("CreateProfile.qml")
 	}
 }

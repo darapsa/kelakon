@@ -1,18 +1,32 @@
 import QtQuick 2.12
-import "larva/features"
+import QtQuick.Controls 2.12
+import QtQuick.Controls.Material 2.12
+import QtQuick.Layouts 1.12
 
-OnboardingForm {
-	signal logIn(string name, string password)
-	signal ticketNew(string queue, string requestor)
-	signal ticketSearch(string name)
-	function pushProfile() {
-		stackView.push("qrc:/pages/Profile.qml")
+Page {
+	header: ToolBar {
+		background: Rectangle {
+			color: "#FAFFFFFF"
+		}
+		RowLayout {
+			ToolButton {
+				id: toolButton
+				icon.name: "back-button"
+				icon.source: "larva/components/icons/arrow-back-24px.svg"
+				highlighted: true
+				onClicked:
+					if (pageView.depth > 1)
+						pageView.pop()
+					else
+						drawer.open()
+			}
+		}
 	}
 
-	objectName: "login"
-	width: appWindow.width
-	height: appWindow.height
-	logoImage.source: "kelakon-logo.png"
-	registerButton.onClicked: stackView.push("qrc:/pages/Email.qml")
-	loginButton.onClicked: stackView.push("qrc:/pages/LoginName.qml")
+	StackView {
+		id: contentView
+		anchors.topMargin: 432
+		anchors.fill: parent
+		initialItem: LoginEmail{}
+	}
 }

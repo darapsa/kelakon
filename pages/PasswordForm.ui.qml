@@ -11,6 +11,7 @@ Rectangle {
     property alias backButton: backButton
     property alias instructionLabel: instructionLabel
     property alias userEmail: userEmail
+    property alias passImage: passImage
     property alias passTextField: passTextField
     property alias createPassButton: createPassButton
     property alias emailAddressLabel: emailAddressLabel
@@ -107,6 +108,7 @@ Rectangle {
         height: 56
 
         Image {
+            id: passImage
             width: 24
             height: 24
             opacity: 0.54

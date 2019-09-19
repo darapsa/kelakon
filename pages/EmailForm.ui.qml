@@ -10,6 +10,7 @@ Rectangle {
 
     property alias backButton: backButton
     property alias instructionLabel: instructionLabel
+    property alias emailImage: emailImage
     property alias emailTextField: emailTextField
     property alias loginButton: loginButton
 
@@ -74,6 +75,7 @@ Rectangle {
         spacing: 8
 
         Image {
+	    id: emailImage
             width: 24
             height: 24
             opacity: 0.54
