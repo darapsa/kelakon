@@ -17,7 +17,9 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto loginView = appWindow->findChild<QObject*>("login");
 	connect(loginView, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
-	connect(client, SIGNAL(logged(rtclient_user*))
+	connect(client, SIGNAL(loggedIn(QString))
+			, client, SLOT(userShow(QString)));
+	connect(client, SIGNAL(userShown(rtclient_user*))
 			, loginView, SLOT(pushProfile()));
 	connect(loginView, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
@@ -33,7 +35,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			return new User;
 			});
 	auto user = engine->singletonInstance<User*>(typeId);
-	connect(client, SIGNAL(logged(rtclient_user*))
+	connect(client, SIGNAL(userShown(rtclient_user*))
 			, user, SLOT(update(rtclient_user*)));
 
 	taskList = new RTClient::TicketList;
