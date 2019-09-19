@@ -1,28 +1,23 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
+import QtQuick.Layouts 1.12
+import "larva/features"
 
 ApplicationWindow {
-	id: appWindow
-	width: 360
-	height: 640
-	visible: true
-	Material.accent: Material.DeepPurple
+    id: window
+    visible: true
+    width: 360
+    height: 640
+    title: {
+        text: qsTr("kelakon")
+    }
 
-	Drawer {
-		id: drawer
-		width: 0.8 * appWindow.width
-		height: appWindow.height
-	}
 
-	StackView {
-		property alias login: login
+    StackView {
+        id: pageView
+        anchors.fill: parent
 
-		id: stackView
-		anchors.fill : parent
-
-		initialItem: Login {
-			id: login
-		}
-	}
+        initialItem: Onboarding {}
+        }
 }
