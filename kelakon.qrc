@@ -32,8 +32,24 @@
         <file>assets/user-24px.svg</file>
         <file>assets/email-24px.svg</file>
         <file>assets/lock-24px.svg</file>
-	<file>pages/LoginName.qml</file>
-	<file>pages/LoginPass.qml</file>
-	<file>pages/Profile.qml</file>
+        <file>pages/LoginName.qml</file>
+        <file>pages/LoginPass.qml</file>
+        <file>pages/Profile.qml</file>
+        <file>larva/components/layout/Card.qml</file>
+        <file>larva/components/layout/CardForm.ui.qml</file>
+        <file>larva/features/EnterPassword.qml</file>
+        <file>larva/features/EnterPasswordForm.ui.qml</file>
+        <file>larva/features/Login.qml</file>
+        <file>larva/features/LoginEmail.qml</file>
+        <file>larva/features/LoginEmailForm.ui.qml</file>
+        <file>larva/features/LoginPassword.qml</file>
+        <file>larva/features/LoginPasswordForm.ui.qml</file>
+        <file>larva/features/Onboarding.qml</file>
+        <file>larva/HomeForm.ui.qml</file>
+        <file>larva/LICENSE</file>
+        <file>larva/main.qml</file>
+        <file>larva/Page1Form.ui.qml</file>
+        <file>larva/Page2Form.ui.qml</file>
+        <file>larva/README.md</file>
     </qresource>
 </RCC>
