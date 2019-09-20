@@ -41,5 +41,10 @@
         <file>larva/features/LoginEmail.qml</file>
         <file>larva/features/LoginPassword.qml</file>
         <file>larva/features/Onboarding.qml</file>
+        <file>larva/features/Home.qml</file>
+        <file>larva/features/HomeForm.ui.qml</file>
+        <file>larva/components/icons/menu-24px.svg</file>
+        <file>Future.qml</file>
+        <file>FutureForm.ui.qml</file>
     </qresource>
 </RCC>

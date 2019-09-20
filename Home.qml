@@ -68,6 +68,28 @@ Page {
         width: window.width * 0.8
         height: window.height
         visible: false
+
+        Column {
+            anchors.fill: parent
+            ItemDelegate {
+                text: qsTr("Today")
+                width: parent.width
+                onClicked: {
+                    contentView.pop("HomeForm.ui.qml")
+                    drawer.close()
+                }
+            }
+
+            ItemDelegate {
+                text:qsTr("Future")
+                width: parent.width
+                onClicked: {
+                    contentView.push("FutureForm.ui.qml")
+                    drawer.close()
+                }
+
+            }
+        }
     }
 
     StackView {
