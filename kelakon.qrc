@@ -45,5 +45,7 @@
         <file>larva/features/HomeForm.ui.qml</file>
         <file>larva/components/icons/menu-24px.svg</file>
         <file>FutureForm.ui.qml</file>
+        <file>assets/arrow-back-24px.svg</file>
+        <file>onboarding-1.png</file>
     </qresource>
 </RCC>
