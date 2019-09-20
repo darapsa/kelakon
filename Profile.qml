@@ -21,7 +21,35 @@ Page {
                         pageView.pop()
                 }
             }
+            Label {
+                text: contentView.currentItem.title
+                Layout.leftMargin: 16
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignLeft
+                wrapMode: Text.WordWrap
+                font.family: "Work Sans"
+                font.weight: Font.Medium
+                font.pointSize: 20
+                color: "#000000"
+                Layout.fillWidth: true
+            }
+            ToolButton {
+                text: qsTr("Edit")
+                font.weight: Font.Medium
+                display: AbstractButton.TextOnly
+                font.family: "Work Sans"
+                font.capitalization: Font.MixedCase
+                flat: false
+                highlighted: true
+                Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+
+            }
         }
+    }
+    StackView {
+        id: contentView
+        anchors.fill: parent
+        initialItem: ProfileForm {}
     }
 }
 
