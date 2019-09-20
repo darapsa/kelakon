@@ -44,7 +44,6 @@
         <file>larva/features/Home.qml</file>
         <file>larva/features/HomeForm.ui.qml</file>
         <file>larva/components/icons/menu-24px.svg</file>
-        <file>Future.qml</file>
         <file>FutureForm.ui.qml</file>
     </qresource>
 </RCC>
