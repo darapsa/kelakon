@@ -47,5 +47,7 @@
         <file>FutureForm.ui.qml</file>
         <file>assets/arrow-back-24px.svg</file>
         <file>onboarding-1.png</file>
+        <file>larva/features/ProfileForm.ui.qml</file>
+        <file>assets/email-24px.svg</file>
     </qresource>
 </RCC>
