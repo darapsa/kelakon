@@ -4,7 +4,6 @@ import "larva/features"
 OnboardingForm {
 	signal logIn(string name, string password)
 	signal ticketNew(string queue, string requestor)
-	signal ticketSearch(string name)
 	function pushHome() {
 		pageView.push("Home.qml")
 	}
