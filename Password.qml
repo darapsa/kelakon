@@ -4,11 +4,11 @@ import "pages"
 
 PasswordForm {
 	backButton {
-		icon.source: "larva/components/icons/arrow-back-24px.svg"
+        icon.source: "assets/arrow-back-24px.svg"
 		onClicked: pageView.pop()
 	}
 
-	passImage.source: "larva/components/icons/lock-24px.svg"
+    passImage.source: "assets/lock-24px.svg"
 	emailAddressLabel.text: User.name
 
 	passTextField.onTextChanged: {

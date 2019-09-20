@@ -4,11 +4,11 @@ import "pages"
 
 EmailForm {
 	backButton {
-		icon.source: "larva/components/icons/arrow-back-24px.svg"
+        icon.source: "assets/arrow-back-24px.svg"
 		onClicked: pageView.pop()
 	}
 
-	emailImage.source: "larva/components/icons/email-24px.svg"
+    emailImage.source: "assets/email-24px.svg"
 
 	emailTextField.onTextChanged: {
 		if (!emailTextField.text || !loginButton.enabled)

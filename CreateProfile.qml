@@ -4,12 +4,12 @@ import "pages"
 
 CreateProfileForm {
 	backButton {
-		icon.source: "larva/components/icons/arrow-back-24px.svg"
+		icon.source: "../assets/arrow-back-24px.svg"
 		onClicked: pageView.pop()
 	}
 
 	skipButton.onClicked: pageView.push("Home.qml")
-	emailImage.source: "larva/components/icons/email-24px.svg"
+	emailImage.source: "../assets/email-24px.svg"
 	emailAddressLabel.text: User.emailAddress
 	startUsingKelakon.onClicked: {
 		User.name = userNameLabel.text

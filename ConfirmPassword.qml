@@ -4,12 +4,12 @@ import "pages"
 
 PasswordForm {
 	backButton {
-		icon.source: "larva/components/icons/arrow-back-24px.svg"
+		icon.source: "../assets/arrow-back-24px.svg"
 		onClicked: pageView.pop()
 	}
 
 	userEmail.y: 292
-	passImage.source: "larva/components/icons/lock-24px.svg"
+	passImage.source: "../assets/lock-24px.svg"
 	instructionLabel.text: qsTr("Re-Enter password")
 	emailAddressLabel.text: User.name
 

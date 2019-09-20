@@ -4,16 +4,12 @@
         <file>Onboarding.qml</file>
         <file>larva/features/OnboardingForm.ui.qml</file>
         <file>kelakon-logo.png</file>
-        <file>larva/components/images/onboarding-1.png</file>
         <file>Login.qml</file>
-        <file>larva/components/icons/arrow-back-24px.svg</file>
         <file>LoginEmail.qml</file>
         <file>larva/features/LoginEmailForm.ui.qml</file>
         <file>assets/arrow-forward-24px.svg</file>
-        <file>larva/components/icons/email-24px.svg</file>
         <file>LoginPassword.qml</file>
         <file>larva/features/LoginPasswordForm.ui.qml</file>
-        <file>larva/components/icons/lock-24px.svg</file>
         <file>Profile.qml</file>
         <file>Email.qml</file>
         <file>pages/EmailForm.ui.qml</file>
@@ -40,14 +36,13 @@
         <file>larva/features/Login.qml</file>
         <file>larva/features/LoginEmail.qml</file>
         <file>larva/features/LoginPassword.qml</file>
-        <file>larva/features/Onboarding.qml</file>
         <file>larva/features/Home.qml</file>
         <file>larva/features/HomeForm.ui.qml</file>
-        <file>larva/components/icons/menu-24px.svg</file>
         <file>FutureForm.ui.qml</file>
         <file>assets/arrow-back-24px.svg</file>
         <file>onboarding-1.png</file>
         <file>larva/features/ProfileForm.ui.qml</file>
         <file>assets/email-24px.svg</file>
+        <file>assets/lock-24px.svg</file>
     </qresource>
 </RCC>
