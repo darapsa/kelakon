@@ -19,8 +19,6 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			, client, SLOT(logIn(QString, QString)));
 	connect(client, SIGNAL(loggedIn(QString))
 			, client, SLOT(userShow(QString)));
-	connect(client, SIGNAL(userShown(rtclient_user*))
-			, onboardingView, SLOT(pushProfile()));
 	connect(onboardingView, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
 	connect(onboardingView, SIGNAL(ticketSearch(QString))
@@ -42,6 +40,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	engine->rootContext()->setContextProperty("taskList", taskList);
 	connect(client, SIGNAL(ticketSearched(rtclient_ticketlist*))
 			, taskList, SLOT(update(rtclient_ticketlist*)));
+	connect(taskList, SIGNAL(updated()), onboardingView, SLOT(pushHome()));
 
 	thread.start();
 }

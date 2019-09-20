@@ -9,7 +9,6 @@ CreateProfileForm {
 	}
 	titleLabel.text: qsTr("Edit Profile")
 	skipButton.onClicked: {
-		onboarding.ticketSearch(User.name)
 		pageView.push("Home.qml")
 	}
 	emailImage.source: "larva/components/icons/email-24px.svg"

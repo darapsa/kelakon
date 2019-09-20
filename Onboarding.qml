@@ -5,8 +5,8 @@ OnboardingForm {
 	signal logIn(string name, string password)
 	signal ticketNew(string queue, string requestor)
 	signal ticketSearch(string name)
-	function pushProfile() {
-		pageView.push("Profile.qml")
+	function pushHome() {
+		pageView.push("Home.qml")
 	}
 
 	objectName: "onboarding"

@@ -14,7 +14,10 @@ LoginPasswordForm {
 		icon.source: "assets/arrow-forward-24px.svg"
 		onClicked: {
 			User.password = passwordTextField.text
-			onClicked: onboarding.logIn(User.name, User.password)
+			onClicked: {
+				onboarding.logIn(User.name, User.password)
+				onboarding.ticketSearch(User.name)
+			}
 		}
 	}
 }
