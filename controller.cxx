@@ -41,7 +41,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	taskList = new RTClient::TicketList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
 	connect(client, SIGNAL(ticketSearched(rtclient_ticketlist*))
-			, taskList, SLOT(addTickets(rtclient_ticketlist*)));
+			, taskList, SLOT(update(rtclient_ticketlist*)));
 
 	thread.start();
 }
