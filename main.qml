@@ -2,6 +2,7 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 import QtQuick.Controls.Material 2.12
 
+
 ApplicationWindow {
 	id: window
 	visible: true
@@ -17,6 +18,9 @@ ApplicationWindow {
 		anchors.fill: parent
 		initialItem: Onboarding {
 			id: onboarding
+            logoImage.source: ("../kelakon-logo.png")
+            onboardingImage.source: ("../onboarding-1.png")
+            onboardingText1.text: qsTr("Get things done today, chill tomorrow.")
 		}
 	}
 }

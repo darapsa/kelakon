@@ -14,16 +14,8 @@ Page {
             spacing: 0
             ToolButton {
                 id: menuButton
-                Layout.rightMargin: 0
-                Layout.preferredHeight: -1
-                Layout.preferredWidth: -1
-                padding: 0
-                rightPadding: 0
-                leftPadding: 0
-                bottomPadding: 0
-                topPadding: 0
                 icon.name: "menu-button"
-                icon.source: "larva/components/icons/menu-24px.svg"
+                icon.source: "assets/menu-24px.svg"
                 highlighted: true
                 onClicked: {
                         drawer.open()
@@ -40,7 +32,15 @@ Page {
                 font.pointSize: 20
                 color: "#000000"
                 Layout.fillWidth: true
-
+            }
+            ToolButton {
+                id: profileButton
+                icon.name: "profile-button"
+                icon.source: "assets/profile-24px.svg"
+                highlighted: true
+                onClicked: {
+                        pageView.push("Profile.qml")
+                }
             }
         }
     }
