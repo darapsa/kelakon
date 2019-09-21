@@ -37,17 +37,16 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	connect(this, SIGNAL(checked(rtclient_user*))
 			, user, SLOT(update(rtclient_user*)));
-
 	connect(this, SIGNAL(checked(QString))
 			, client, SLOT(ticketSearch(QString)));
 
 	connect(client, SIGNAL(ticketSearched(rtclient_ticketlist*))
 			, taskList, SLOT(update(rtclient_ticketlist*)));
 
+	connect(taskList, SIGNAL(updated()), onboardingView, SLOT(pushHome()));
+
 	connect(onboardingView, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
-
-	connect(taskList, SIGNAL(updated()), onboardingView, SLOT(pushHome()));
 
 	thread.start();
 }
