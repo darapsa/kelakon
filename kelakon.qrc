@@ -25,8 +25,8 @@
         <file>forms/DayForm.ui.qml</file>
         <file>forms/DayListForm.ui.qml</file>
         <file>TaskList.qml</file>
-        <file>pages/TaskListForm.ui.qml</file>
-        <file>pages/TaskForm.ui.qml</file>
+        <file>forms/TaskListForm.ui.qml</file>
+        <file>forms/TaskForm.ui.qml</file>
         <file>assets/photo_camera_24px.svg</file>
         <file>assets/menu-24px.svg</file>
         <file>assets/check-box-outline-24px.svg</file>
