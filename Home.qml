@@ -27,7 +27,7 @@ HomeForm {
 			todayItemDelegate {
 				text: qsTr("Today")
 				onClicked: {
-					contentView.push("Today.qml")
+					contentView.push("TaskList.qml")
 					drawer.close()
 				}
 			}
@@ -35,12 +35,14 @@ HomeForm {
 			futureItemDelegate {
 				text:qsTr("Future")
 				onClicked: {
-					contentView.push("Future.qml")
+					contentView.push("TaskList.qml")
 					drawer.close()
 				}
 			}
 		}
 	}
 
-	contentView.initialItem: Today {}
+	contentView.initialItem: TaskList {
+		title: qsTr("Today")
+	}
 }

@@ -20,9 +20,6 @@
         <file>pages/CreateProfileForm.ui.qml</file>
         <file>Home.qml</file>
         <file>forms/HomeForm.ui.qml</file>
-        <file>Today.qml</file>
-        <file>Future.qml</file>
-        <file>forms/DayForm.ui.qml</file>
         <file>forms/DayListForm.ui.qml</file>
         <file>TaskList.qml</file>
         <file>forms/TaskListForm.ui.qml</file>
