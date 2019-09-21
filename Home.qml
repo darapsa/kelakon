@@ -41,4 +41,6 @@ HomeForm {
 			}
 		}
 	}
+
+	contentView.initialItem: Today {}
 }

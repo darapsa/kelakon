@@ -60,15 +60,5 @@ Page {
 	StackView {
 		id: contentView
 		anchors.fill: parent
-		initialItem: Page {
-			id: page
-			title: qsTr("Today")
-
-			Label {
-				text: qsTr("Load `contentView` here")
-				anchors.verticalCenter: parent.verticalCenter
-				anchors.horizontalCenter: parent.horizontalCenter
-			}
-		}
 	}
 }
