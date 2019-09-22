@@ -4,7 +4,7 @@ import QtQuick.Layouts 1.12
 
 GridLayout {
     property alias task: task
-    property alias checkBox: checkBox
+    property alias taskTitle: taskTitle
 
     id: task
     width: fillWidth
@@ -37,7 +37,7 @@ GridLayout {
                 Layout.fillWidth: true
                 Layout.fillHeight: true
                 Label {
-                    id: checkBox
+                    id: taskTitle
                     text: qsTr("Task title")
                     Layout.columnSpan: 0
                     Layout.rowSpan: 0

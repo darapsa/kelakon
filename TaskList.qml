@@ -9,7 +9,13 @@ TaskListForm {
 		delegate: TaskForm {
 			width: parent.width
 			height: task.height
-			checkBox.text: subject
+            taskTitle.text: subject
 		}
 	}
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
