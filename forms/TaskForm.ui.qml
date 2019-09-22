@@ -7,15 +7,11 @@ GridLayout {
     property alias taskTitle: taskTitle
 
     id: task
-    width: fillWidth
     height: 72
     anchors.right: parent.right
     anchors.rightMargin: 0
     anchors.left: parent.left
     anchors.leftMargin: 0
-
-    Layout.fillWidth: true
-    Layout.fillHeight: true
 
     ItemDelegate {
         id: itemDelegate
@@ -27,38 +23,47 @@ GridLayout {
             CheckBox {
                 Layout.leftMargin: 4
                 display: AbstractButton.IconOnly
-                font.family: "Google Sans"
-                font.pointSize: 16
-                font.weight: Font.Medium
             }
             ColumnLayout {
                 Layout.leftMargin: 14
                 spacing: 0
                 Layout.fillWidth: true
                 Layout.fillHeight: true
-                Label {
+
+                Text {
                     id: taskTitle
                     text: qsTr("Task title")
+                    Layout.rightMargin: 16
+                    elide: Text.ElideRight
                     Layout.columnSpan: 0
                     Layout.rowSpan: 0
                     verticalAlignment: Text.AlignVCenter
-                    Layout.topMargin: 8
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
+                    Layout.topMargin: 0
                     font.weight: Font.Medium
                     font.family: "Work Sans"
-                    font.pointSize: 16
+                    font.pixelSize: 16
                     Layout.fillWidth: true
                 }
-                Label {
+                Text {
                     text: qsTr("Truncated task description")
+                    Layout.rightMargin: 16
+                    font.pixelSize: 14
                     Layout.topMargin: 4
                     Layout.columnSpan: 0
                     Layout.rowSpan: 0
                     verticalAlignment: Text.AlignVCenter
-                    Layout.bottomMargin: 8
-                    wrapMode: Text.WrapAtWordBoundaryOrAnywhere
-                    color: "#8a000000"
+                    Layout.bottomMargin: 0
+                    color: "#b3000000"
                     Layout.fillWidth: true
+                    elide: Text.ElideRight
+                }
+                Text {
+                    id: taskTimestamp
+                    color: "#8a000000"
+                    text: qsTr("DD/MM/YYYY")
+                    topPadding: 4
+                    font.pixelSize: 12
+                    font.family: "Work Sans"
                 }
             }
             Image {
