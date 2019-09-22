@@ -15,8 +15,6 @@ HomeForm {
 		onClicked: pageView.push("Profile.qml")
 	}
 
-	roundButton.icon.source: "/assets/add-24px.svg"
-
 	Drawer {
 		id: drawer
 		width: window.width * 0.8
