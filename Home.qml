@@ -28,6 +28,8 @@ HomeForm {
 				text: qsTr("Today")
 				onClicked: {
 					contentView.push("TaskList.qml")
+					var taskList = contentView.currentItem
+					taskList.title = qsTr("Today")
 					drawer.close()
 				}
 			}
@@ -36,6 +38,8 @@ HomeForm {
 				text:qsTr("Future")
 				onClicked: {
 					contentView.push("TaskList.qml")
+					var taskList = contentView.currentItem
+					taskList.title = qsTr("Future task")
 					drawer.close()
 				}
 			}
