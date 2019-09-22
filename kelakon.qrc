@@ -39,5 +39,6 @@
         <file>larva/features/ProfileForm.ui.qml</file>
         <file>assets/email-24px.svg</file>
         <file>assets/lock-24px.svg</file>
+        <file>larva/features/ProfileEditForm.ui.qml</file>
     </qresource>
 </RCC>

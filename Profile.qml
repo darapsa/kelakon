@@ -42,6 +42,7 @@ Page {
                 flat: false
                 highlighted: true
                 Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
+                onClicked: pageView.push("/larva/features/ProfileEditForm.ui.qml")
 
             }
         }
