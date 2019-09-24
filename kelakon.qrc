@@ -19,11 +19,12 @@
         <file>CreateProfile.qml</file>
         <file>pages/CreateProfileForm.ui.qml</file>
         <file>Home.qml</file>
-        <file>forms/HomeForm.ui.qml</file>
-        <file>forms/DayListForm.ui.qml</file>
+        <file>larva/features/HomeForm.ui.qml</file>
+        <file>larva/features/DayListForm.ui.qml</file>
         <file>TaskList.qml</file>
-        <file>forms/TaskListForm.ui.qml</file>
-        <file>forms/TaskForm.ui.qml</file>
+        <file>TaskDetails.qml</file>
+        <file>larva/features/TaskListForm.ui.qml</file>
+        <file>larva/features/TaskForm.ui.qml</file>
         <file>assets/photo_camera_24px.svg</file>
         <file>assets/menu-24px.svg</file>
         <file>assets/check-box-outline-24px.svg</file>
@@ -33,7 +34,6 @@
         <file>assets/user-24px.svg</file>
         <file>qtquickcontrols2.conf</file>
         <file>larva/features/EnterPasswordForm.ui.qml</file>
-        <file>larva/features/HomeForm.ui.qml</file>
         <file>assets/arrow-back-24px.svg</file>
         <file>onboarding-1.png</file>
         <file>larva/features/ProfileForm.ui.qml</file>
