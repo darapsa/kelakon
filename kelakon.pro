@@ -6,7 +6,10 @@ SOURCES += \
 	controller.cxx \
 	main.cxx
 
-RESOURCES += kelakon.qrc
+RESOURCES += \
+	kelakon.qrc \
+	larva.qrc \
+	larva/material-design-icons.qrc
 
 INCLUDEPATH += \
 	$$PWD/qrtclient \

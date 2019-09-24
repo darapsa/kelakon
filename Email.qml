@@ -1,14 +1,9 @@
 import QtQuick 2.12
 import KelakonUser 0.1
-import "pages"
+import "larva/features"
 
 EmailForm {
-	backButton {
-        icon.source: "assets/arrow-back-24px.svg"
-		onClicked: pageView.pop()
-	}
-
-    emailImage.source: "assets/email-24px.svg"
+	backButton.onClicked: pageView.pop()
 
 	emailTextField.onTextChanged: {
 		if (!emailTextField.text || !loginButton.enabled)

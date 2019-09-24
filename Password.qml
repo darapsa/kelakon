@@ -1,14 +1,9 @@
 import QtQuick 2.12
 import KelakonUser 0.1
-import "pages"
+import "larva/features"
 
 PasswordForm {
-	backButton {
-        icon.source: "assets/arrow-back-24px.svg"
-		onClicked: pageView.pop()
-	}
-
-    passImage.source: "assets/lock-24px.svg"
+	backButton.onClicked: pageView.pop()
 	emailAddressLabel.text: User.name
 
 	passTextField.onTextChanged: {

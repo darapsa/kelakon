@@ -1,15 +1,10 @@
 import QtQuick 2.12
 import KelakonUser 0.1
-import "pages"
+import "larva/features"
 
 PasswordForm {
-	backButton {
-		icon.source: "../assets/arrow-back-24px.svg"
-		onClicked: pageView.pop()
-	}
-
+	backButton.onClicked: pageView.pop()
 	userEmail.y: 292
-	passImage.source: "../assets/lock-24px.svg"
 	instructionLabel.text: qsTr("Re-Enter password")
 	emailAddressLabel.text: User.name
 

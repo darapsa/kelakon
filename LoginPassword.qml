@@ -8,11 +8,8 @@ LoginPasswordForm {
 		if (!passwordTextField.text || !continueButton.enabled)
 			continueButton.enabled = !continueButton.enabled
 
-	continueButton {
-		icon.source: "assets/arrow-forward-24px.svg"
-		onClicked: {
+	continueButton.onClicked: {
 			User.password = passwordTextField.text
 			onboarding.logIn(User.name, User.password)
 		}
-	}
 }
