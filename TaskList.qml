@@ -1,5 +1,5 @@
 import QtQuick 2.12
-import "forms"
+import "larva/features"
 
 TaskListForm {
 	listView {
