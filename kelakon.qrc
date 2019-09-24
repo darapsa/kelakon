@@ -22,6 +22,7 @@
         <file>forms/HomeForm.ui.qml</file>
         <file>forms/DayListForm.ui.qml</file>
         <file>TaskList.qml</file>
+        <file>TaskDetails.qml</file>
         <file>forms/TaskListForm.ui.qml</file>
         <file>forms/TaskForm.ui.qml</file>
         <file>assets/photo_camera_24px.svg</file>

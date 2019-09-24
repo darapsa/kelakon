@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 GridLayout {
     property alias task: task
     property alias taskTitle: taskTitle
+    property alias itemDelegate: itemDelegate
 
     id: task
     height: 72

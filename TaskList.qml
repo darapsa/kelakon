@@ -1,5 +1,4 @@
 import QtQuick 2.12
-import QtQuick.Controls 2.12
 import "forms"
 
 TaskListForm {
@@ -9,13 +8,8 @@ TaskListForm {
 		delegate: TaskForm {
 			width: parent.width
 			height: task.height
-            taskTitle.text: subject
+			taskTitle.text: subject
+			itemDelegate.onClicked: contentView.push("TaskDetails.qml")
 		}
 	}
 }
-
-/*##^##
-Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
-##^##*/
