@@ -40,7 +40,6 @@
         <file>assets/email-24px.svg</file>
         <file>assets/lock-24px.svg</file>
         <file>larva/features/ProfileEditForm.ui.qml</file>
-        <file>larva/features/TaskDetail.qml</file>
         <file>larva/features/TaskDetailForm.ui.qml</file>
     </qresource>
 </RCC>
