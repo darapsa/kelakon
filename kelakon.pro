@@ -39,6 +39,9 @@ android {
 	QT += svg
 	DISTFILES += android/AndroidManifest.xml
 	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
+	certs.path = /assets/certs
+	certs.files = /etc/ssl/certs/ca-certificates.crt
+	INSTALLS += certs
 }
 
 debug: DEFINES += DEBUG

@@ -1,3 +1,6 @@
+#ifdef ANDROID
+#include <QStringBuilder>
+#endif
 #include <QQmlApplicationEngine>
 #include <QtQml>
 #include <qrtclient/client.hxx>
@@ -6,7 +9,19 @@
 
 Controller::Controller(QObject* parent) : QObject{parent}
 {
+#ifdef ANDROID
+	QFile file{"assets:/certs/ca-certificates.crt"};
+	file.copy(QDir{QStandardPaths::writableLocation
+		(QStandardPaths::AppDataLocation)}.absolutePath()
+		% "/ca-certificates.crt");
+	auto path = QDir{QStandardPaths::writableLocation
+		(QStandardPaths::AppDataLocation)}.absolutePath()
+		% "/ca-certificates.crt";
+	auto client = new RTClient::Client{"https://darapsa.co.id/rt"
+		, path.toLatin1().constData()};
+#else
 	auto client = new RTClient::Client{"https://darapsa.co.id/rt"};
+#endif
 	client->moveToThread(&thread);
 	connect(&thread, &QThread::finished, client, &QObject::deleteLater);
 
