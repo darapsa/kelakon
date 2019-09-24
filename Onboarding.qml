@@ -10,6 +10,7 @@ OnboardingForm {
 
 	objectName: "onboarding"
 	logoImage.source: "kelakon-logo.png"
+	onboardingImage.source: "onboarding-1.png"
 	registerButton.onClicked: pageView.push("Email.qml")
 	loginButton.onClicked: pageView.push("Login.qml")
 }

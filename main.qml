@@ -18,9 +18,7 @@ ApplicationWindow {
 		anchors.fill: parent
 		initialItem: Onboarding {
 			id: onboarding
-            logoImage.source: ("../kelakon-logo.png")
-            onboardingImage.source: ("../onboarding-1.png")
-            onboardingText1.text: qsTr("Get things done today, chill tomorrow.")
+			onboardingText1.text: qsTr("Get things done today, chill tomorrow.")
 		}
 	}
 }

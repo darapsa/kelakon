@@ -8,11 +8,8 @@ LoginEmailForm {
 			continueButton.enabled = !continueButton.enabled
 	}
 
-	continueButton {
-		icon.source: "assets/arrow-forward-24px.svg"
-		onClicked: {
+	continueButton.onClicked: {
 			User.name = emailTextField.text
 			contentView.push("LoginPassword.qml")
 		}
-	}
 }

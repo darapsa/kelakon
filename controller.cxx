@@ -10,13 +10,11 @@
 Controller::Controller(QObject* parent) : QObject{parent}
 {
 #ifdef ANDROID
+	QDir location{QStandardPaths::writableLocation
+		(QStandardPaths::AppDataLocation)};
+	QString path{location.absolutePath() % "/ca-certificates.crt"};
 	QFile file{"assets:/certs/ca-certificates.crt"};
-	file.copy(QDir{QStandardPaths::writableLocation
-		(QStandardPaths::AppDataLocation)}.absolutePath()
-		% "/ca-certificates.crt");
-	auto path = QDir{QStandardPaths::writableLocation
-		(QStandardPaths::AppDataLocation)}.absolutePath()
-		% "/ca-certificates.crt";
+	file.copy(path);
 	auto client = new RTClient::Client{"https://darapsa.co.id/rt"
 		, path.toLatin1().constData()};
 #else

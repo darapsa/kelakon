@@ -3,17 +3,8 @@ import QtQuick.Controls 2.12
 import "larva/features"
 
 HomeForm {
-	menuButton {
-		icon.source: "assets/menu-24px.svg"
-		onClicked: drawer.open()
-	}
-
-	titleLabel.text: contentView.currentItem.title
-
-	profileButton {
-		icon.source: "assets/profile-24px.svg"
-		onClicked: pageView.push("Profile.qml")
-	}
+	menuButton.onClicked: drawer.open()
+	profileButton.onClicked: pageView.push("Profile.qml")
 
 	Drawer {
 		id: drawer

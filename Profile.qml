@@ -15,7 +15,7 @@ Page {
             ToolButton {
                 id: backButton
                 icon.name: "back-button"
-                icon.source: "assets/arrow-back-24px.svg"
+                icon.source: "/components/icons/arrow-back-24px.svg"
                 highlighted: true
                 onClicked: {
                         pageView.pop()
