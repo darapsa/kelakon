@@ -13,6 +13,8 @@ PasswordForm {
 		onTextChanged:
 			if (passTextField.text == User.password)
 				createPassButton.enabled = true
+			else
+				createPassButton.enabled = false
 	}
 
 	createPassButton {
