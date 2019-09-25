@@ -10,7 +10,6 @@
 		<file>larva/features/TaskForm.ui.qml</file>
 		<file>larva/features/EnterPasswordForm.ui.qml</file>
 		<file>larva/features/ProfileForm.ui.qml</file>
-		<file>larva/features/ProfileEditForm.ui.qml</file>
 		<file>larva/features/TaskDetailForm.ui.qml</file>
 		<file>larva/features/EmailForm.ui.qml</file>
 		<file>larva/features/PasswordForm.ui.qml</file>
