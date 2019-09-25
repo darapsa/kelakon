@@ -9,7 +9,7 @@ TaskListForm {
 			width: parent.width
 			height: task.height
 			taskTitle.text: subject
-            itemDelegate.onClicked: pageView.push("TaskDetails.qml")
+			itemDelegate.onClicked: pageView.push("TaskDetails.qml")
 		}
 	}
 }
