@@ -10,6 +10,6 @@ LoginPasswordForm {
 
 	continueButton.onClicked: {
 			User.password = passwordTextField.text
-			onboarding.logIn(User.name, User.password)
+			window.logIn(User.name, User.password)
 		}
 }

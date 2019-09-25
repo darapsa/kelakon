@@ -26,7 +26,6 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto engine = static_cast<QQmlApplicationEngine*>(parent);
 	auto rootObjects = engine->rootObjects();
 	auto appWindow = rootObjects[0];
-	auto onboardingView = appWindow->findChild<QObject*>("onboarding");
 	using RTClient::User;
 	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"
 			, [](QQmlEngine *engine
@@ -39,7 +38,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	taskList = new RTClient::TicketList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
 
-	connect(onboardingView, SIGNAL(logIn(QString, QString))
+	connect(appWindow, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
 
 	connect(client, SIGNAL(loggedIn(QString))
@@ -56,9 +55,9 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	connect(client, SIGNAL(ticketSearched(rtclient_ticketlist*))
 			, taskList, SLOT(update(rtclient_ticketlist*)));
 
-	connect(taskList, SIGNAL(updated()), onboardingView, SLOT(pushHome()));
+	connect(taskList, SIGNAL(updated()), appWindow, SLOT(pushHome()));
 
-	connect(onboardingView, SIGNAL(ticketNew(QString, QString))
+	connect(appWindow, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
 
 	thread.start();

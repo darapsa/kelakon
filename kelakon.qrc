@@ -1,7 +1,6 @@
 <RCC>
 	<qresource prefix="/">
 		<file>main.qml</file>
-		<file>Onboarding.qml</file>
 		<file>Login.qml</file>
 		<file>LoginEmail.qml</file>
 		<file>LoginPassword.qml</file>

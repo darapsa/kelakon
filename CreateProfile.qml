@@ -9,7 +9,7 @@ CreateProfileForm {
 	startUsingKelakon.onClicked: {
 		User.name = userNameLabel.text
 		User.realName = enterFullName.text
-		onboarding.ticketNew("Kelakon", User.realName + " <"
+		window.ticketNew("Kelakon", User.realName + " <"
 			+ User.emailAddress + ">")
 	}
 }
