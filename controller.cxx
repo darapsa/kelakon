@@ -57,6 +57,9 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	connect(taskList, SIGNAL(updated()), appWindow, SLOT(pushHome()));
 
+	connect(appWindow, SIGNAL(ticketHistory(int))
+			, client, SLOT(ticketHistory(int)));
+
 	connect(appWindow, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
 
