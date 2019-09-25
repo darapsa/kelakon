@@ -6,7 +6,7 @@ PasswordForm {
 	backButton.onClicked: pageView.pop()
 	userEmail.y: 292
 	instructionLabel.text: qsTr("Re-Enter password")
-	emailAddressLabel.text: User.name
+	emailAddressLabel.text: User.emailAddress
 
 	passTextField {
 		placeholderText: qsTr("Re-enter Password")

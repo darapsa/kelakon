@@ -4,7 +4,7 @@ import "larva/features"
 
 PasswordForm {
 	backButton.onClicked: pageView.pop()
-	emailAddressLabel.text: User.name
+	emailAddressLabel.text: User.emailAddress
 
 	passTextField.onTextChanged: {
 		if (!passTextField.text || !createPassButton.enabled)
