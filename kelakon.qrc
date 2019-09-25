@@ -2,7 +2,6 @@
 	<qresource prefix="/">
 		<file>main.qml</file>
 		<file>Login.qml</file>
-		<file>LoginEmail.qml</file>
 		<file>LoginPassword.qml</file>
 		<file>Home.qml</file>
 		<file>TaskList.qml</file>
