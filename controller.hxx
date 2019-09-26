@@ -18,9 +18,6 @@ class Controller : public QObject
 		void checked(rtclient_user* user);
 		void checked(QString const& name);
 
-	private slots:
-		void check(rtclient_user* user);
-
 	private:
 		QThread thread;
 		RTClient::TicketList* taskList;

@@ -16,7 +16,8 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	QFile file{"assets:/certs/ca-certificates.crt"};
 	file.copy(path);
 #endif
-	auto client = new RTClient::Client{"https://darapsa.co.id/rt"
+	using RTClient::Client;
+	auto client = new Client{"https://darapsa.co.id/rt"
 #ifdef ANDROID
 		, path.toLatin1().constData()
 #endif
@@ -27,6 +28,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto engine = static_cast<QQmlApplicationEngine*>(parent);
 	auto rootObjects = engine->rootObjects();
 	auto appWindow = rootObjects[0];
+
 	using RTClient::User;
 	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"
 			, [](QQmlEngine *engine
@@ -36,27 +38,37 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			return new User;
 			});
 	auto user = engine->singletonInstance<User*>(typeId);
-	taskList = new RTClient::TicketList;
+
+	using RTClient::TicketList;
+	taskList = new TicketList;
 	engine->rootContext()->setContextProperty("taskList", taskList);
 
 	connect(appWindow, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
 
-	connect(client, SIGNAL(loggedIn(QString))
-			, client, SLOT(userShow(QString)));
+	connect(client, &Client::loggedIn
+			, client, static_cast<void (Client::*)(QString const&)>
+			(&Client::userShow));
 
-	connect(client, SIGNAL(userShown(rtclient_user*))
-			, this, SLOT(check(rtclient_user*)));
+	connect(client, &Client::userShown, [this](rtclient_user* user) {
+			if (user) {
+				emit checked(QString{user->name});
+				emit checked(user);
+			}
+		});
 
-	connect(this, SIGNAL(checked(rtclient_user*))
-			, user, SLOT(update(rtclient_user*)));
-	connect(this, SIGNAL(checked(QString))
-			, client, SLOT(ticketSearch(QString)));
+	connect(this, static_cast<void (Controller::*)(rtclient_user*)>
+			(&Controller::checked)
+			, user, &User::update);
+	connect(this, static_cast<void (Controller::*)(QString const&)>
+			(&Controller::checked)
+			, client, &Client::ticketSearch);
 
-	connect(client, SIGNAL(ticketSearched(rtclient_ticketlist*))
-			, taskList, SLOT(update(rtclient_ticketlist*)));
+	connect(client, &Client::ticketSearched, taskList, &TicketList::update);
 
-	connect(taskList, SIGNAL(updated()), appWindow, SLOT(pushHome()));
+	connect(taskList, &TicketList::updated, [appWindow]() {
+			QMetaObject::invokeMethod(appWindow, "pushHome");
+			});
 
 	connect(appWindow, SIGNAL(ticketHistory(int))
 			, client, SLOT(ticketHistory(int)));
@@ -65,14 +77,6 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			, client, SLOT(ticketNew(QString, QString)));
 
 	thread.start();
-}
-
-void Controller::check(rtclient_user* user)
-{
-	if (user) {
-		emit checked(QString{user->name});
-		emit checked(user);
-	}
 }
 
 Controller::~Controller()
