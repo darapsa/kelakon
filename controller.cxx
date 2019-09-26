@@ -10,16 +10,17 @@
 Controller::Controller(QObject* parent) : QObject{parent}
 {
 #ifdef ANDROID
-	QDir location{QStandardPaths::writableLocation
-		(QStandardPaths::AppDataLocation)};
+	QDir location{QStandardPaths::writableLocation(QStandardPaths
+			::AppDataLocation)};
 	QString path{location.absolutePath() % "/ca-certificates.crt"};
 	QFile file{"assets:/certs/ca-certificates.crt"};
 	file.copy(path);
-	auto client = new RTClient::Client{"https://darapsa.co.id/rt"
-		, path.toLatin1().constData()};
-#else
-	auto client = new RTClient::Client{"https://darapsa.co.id/rt"};
 #endif
+	auto client = new RTClient::Client{"https://darapsa.co.id/rt"
+#ifdef ANDROID
+		, path.toLatin1().constData()
+#endif
+	};
 	client->moveToThread(&thread);
 	connect(&thread, &QThread::finished, client, &QObject::deleteLater);
 
