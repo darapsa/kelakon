@@ -37,7 +37,7 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			Q_UNUSED(scriptEngine)
 			return new User;
 			});
-	auto user = engine->singletonInstance<User*>(typeId);
+	auto qUser = engine->singletonInstance<User*>(typeId);
 
 	using RTClient::TicketList;
 	taskList = new TicketList;
@@ -50,16 +50,13 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			, client, static_cast<void (Client::*)(QString const&)>
 			(&Client::userShow));
 
-	connect(client, &Client::userShown, [this](rtclient_user* user) {
+	connect(client, &Client::userShown, [this,qUser](rtclient_user* user) {
 			if (user) {
 				emit checked(QString{user->name});
-				emit checked(user);
+				qUser->update(user);
 			}
 		});
 
-	connect(this, static_cast<void (Controller::*)(rtclient_user*)>
-			(&Controller::checked)
-			, user, &User::update);
 	connect(this, static_cast<void (Controller::*)(QString const&)>
 			(&Controller::checked)
 			, client, &Client::ticketSearch);
