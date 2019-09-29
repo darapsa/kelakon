@@ -1,18 +1,19 @@
 <RCC>
-	<qresource prefix="/">
-		<file>larva/features/OnboardingForm.ui.qml</file>
-		<file>larva/features/LoginForm.ui.qml</file>
-		<file>larva/features/LoginEmailForm.ui.qml</file>
-		<file>larva/features/LoginPasswordForm.ui.qml</file>
-		<file>larva/features/HomeForm.ui.qml</file>
-		<file>larva/features/DayListForm.ui.qml</file>
-		<file>larva/features/TaskListForm.ui.qml</file>
-		<file>larva/features/TaskForm.ui.qml</file>
-		<file>larva/features/EnterPasswordForm.ui.qml</file>
-		<file>larva/features/ProfileForm.ui.qml</file>
-		<file>larva/features/TaskDetailForm.ui.qml</file>
-		<file>larva/features/EmailForm.ui.qml</file>
-		<file>larva/features/PasswordForm.ui.qml</file>
-		<file>larva/features/CreateProfileForm.ui.qml</file>
-	</qresource>
+    <qresource prefix="/">
+        <file>larva/features/OnboardingForm.ui.qml</file>
+        <file>larva/features/LoginForm.ui.qml</file>
+        <file>larva/features/LoginEmailForm.ui.qml</file>
+        <file>larva/features/LoginPasswordForm.ui.qml</file>
+        <file>larva/features/HomeForm.ui.qml</file>
+        <file>larva/features/DayListForm.ui.qml</file>
+        <file>larva/features/TaskListForm.ui.qml</file>
+        <file>larva/features/TaskForm.ui.qml</file>
+        <file>larva/features/EnterPasswordForm.ui.qml</file>
+        <file>larva/features/ProfileForm.ui.qml</file>
+        <file>larva/features/TaskDetailForm.ui.qml</file>
+        <file>larva/features/EmailForm.ui.qml</file>
+        <file>larva/features/PasswordForm.ui.qml</file>
+        <file>larva/features/CreateProfileForm.ui.qml</file>
+        <file>larva/features/TaskBriefForm.ui.qml</file>
+    </qresource>
 </RCC>
