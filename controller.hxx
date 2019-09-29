@@ -15,7 +15,6 @@ class Controller : public QObject
 		~Controller();
 
 	signals:
-		void checked(rtclient_user* user);
 		void checked(QString const& name);
 
 	private:
