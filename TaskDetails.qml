@@ -5,6 +5,7 @@ import QtQuick.Layouts 1.12
 import "larva/features"
 
 TaskDetailForm {
+    property string subject
     backButton.onClicked: pageView.pop()
 
     StackView {
