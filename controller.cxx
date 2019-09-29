@@ -63,8 +63,12 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	connect(client, &Client::ticketSearched, taskList, &TicketList::update);
 
-	connect(taskList, &TicketList::updated, [appWindow]() {
-			QMetaObject::invokeMethod(appWindow, "pushHome");
+	connect(client, &Client::loggedIn, [appWindow,this]() {
+			auto loginView = appWindow->findChild<QObject*>("login");
+			connect(taskList, &TicketList::updated, [loginView]() {
+					QMetaObject::invokeMethod(loginView
+							, "pushHome");
+					});
 			});
 
 	connect(appWindow, SIGNAL(ticketHistory(int))
