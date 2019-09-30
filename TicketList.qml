@@ -8,7 +8,10 @@ TaskListForm {
 			width: parent.width
 			height: task.height
 			taskTitle.text: subject
-			itemDelegate.onClicked: window.ticketHistory(id)
+			itemDelegate.onClicked: {
+				window.ticketId(id)
+				window.ticketSubject(subject)
+			}
 		}
 	}
 }

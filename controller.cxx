@@ -1,3 +1,4 @@
+#include <QDebug>
 #ifdef ANDROID
 #include <QStringBuilder>
 #endif
@@ -7,7 +8,9 @@
 #include <qrtclient/user.hxx>
 #include "controller.hxx"
 
-Controller::Controller(QObject* parent) : QObject{parent}
+Controller::Controller(QObject* parent)
+	: QObject{parent}
+	, m_ticketSubject{""}
 {
 #ifdef ANDROID
 	QDir location{QStandardPaths::writableLocation(QStandardPaths
@@ -63,42 +66,43 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	connect(client, &Client::searchedTicket, ticketList, &TicketList::update);
 
-	auto ticketHistory = [appWindow,this,&client]() {
-		auto homeView = appWindow->findChild<QObject*>("home");
-		connect(client, &Client::gotTicketHistory, [homeView]
-				(rtclient_ticket_history_list* list) {
-				auto history = list->histories[list->length - 1];
-				QMetaObject::invokeMethod(homeView
-						, "ticketHistory"
-						, Q_ARG(QString
-							, QString{history
-							->description})
-						, Q_ARG(QString
-							, QString{history
-							->content})
-						, Q_ARG(QString
-							, QString{history
-							->creator}));
-				});
-	};
-
-	connect(client, &Client::loggedIn, [appWindow,this,ticketHistory]() {
+	connect(client, &Client::loggedIn, [appWindow,this]() {
 			auto loginView = appWindow->findChild<QObject*>("login");
-			connect(ticketList, &TicketList::updated
-					, [loginView,this,ticketHistory]() {
+			connect(ticketList, &TicketList::updated, [loginView]() {
 					QMetaObject::invokeMethod(loginView
 							, "pushHome");
-					ticketHistory();
-					});
+				});
 		});
 
-	connect(appWindow, SIGNAL(ticketHistory(int))
+	connect(appWindow, SIGNAL(ticketId(int))
 			, client, SLOT(ticketHistory(int)));
+
+	connect(appWindow, SIGNAL(ticketSubject(QString))
+			, this, SLOT(setTicketSubject(QString)));
+	
+	connect(client, &Client::gotTicketHistory
+			, [appWindow,this](rtclient_ticket_history_list* list) {
+			auto history = list->histories[list->length - 1];
+			QMetaObject::invokeMethod(appWindow, "ticketHistory"
+					, Q_ARG(QVariant, m_ticketSubject)
+					, Q_ARG(QVariant
+						, QString{history->description})
+					, Q_ARG(QVariant
+						, QString{history->content})
+					, Q_ARG(QVariant
+						, QString{history->creator}));
+		});
 
 	connect(appWindow, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
 
 	thread.start();
+}
+
+void Controller::setTicketSubject(QString const& subject)
+{
+	qDebug() << "Subject: " << subject;
+	if (m_ticketSubject != subject) m_ticketSubject = subject;
 }
 
 Controller::~Controller()

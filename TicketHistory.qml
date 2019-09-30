@@ -51,7 +51,7 @@ TaskDetailForm {
 			anchors.leftMargin: 0
 			anchors.top: separator.bottom
 			anchors.topMargin: 8
-			creator.text: creator
+			creatorText.text: creator
 			ticketDescription.text: content
 		}
 	}

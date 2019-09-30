@@ -4,8 +4,17 @@ import "larva/features"
 
 ApplicationWindow {
 	signal logIn(string name, string password)
-	signal ticketHistory(int id)
+	signal ticketId(int id)
+	signal ticketSubject(string subject)
 	signal ticketNew(string queue, string requestor)
+	function ticketHistory(subject, description, content, creator) {
+		pageView.push("TicketHistory.qml", {
+			"subject": subject
+			, "description": description
+			, "content": content
+			, "creator": creator
+		})
+	}
 
 	id: window
 	visible: true
