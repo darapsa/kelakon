@@ -19,7 +19,7 @@ class Controller : public QObject
 
 	private:
 		QThread thread;
-		RTClient::TicketList* taskList;
+		RTClient::TicketList* ticketList;
 };
 
 #endif // CONTROLLER_HXX

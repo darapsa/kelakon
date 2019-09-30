@@ -33,15 +33,15 @@ Controller::Controller(QObject* parent) : QObject{parent}
 	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"
 			, [](QQmlEngine *engine
 				, QJSEngine *scriptEngine) -> QObject* {
-			Q_UNUSED(engine)
-			Q_UNUSED(scriptEngine)
-			return new User;
+				Q_UNUSED(engine)
+				Q_UNUSED(scriptEngine)
+				return new User;
 			});
 	auto qUser = engine->singletonInstance<User*>(typeId);
 
 	using RTClient::TicketList;
-	taskList = new TicketList;
-	engine->rootContext()->setContextProperty("taskList", taskList);
+	ticketList = new TicketList;
+	engine->rootContext()->setContextProperty("ticketList", ticketList);
 
 	connect(appWindow, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
@@ -61,11 +61,11 @@ Controller::Controller(QObject* parent) : QObject{parent}
 			(&Controller::checked)
 			, client, &Client::ticketSearch);
 
-	connect(client, &Client::ticketSearched, taskList, &TicketList::update);
+	connect(client, &Client::ticketSearched, ticketList, &TicketList::update);
 
 	connect(client, &Client::loggedIn, [appWindow,this]() {
 			auto loginView = appWindow->findChild<QObject*>("login");
-			connect(taskList, &TicketList::updated, [loginView]() {
+			connect(ticketList, &TicketList::updated, [loginView]() {
 					QMetaObject::invokeMethod(loginView
 							, "pushHome");
 					});
@@ -84,5 +84,5 @@ Controller::~Controller()
 {
 	thread.quit();
 	thread.wait();
-	delete taskList;
+	delete ticketList;
 }

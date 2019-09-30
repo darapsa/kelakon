@@ -3,15 +3,14 @@ import "larva/features"
 
 TaskListForm {
 	listView {
-		objectName: "taskList"
-		model: taskList
+		model: ticketList
 		delegate: TaskForm {
 			width: parent.width
 			height: task.height
 			taskTitle.text: subject
 			itemDelegate.onClicked: {
 				window.ticketHistory(id)
-				pageView.push("TaskDetails.qml"
+				pageView.push("TicketDetails.qml"
 					, {"subject": subject})
 			}
 		}

@@ -16,9 +16,9 @@ HomeForm {
 			todayItemDelegate {
 				text: qsTr("Today")
 				onClicked: {
-					contentView.push("TaskList.qml")
-					var taskList = contentView.currentItem
-					taskList.title = qsTr("Today")
+					contentView.push("TicketList.qml")
+					var ticketList = contentView.currentItem
+					ticketList.title = qsTr("Today")
 					drawer.close()
 				}
 			}
@@ -26,16 +26,16 @@ HomeForm {
 			futureItemDelegate {
 				text:qsTr("Future")
 				onClicked: {
-					contentView.push("TaskList.qml")
-					var taskList = contentView.currentItem
-					taskList.title = qsTr("Future task")
+					contentView.push("TicketList.qml")
+					var ticketList = contentView.currentItem
+					ticketList.title = qsTr("Future ticket")
 					drawer.close()
 				}
 			}
 		}
 	}
 
-	contentView.initialItem: TaskList {
+	contentView.initialItem: TicketList {
 		title: qsTr("Today")
 	}
 }

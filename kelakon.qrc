@@ -4,8 +4,8 @@
 		<file>Login.qml</file>
 		<file>LoginPassword.qml</file>
 		<file>Home.qml</file>
-		<file>TaskList.qml</file>
-		<file>TaskDetails.qml</file>
+		<file>TicketList.qml</file>
+		<file>TicketDetails.qml</file>
 		<file>Profile.qml</file>
 		<file>Email.qml</file>
 		<file>Password.qml</file>
