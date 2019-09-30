@@ -16,5 +16,6 @@
         <file>larva/features/CreateProfileForm.ui.qml</file>
         <file>larva/features/TaskBriefForm.ui.qml</file>
         <file>larva/features/TaskHistoryForm.ui.qml</file>
+        <file>larva/features/TicketAttachmentForm.ui.qml</file>
     </qresource>
 </RCC>
