@@ -3,6 +3,16 @@ import QtQuick.Controls 2.12
 import "larva/features"
 
 HomeForm {
+	objectName: "home"
+	function ticketHistory(description, content, creator) {
+					pageView.push("TicketHistory.qml", {
+						"subject": subject
+						, "description": description
+						, "content": content
+						, "creator": creator
+					})
+	}
+
 	menuButton.onClicked: drawer.open()
 	profileButton.onClicked: pageView.push("Profile.qml")
 

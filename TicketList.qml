@@ -8,11 +8,7 @@ TaskListForm {
 			width: parent.width
 			height: task.height
 			taskTitle.text: subject
-			itemDelegate.onClicked: {
-				window.ticketHistory(id)
-				pageView.push("TicketDetails.qml"
-					, {"subject": subject})
-			}
+			itemDelegate.onClicked: window.ticketHistory(id)
 		}
 	}
 }

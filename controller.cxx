@@ -63,13 +63,34 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	connect(client, &Client::searchedTicket, ticketList, &TicketList::update);
 
-	connect(client, &Client::loggedIn, [appWindow,this]() {
+	auto ticketHistory = [appWindow,this,&client]() {
+		auto homeView = appWindow->findChild<QObject*>("home");
+		connect(client, &Client::gotTicketHistory, [homeView]
+				(rtclient_ticket_history_list* list) {
+				auto history = list->histories[list->length - 1];
+				QMetaObject::invokeMethod(homeView
+						, "ticketHistory"
+						, Q_ARG(QString
+							, QString{history
+							->description})
+						, Q_ARG(QString
+							, QString{history
+							->content})
+						, Q_ARG(QString
+							, QString{history
+							->creator}));
+				});
+	};
+
+	connect(client, &Client::loggedIn, [appWindow,this,ticketHistory]() {
 			auto loginView = appWindow->findChild<QObject*>("login");
-			connect(ticketList, &TicketList::updated, [loginView]() {
+			connect(ticketList, &TicketList::updated
+					, [loginView,this,ticketHistory]() {
 					QMetaObject::invokeMethod(loginView
 							, "pushHome");
+					ticketHistory();
 					});
-			});
+		});
 
 	connect(appWindow, SIGNAL(ticketHistory(int))
 			, client, SLOT(ticketHistory(int)));

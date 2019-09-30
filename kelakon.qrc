@@ -5,7 +5,7 @@
 		<file>LoginPassword.qml</file>
 		<file>Home.qml</file>
 		<file>TicketList.qml</file>
-		<file>TicketDetails.qml</file>
+		<file>TicketHistory.qml</file>
 		<file>Profile.qml</file>
 		<file>Email.qml</file>
 		<file>Password.qml</file>
