@@ -59,9 +59,9 @@ Controller::Controller(QObject* parent) : QObject{parent}
 
 	connect(this, static_cast<void (Controller::*)(QString const&)>
 			(&Controller::checked)
-			, client, &Client::ticketSearch);
+			, client, &Client::searchTicket);
 
-	connect(client, &Client::ticketSearched, ticketList, &TicketList::update);
+	connect(client, &Client::searchedTicket, ticketList, &TicketList::update);
 
 	connect(client, &Client::loggedIn, [appWindow,this]() {
 			auto loginView = appWindow->findChild<QObject*>("login");
