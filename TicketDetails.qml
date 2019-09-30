@@ -11,6 +11,9 @@ TaskDetailForm {
 	StackView {
 		id: contentView
 		anchors.fill: parent
+        background: Rectangle {
+            color: "#FFFFFF"
+        }
 
 		TaskBriefForm {
 			id: ticketBriefForm
@@ -32,7 +35,7 @@ TaskDetailForm {
             anchors.left: parent.left
             anchors.leftMargin: 16
             anchors.top: ticketBriefForm.bottom
-            anchors.topMargin: 16
+            anchors.topMargin: 8
         }
 
 		TaskHistoryForm {
@@ -41,7 +44,7 @@ TaskDetailForm {
 			anchors.left: parent.left
 			anchors.leftMargin: 0
             anchors.top: separator.bottom
-            anchors.topMargin: 16
+            anchors.topMargin: 8
         }
     }
 }
