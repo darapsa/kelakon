@@ -1,4 +1,3 @@
-#include <QDebug>
 #ifdef ANDROID
 #include <QStringBuilder>
 #endif
@@ -101,7 +100,6 @@ Controller::Controller(QObject* parent)
 
 void Controller::setTicketSubject(QString const& subject)
 {
-	qDebug() << "Subject: " << subject;
 	if (m_ticketSubject != subject) m_ticketSubject = subject;
 }
 
