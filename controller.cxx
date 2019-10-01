@@ -79,7 +79,7 @@ Controller::Controller(QObject* parent)
 	
 	connect(client, &Client::gotTicketHistory
 			, [appWindow,this](rtclient_ticket_history_list* list) {
-			auto history = list->histories[list->length - 1];
+			auto history = list->histories[0];
 			QMetaObject::invokeMethod(appWindow, "ticketHistory"
 					, Q_ARG(QVariant, m_ticketSubject)
 					, Q_ARG(QVariant
