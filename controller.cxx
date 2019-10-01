@@ -83,11 +83,12 @@ Controller::Controller(QObject* parent)
 			QMetaObject::invokeMethod(appWindow, "ticketHistory"
 					, Q_ARG(QVariant, m_ticketSubject)
 					, Q_ARG(QVariant
-						, QString{history->description})
-					, Q_ARG(QVariant
 						, QString{history->content})
 					, Q_ARG(QVariant
-						, QString{history->creator}));
+						, QString{history->creator})
+					, Q_ARG(QVariant
+						, QString{asctime(history
+								->created)}));
 		});
 
 	connect(appWindow, SIGNAL(ticketNew(QString, QString))

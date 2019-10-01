@@ -7,12 +7,12 @@ ApplicationWindow {
 	signal ticketId(int id)
 	signal ticketSubject(string subject)
 	signal ticketNew(string queue, string requestor)
-	function ticketHistory(subject, description, content, creator) {
+	function ticketHistory(subject, content, creator, created) {
 		pageView.push("TicketHistory.qml", {
 			"subject": subject
-			, "description": description
 			, "content": content
 			, "creator": creator
+			, "created": created
 		})
 	}
 

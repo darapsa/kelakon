@@ -5,9 +5,9 @@ import "larva/features"
 
 TaskDetailForm {
 	property string subject
-	property string description
 	property string content
 	property string creator
+	property string created
 
 	backButton.onClicked: pageView.pop()
 
@@ -28,7 +28,6 @@ TaskDetailForm {
 			anchors.leftMargin: 0
 			ticketSubject.text: subject
 			ticketCreator.text: creator
-			ticketCreatedText.text: description
 		}
 
 		Label {
@@ -53,6 +52,7 @@ TaskDetailForm {
 			anchors.topMargin: 8
 			creatorText.text: creator
 			ticketDescription.text: content
+			ticketDate.text: created
 		}
 	}
 }
