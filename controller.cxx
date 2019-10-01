@@ -59,9 +59,7 @@ Controller::Controller(QObject* parent)
 			}
 		});
 
-	connect(this, static_cast<void (Controller::*)(QString const&)>
-			(&Controller::checked)
-			, client, &Client::searchTicket);
+	connect(this, &Controller::checked, client, &Client::searchTicket);
 
 	connect(client, &Client::searchedTicket, ticketList, &TicketList::update);
 
