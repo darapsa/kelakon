@@ -4,7 +4,7 @@ import "larva/features"
 
 ApplicationWindow {
 	signal logIn(string name, string password)
-	signal ticketHistory(int id)
+	signal ticketHistory(int id, bool longFormat)
 	signal ticketNew(string queue, string requestor)
 
 	id: window

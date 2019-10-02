@@ -75,8 +75,8 @@ Controller::Controller(QObject* parent)
 				});
 		});
 
-	connect(appWindow, SIGNAL(ticketHistory(int))
-			, client, SLOT(ticketHistory(int)));
+	connect(appWindow, SIGNAL(ticketHistory(int, bool))
+			, client, SLOT(ticketHistory(int, bool)));
 
 	connect(client, &Client::gotTicketHistory
 			, ticketHistoryList, &TicketHistoryList::update);
