@@ -89,6 +89,7 @@ Controller::Controller(QObject* parent)
 					, Q_ARG(QVariant
 						, QString{asctime(history
 								->created)}));
+			rtclient_ticket_history_list_free(list);
 		});
 
 	connect(appWindow, SIGNAL(ticketNew(QString, QString))
