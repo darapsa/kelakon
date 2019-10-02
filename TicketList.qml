@@ -9,8 +9,9 @@ TaskListForm {
 			height: task.height
 			taskTitle.text: subject
 			itemDelegate.onClicked: {
-				window.ticketId(id)
-				window.ticketSubject(subject)
+				window.ticketHistory(id)
+				pageView.push("TicketHistory.qml"
+						, {"subject": subject})
 			}
 		}
 	}

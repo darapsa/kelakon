@@ -9,7 +9,6 @@
 
 Controller::Controller(QObject* parent)
 	: QObject{parent}
-	, m_ticketSubject{""}
 {
 #ifdef ANDROID
 	QDir location{QStandardPaths::writableLocation(QStandardPaths
@@ -45,6 +44,11 @@ Controller::Controller(QObject* parent)
 	ticketList = new TicketList;
 	engine->rootContext()->setContextProperty("ticketList", ticketList);
 
+	using RTClient::TicketHistoryList;
+	ticketHistoryList = new TicketHistoryList;
+	engine->rootContext()->setContextProperty("ticketHistoryList"
+			, ticketHistoryList);
+
 	connect(appWindow, SIGNAL(logIn(QString, QString))
 			, client, SLOT(logIn(QString, QString)));
 
@@ -71,36 +75,16 @@ Controller::Controller(QObject* parent)
 				});
 		});
 
-	connect(appWindow, SIGNAL(ticketId(int))
+	connect(appWindow, SIGNAL(ticketHistory(int))
 			, client, SLOT(ticketHistory(int)));
 
-	connect(appWindow, SIGNAL(ticketSubject(QString))
-			, this, SLOT(setTicketSubject(QString)));
-	
 	connect(client, &Client::gotTicketHistory
-			, [appWindow,this](rtclient_ticket_history_list* list) {
-			auto history = list->histories[0];
-			QMetaObject::invokeMethod(appWindow, "ticketHistory"
-					, Q_ARG(QVariant, m_ticketSubject)
-					, Q_ARG(QVariant
-						, QString{history->content})
-					, Q_ARG(QVariant
-						, QString{history->creator})
-					, Q_ARG(QVariant
-						, QString{asctime(history
-								->created)}));
-			rtclient_ticket_history_list_free(list);
-		});
+			, ticketHistoryList, &TicketHistoryList::update);
 
 	connect(appWindow, SIGNAL(ticketNew(QString, QString))
 			, client, SLOT(ticketNew(QString, QString)));
 
 	thread.start();
-}
-
-void Controller::setTicketSubject(QString const& subject)
-{
-	if (m_ticketSubject != subject) m_ticketSubject = subject;
 }
 
 Controller::~Controller()

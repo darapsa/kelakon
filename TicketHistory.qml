@@ -5,54 +5,21 @@ import "larva/features"
 
 TaskDetailForm {
 	property string subject
-	property string content
-	property string creator
-	property string created
 
 	backButton.onClicked: pageView.pop()
 
-	StackView {
-		id: contentView
-		anchors.fill: parent
-		background: Rectangle {
-			color: "#FFFFFF"
-		}
+	ticketBriefForm {
+		ticketSubject.text: subject
+//		ticketCreator.text: creator
+	}
 
-		TaskBriefForm {
-			id: ticketBriefForm
-			anchors.top: parent.top
-			anchors.topMargin: 0
-			anchors.right: parent.right
-			anchors.rightMargin: 0
-			anchors.left: parent.left
-			anchors.leftMargin: 0
-			ticketSubject.text: subject
-			ticketCreator.text: creator
-		}
-
-		Label {
-			id: separator
-			color: "#000000"
-			text: qsTr("Activities")
-			font.weight: Font.Medium
-			font.pixelSize: 16
-			font.family: "Work Sans"
-			anchors.left: parent.left
-			anchors.leftMargin: 16
-			anchors.top: ticketBriefForm.bottom
-			anchors.topMargin: 8
-		}
-
-		TaskHistoryForm {
-			anchors.right: parent.right
-			anchors.rightMargin: 0
-			anchors.left: parent.left
-			anchors.leftMargin: 0
-			anchors.top: separator.bottom
-			anchors.topMargin: 8
+	listView {
+		model: ticketHistoryList
+		delegate: TaskHistoryForm {
 			creatorText.text: creator
 			ticketDescription.text: content
 			ticketDate.text: created
 		}
 	}
+
 }
