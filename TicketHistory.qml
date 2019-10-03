@@ -14,6 +14,7 @@ TaskDetailForm {
 	}
 
 	listView {
+		height: 1000
 		model: ticketHistoryList
 		delegate: TaskHistoryForm {
 			creatorText.text: creator
