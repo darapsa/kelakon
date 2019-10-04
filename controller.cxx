@@ -91,5 +91,6 @@ Controller::~Controller()
 {
 	thread.quit();
 	thread.wait();
+	delete ticketHistoryList;
 	delete ticketList;
 }
