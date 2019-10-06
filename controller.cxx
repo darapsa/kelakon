@@ -56,20 +56,18 @@ Controller::Controller(QObject* parent)
 			, client, static_cast<void (Client::*)(QString const&)>
 			(&Client::userShow));
 
-	connect(client, &Client::userShown, [this,qUser](rtclient_user* user) {
+	connect(client, &Client::userShown
+			, [this,qUser,appWindow](rtclient_user* user) {
 			if (user) {
 				emit checked(QString{user->name});
 				qUser->update(user);
+				QMetaObject::invokeMethod(appWindow, "pushHome");
 			}
 		});
 
 	connect(this, &Controller::checked, client, &Client::searchTicket);
 
 	connect(client, &Client::searchedTicket, ticketList, &TicketList::update);
-
-	connect(ticketList, &TicketList::updated, [appWindow]() {
-			QMetaObject::invokeMethod(appWindow, "pushHome");
-		});
 
 	connect(appWindow, SIGNAL(ticketHistory(int, bool))
 			, client, SLOT(ticketHistory(int, bool)));
