@@ -6,6 +6,9 @@ ApplicationWindow {
 	signal logIn(string name, string password)
 	signal ticketHistory(int id, bool longFormat)
 	signal ticketNew(string queue, string requestor)
+	function pushHome() {
+		pageView.push("Home.qml")
+	}
 
 	id: window
 	visible: true
