@@ -18,7 +18,7 @@ Controller::Controller(QObject* parent)
 	file.copy(path);
 #endif
 	using RTClient::Client;
-	auto client = new Client{"https://darapsa.co.id/rt"
+	auto client = new Client{"https://rt.darapsa.co.id"
 #ifdef ANDROID
 		, path.toLatin1().constData()
 #endif
