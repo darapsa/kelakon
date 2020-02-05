@@ -1,6 +1,6 @@
 [submodule "qrtclient"]
 	path = qrtclient
-	url = git@github.com:darapsa/qrtclient.git
+	url = git://darapsa.co.id/qrtclient.git
 [submodule "larva"]
 	path = larva
-	url = git@github.com:darapsa/larva.git
+	url = git://darapsa.co.id/larva.git
