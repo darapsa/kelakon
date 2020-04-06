@@ -26,7 +26,8 @@ if (ANDROID)
 			/usr/local/aarch64-linux-android/sysroot/usr/lib/libssl.so
 			/usr/local/aarch64-linux-android/sysroot/usr/lib/libcurl.so
 			/usr/local/aarch64-linux-android/sysroot/usr/lib/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_arm64-v8a.so)
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_arm64-v8a.so
+			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "armeabi-v7a")
 		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/arm-linux-androideabi/sysroot/usr/lib)
 		target_link_libraries(${PROJECT_NAME} qrtclient_armeabi-v7a)
@@ -35,7 +36,8 @@ if (ANDROID)
 			/usr/local/arm-linux-androideabi/sysroot/usr/lib/libssl.so
 			/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcurl.so
 			/usr/local/arm-linux-androideabi/sysroot/usr/lib/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_armeabi-v7a.so)
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_armeabi-v7a.so
+			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "x86")
 		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/i686-linux-android/sysroot/usr/lib)
 		target_link_libraries(${PROJECT_NAME} qrtclient_x86)
@@ -44,7 +46,8 @@ if (ANDROID)
 			/usr/local/i686-linux-android/sysroot/usr/lib/libssl.so
 			/usr/local/i686-linux-android/sysroot/usr/lib/libcurl.so
 			/usr/local/i686-linux-android/sysroot/usr/lib/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86.so)
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86.so
+			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "x86_64")
 		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/x86_64-linux-android/sysroot/usr/lib64)
 		target_link_libraries(${PROJECT_NAME} qrtclient_x86_64)
@@ -53,7 +56,8 @@ if (ANDROID)
 			/usr/local/x86_64-linux-android/sysroot/usr/lib64/libssl.so
 			/usr/local/x86_64-linux-android/sysroot/usr/lib64/libcurl.so
 			/usr/local/x86_64-linux-android/sysroot/usr/lib64/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86_64.so)
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86_64.so
+			CACHE INTERNAL "")
 	endif()
 else()
 	add_executable(${PROJECT_NAME}
