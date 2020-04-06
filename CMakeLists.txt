@@ -8,7 +8,6 @@ set(CMAKE_AUTORCC ON)
 find_package(Qt5 COMPONENTS Core Quick REQUIRED)
 
 if (ANDROID)
-	set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
 	add_library(${PROJECT_NAME} SHARED
 		controller.hxx
 		controller.cxx
@@ -17,46 +16,42 @@ if (ANDROID)
 		larva.qrc
 		larva/material-design-icons.qrc
 		)
-	target_link_directories(${PROJECT_NAME} PRIVATE /opt/Qt5.14.1/5.14.1/android/lib)
+	target_link_directories(${PROJECT_NAME} PRIVATE
+		${CMAKE_SYSROOT}/usr/lib/${ANDROID_TOOLCHAIN_NAME}/${ANDROID_NATIVE_API_LEVEL}
+		/opt/Qt5.14.1/5.14.1/android/lib)
+	target_link_libraries(${PROJECT_NAME} qrtclient_${ANDROID_ABI})
+	set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
 	if (ANDROID_ABI STREQUAL "arm64-v8a")
-		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/aarch64-linux-android/sysroot/usr/lib)
-		target_link_libraries(${PROJECT_NAME} qrtclient_arm64-v8a)
 		set(ANDROID_EXTRA_LIBS
-			/usr/local/aarch64-linux-android/sysroot/usr/lib/libcrypto.so
-			/usr/local/aarch64-linux-android/sysroot/usr/lib/libssl.so
-			/usr/local/aarch64-linux-android/sysroot/usr/lib/libcurl.so
-			/usr/local/aarch64-linux-android/sysroot/usr/lib/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_arm64-v8a.so
+			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcrypto.so
+			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libssl.so
+			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
+			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "armeabi-v7a")
-		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/arm-linux-androideabi/sysroot/usr/lib)
-		target_link_libraries(${PROJECT_NAME} qrtclient_armeabi-v7a)
 		set(ANDROID_EXTRA_LIBS
-			/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcrypto.so
-			/usr/local/arm-linux-androideabi/sysroot/usr/lib/libssl.so
-			/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcurl.so
-			/usr/local/arm-linux-androideabi/sysroot/usr/lib/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_armeabi-v7a.so
+			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/libcrypto.so
+			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/libssl.so
+			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
+			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "x86")
-		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/i686-linux-android/sysroot/usr/lib)
-		target_link_libraries(${PROJECT_NAME} qrtclient_x86)
 		set(ANDROID_EXTRA_LIBS
-			/usr/local/i686-linux-android/sysroot/usr/lib/libcrypto.so
-			/usr/local/i686-linux-android/sysroot/usr/lib/libssl.so
-			/usr/local/i686-linux-android/sysroot/usr/lib/libcurl.so
-			/usr/local/i686-linux-android/sysroot/usr/lib/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86.so
+			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcrypto.so
+			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/libssl.so
+			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
+			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "x86_64")
-		target_link_directories(${PROJECT_NAME} PRIVATE /usr/local/x86_64-linux-android/sysroot/usr/lib64)
-		target_link_libraries(${PROJECT_NAME} qrtclient_x86_64)
 		set(ANDROID_EXTRA_LIBS
-			/usr/local/x86_64-linux-android/sysroot/usr/lib64/libcrypto.so
-			/usr/local/x86_64-linux-android/sysroot/usr/lib64/libssl.so
-			/usr/local/x86_64-linux-android/sysroot/usr/lib64/libcurl.so
-			/usr/local/x86_64-linux-android/sysroot/usr/lib64/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86_64.so
+			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcrypto.so
+			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libssl.so
+			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
+			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
+			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	endif()
 else()
@@ -70,12 +65,12 @@ else()
 	target_link_libraries(${PROJECT_NAME} qrtclient)
 endif()
 
-target_compile_definitions(${PROJECT_NAME}
-	PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-
 target_link_libraries(${PROJECT_NAME}
 	curl
 	Qt5::Core
 	Qt5::Quick
 	rtclient
 	)
+
+target_compile_definitions(${PROJECT_NAME}
+	PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
