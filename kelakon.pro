@@ -19,6 +19,17 @@ LIBS += \
 	LIBS += -lqrtclient
 }
 
+android {
+	INCLUDEPATH += /opt/android-ndk-r19c/sources/cxx-stl/llvm-libc++/include
+	LIBS += \
+		-L/opt/Qt5.14.2/5.14.2/android/lib \
+		-lc++
+	QT += svg
+	certs.path = /assets/certs
+	certs.files = /etc/ssl/certs/ca-certificates.crt
+	INSTALLS += certs
+}
+
 contains(ANDROID_TARGET_ARCH,arm64-v8a) {
 	LIBS += \
 		-L/opt/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21 \
@@ -65,17 +76,6 @@ contains(ANDROID_TARGET_ARCH,x86_64) {
 		/opt/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/21/libcurl.so \
 		/opt/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/x86_64-linux-android/21/librtclient.so \
 		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_x86_64.so
-}
-
-android {
-	INCLUDEPATH += /opt/android-ndk-r19c/sources/cxx-stl/llvm-libc++/include
-	LIBS += \
-		-L/opt/Qt5.14.2/5.14.2/android/lib \
-		-lc++
-	QT += svg
-	certs.path = /assets/certs
-	certs.files = /etc/ssl/certs/ca-certificates.crt
-	INSTALLS += certs
 }
 
 debug: DEFINES += DEBUG
