@@ -19,7 +19,7 @@ if (ANDROID)
 		)
 	target_link_directories(${PROJECT_NAME} PRIVATE
 		${CMAKE_SYSROOT}/usr/lib/${ANDROID_TOOLCHAIN_NAME}/${ANDROID_NATIVE_API_LEVEL}
-		/opt/Qt5.14.1/5.14.1/android/lib)
+		/opt/Qt5.14.2/5.14.2/android/lib)
 	target_link_libraries(${PROJECT_NAME} qrtclient_${ANDROID_ABI})
 	set(ANDROID_PACKAGE_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/android")
 	if (ANDROID_ABI STREQUAL "arm64-v8a")
@@ -28,7 +28,7 @@ if (ANDROID)
 			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libssl_1_1.so
 			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
 			${CMAKE_SYSROOT}/usr/lib/aarch64-linux-android/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
+			/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "armeabi-v7a")
 		set(ANDROID_EXTRA_LIBS
@@ -36,7 +36,7 @@ if (ANDROID)
 			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/libssl_1_1.so
 			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
 			${CMAKE_SYSROOT}/usr/lib/arm-linux-androideabi/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
+			/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "x86")
 		set(ANDROID_EXTRA_LIBS
@@ -44,7 +44,7 @@ if (ANDROID)
 			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/libssl_1_1.so
 			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
 			${CMAKE_SYSROOT}/usr/lib/i686-linux-android/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
+			/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	elseif (ANDROID_ABI STREQUAL "x86_64")
 		set(ANDROID_EXTRA_LIBS
@@ -52,7 +52,7 @@ if (ANDROID)
 			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libssl_1_1.so
 			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/libcurl.so
 			${CMAKE_SYSROOT}/usr/lib/x86_64-linux-android/${ANDROID_NATIVE_API_LEVEL}/librtclient.so
-			/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_${ANDROID_ABI}.so
+			/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_${ANDROID_ABI}.so
 			CACHE INTERNAL "")
 	endif()
 else()
