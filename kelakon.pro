@@ -73,8 +73,6 @@ android {
 		-L/opt/Qt5.14.2/5.14.2/android/lib \
 		-lc++
 	QT += svg
-	DISTFILES += android/AndroidManifest.xml
-	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
 	certs.path = /assets/certs
 	certs.files = /etc/ssl/certs/ca-certificates.crt
 	INSTALLS += certs
