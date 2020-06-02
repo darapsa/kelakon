@@ -28,7 +28,7 @@ contains(ANDROID_TARGET_ARCH,arm64-v8a) {
 		/opt/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/libssl_1_1.so \
 		/opt/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/libcurl.so \
 		/opt/android-ndk-r19c/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/21/librtclient.so \
-		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient-arm64-v8a.so
+		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_arm64-v8a.so
 }
 
 contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
