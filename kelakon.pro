@@ -57,7 +57,7 @@ contains(ANDROID_TARGET_ARCH,x86_64) {
 }
 
 android {
-	INCLUDEPATH += /opt/android-ndkr19c/sources/cxx-stl/llvm-libc++/include
+	INCLUDEPATH += /opt/android-ndk-r19c/sources/cxx-stl/llvm-libc++/include
 	QT += svg
 	DISTFILES += android/AndroidManifest.xml
 	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
