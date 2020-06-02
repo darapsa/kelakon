@@ -6,53 +6,28 @@
 
 ```sh
 $ git clone git://darapsa.org/kelakon.git
-$ cd kelakon
 ```
 
 ## Configuring for various target hosts (with optional debugging)
 
 ```sh
-$ mkdir build
-$ cmake -DCMAKE_BUILD_TYPE=Debug ..
+$ mkdir build-kelakon-Desktop-Debug
+$ cd build-kelakon-Desktop-Debug
+$ qmake ../kelakon/kelakon.pro -spec linux-g++ CONFIG+='debug qml_debug'
 ```
 
 or
 
 ```sh
-$ mkdir build-Android_arm64_v8a-Debug
-$ cd build-Android_arm64_v8a-Debug
-$ cmake -DCMAKE_TOOLCHAIN_FILE=/opt/android-ndk-r19c/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH=/opt/Qt5.14.2/5.14.2/android -DANDROID_NATIVE_API_LEVEL=21 -DANDROID_BUILD_ABI_arm64_v8a=1 -DCMAKE_BUILD_TYPE=Debug -DANDROID_ABI=arm64-v8a -DANDROID_SDK=/opt/android-sdk-update-manager -DCMAKE_PREFIX_PATH=/opt/Qt5.14.2/5.14.2/android ..
+$ mkdir build-kelakon-Android_for_armeabi_v7a_arm64_v8a_x86_x86_64_Clang_Qt_5_14_2_for_Android-Debug
+$ cd build-kelakon-Android_for_armeabi_v7a_arm64_v8a_x86_x86_64_Clang_Qt_5_14_2_for_Android-Debug
+$ /opt/Qt5.14.2/5.14.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_ABIS="armeabi-v7a arm64-v8a x86 x86_64" 
 ```
-
-or
-
-```sh
-$ mkdir build-Android_armeabi_v7a-Debug
-$ cd build-Android_armeabi_v7a-Debug
-$ cmake -DCMAKE_TOOLCHAIN_FILE=/opt/android-ndk-r19c/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH=/opt/Qt5.14.2/5.14.2/android -DANDROID_NATIVE_API_LEVEL=21 -DANDROID_BUILD_ABI_armeabi_v7a=1 -DCMAKE_BUILD_TYPE=Debug -DANDROID_ABI=armeabi-v7a -DANDROID_SDK=/opt/android-sdk-update-manager -DCMAKE_PREFIX_PATH=/opt/Qt5.14.2/5.14.2/android ..
-```
-
-or
-
-```sh
-$ mkdir build-Android_x86-Debug
-$ cd build-Android_x86-Debug
-$ cmake -DCMAKE_TOOLCHAIN_FILE=/opt/android-ndk-r19c/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH=/opt/Qt5.14.2/5.14.2/android -DANDROID_NATIVE_API_LEVEL=21 -DANDROID_BUILD_ABI_x86=1 -DCMAKE_BUILD_TYPE=Debug -DANDROID_ABI=x86 -DANDROID_SDK=/opt/android-sdk-update-manager -DCMAKE_PREFIX_PATH=/opt/Qt5.14.2/5.14.2/android ..
-```
-
-or
-
-```sh
-$ mkdir build-Android_x86_64-Debug
-$ cd build-Android_x86_64-Debug
-$ cmake -DCMAKE_TOOLCHAIN_FILE=/opt/android-ndk-r19c/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH=/opt/Qt5.14.2/5.14.2/android -DANDROID_NATIVE_API_LEVEL=21 -DANDROID_BUILD_ABI_x86_64=1 -DCMAKE_BUILD_TYPE=Debug -DANDROID_ABI=x86_64 -DANDROID_SDK=/opt/android-sdk-update-manager -DCMAKE_PREFIX_PATH=/opt/Qt5.14.2/5.14.2/android ..
-```
-
 or so on.
 
 ## Compiling, linking, and producing executable
 
 ```sh
 $ make # -jN (with N an integer number of parallel tasks you allow your computer to run for compiling this)
-$ /opt/Qt5.14.2/5.14.2/android/bin/androiddeployqt --input android_deployment_settings.json --output android-build
+$ /opt/Qt5.14.2/5.14.2/android/bin/androiddeployqt --input android_deployment_settings.json --output android-build --android-platform android-24
 ```
