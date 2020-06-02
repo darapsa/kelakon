@@ -23,7 +23,7 @@ contains(ANDROID_TARGET_ARCH,arm64-v8a) {
 		/usr/local/aarch64-linux-android/sysroot/usr/lib/libssl.so \
 		/usr/local/aarch64-linux-android/sysroot/usr/lib/libcurl.so \
 		/usr/local/aarch64-linux-android/sysroot/usr/lib/librtclient.so \
-		/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient-arm64-v8a.so
+		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient-arm64-v8a.so
 }
 
 contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
@@ -33,7 +33,7 @@ contains(ANDROID_TARGET_ARCH,armeabi-v7a) {
 		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libssl.so \
 		/usr/local/arm-linux-androideabi/sysroot/usr/lib/libcurl.so \
 		/usr/local/arm-linux-androideabi/sysroot/usr/lib/librtclient.so \
-		/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_armeabi-v7a.so
+		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_armeabi-v7a.so
 }
 
 contains(ANDROID_TARGET_ARCH,x86) {
@@ -43,7 +43,7 @@ contains(ANDROID_TARGET_ARCH,x86) {
 		/usr/local/i686-linux-android/sysroot/usr/lib/libssl.so \
 		/usr/local/i686-linux-android/sysroot/usr/lib/libcurl.so \
 		/usr/local/i686-linux-android/sysroot/usr/lib/librtclient.so \
-		/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86.so
+		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_x86.so
 }
 
 contains(ANDROID_TARGET_ARCH,x86_64) {
@@ -53,11 +53,11 @@ contains(ANDROID_TARGET_ARCH,x86_64) {
 		/usr/local/x86_64-linux-android/sysroot/usr/lib64/libssl.so \
 		/usr/local/x86_64-linux-android/sysroot/usr/lib64/libcurl.so \
 		/usr/local/x86_64-linux-android/sysroot/usr/lib64/librtclient.so \
-		/opt/Qt5.14.1/5.14.1/android/lib/libqrtclient_x86_64.so
+		/opt/Qt5.14.2/5.14.2/android/lib/libqrtclient_x86_64.so
 }
 
 android {
-	INCLUDEPATH += /opt/android-ndk/sources/cxx-stl/llvm-libc++/include
+	INCLUDEPATH += /opt/android-ndkr19c/sources/cxx-stl/llvm-libc++/include
 	QT += svg
 	DISTFILES += android/AndroidManifest.xml
 	ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
