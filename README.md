@@ -26,7 +26,7 @@ $ cd build-kelakon-Android_for_armeabi_v7a_arm64_v8a_x86_x86_64_Clang_Qt_5_14_2_
 and then for any of these, do it twice (because of some bug that 3rd party libraries wouldn't get included)
 
 ```sh
-$ cmake -DCMAKE_TOOLCHAIN_FILE=/opt/android-ndk-r19c/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH=/opt/Qt5.14.2/5.14.2/android -DANDROID_NATIVE_API_LEVEL=21 -DANDROID_ABI=arm64_v8a -DANDROID_SDK=/opt/android-sdk-update-manager -DCMAKE_PREFIX_PATH=/opt/Qt5.14.2/5.14.2/android -DCMAKE_BUILD_TYPE=Debug ../kelakon
+$ cmake -DCMAKE_TOOLCHAIN_FILE=/opt/android-ndk-r19c/build/cmake/android.toolchain.cmake -DCMAKE_FIND_ROOT_PATH=/opt/Qt5.14.2/5.14.2/android -DANDROID_NATIVE_API_LEVEL=21 -DANDROID_ABI=arm64-v8a -DANDROID_SDK=/opt/android-sdk-update-manager -DCMAKE_PREFIX_PATH=/opt/Qt5.14.2/5.14.2/android -DCMAKE_BUILD_TYPE=Debug ../kelakon
 ```
 
 or
