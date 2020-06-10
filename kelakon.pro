@@ -26,7 +26,7 @@ android {
 		-lc++
 	QT += svg
 	certs.path = /assets/certs
-	certs.files = /etc/ssl/certs/ca-certificates.crt
+	certs.files = /usr/local/share/certs/ca-root-nss.crt
 	INSTALLS += certs
 }
 
