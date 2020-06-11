@@ -30,5 +30,6 @@ or so on.
 ```sh
 $ make # -jN (with N an integer number of parallel tasks you allow your computer to run for compiling this)
 $ make install INSTALL_ROOT=android-build
+$ export ANDROID_SDK_ROOT=/opt/android-sdk-update-manager
 $ /opt/Qt5.14.2/5.14.2/android/bin/androiddeployqt --input android-kelakon-deployment-settings.json --output android-build --android-platform android-24
 ```
