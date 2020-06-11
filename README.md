@@ -53,7 +53,20 @@ or so on.
 
 ```sh
 $ make # -jN (with N an integer number of parallel tasks you allow your computer to run for compiling this)
+```
+
+and if for Android:
+
+```sh
 $ make install INSTALL_ROOT=android-build
 $ export ANDROID_SDK_ROOT=/opt/android-sdk-update-manager
 $ /opt/Qt5.14.2/5.14.2/android/bin/androiddeployqt --input android-kelakon-deployment-settings.json --output android-build --android-platform android-24
+```
+
+and if on FreeBSD:
+
+```sh
+$ cd android-build
+$ echo "android.aapt2FromMavenOverride = $ANDROID_SDK_ROOT/build-tools/28.0.3/aapt2" >> gradle.properties
+./gradlew assembleDebug
 ```
