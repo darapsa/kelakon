@@ -20,7 +20,6 @@ LIBS += \
 }
 
 android {
-	INCLUDEPATH += /opt/android-ndk-r19c/sources/cxx-stl/llvm-libc++/include
 	LIBS += \
 		-L/opt/Qt5.14.2/5.14.2/android/lib \
 		-lc++
