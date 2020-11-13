@@ -6,6 +6,8 @@
 
 ```sh
 $ git clone git://darapsa.org/kelakon.git
+$ git submodule init
+$ git submodule update
 ```
 
 ## Configuring for various target hosts (with optional debugging)
