@@ -77,4 +77,9 @@ contains(ANDROID_TARGET_ARCH,x86_64) {
 		/opt/Qt/5.15.1/android/lib/libqrtclient_x86_64.so
 }
 
+macx {
+	INCLUDEPATH += /usr/local/include
+	LIBS += -L/usr/local/lib
+}
+
 debug: DEFINES += DEBUG
