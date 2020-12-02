@@ -23,7 +23,7 @@ or
 ```sh
 $ mkdir build-kelakon-Android_Qt_5_15_1_Clang_Multi_Abi-Debug
 $ cd build-kelakon-Android_Qt_5_15_1_Clang_Multi_Abi-Debug
-$ /opt/Qt/5.15.1/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_ABIS="armeabi-v7a arm64-v8a x86 x86_64" 
+$ /opt/Qt/5.15.1/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-sdk-update-manager/ndk/21.1.6352462 ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=arm64-v8a QT_ANDROID_LIBDIR=/opt/Qt/5.15.1/android/lib API=21 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=arm64-v8a
 ```
 or so on.
 
