@@ -21,32 +21,32 @@ $ qmake ../kelakon/kelakon.pro -spec linux-g++ CONFIG+='debug qml_debug'
 or
 
 ```sh
-$ mkdir build-kelakon-Android_Qt_5_15_2_Clang_Multi_Abi-Debug
-$ cd build-kelakon-Android_Qt_5_15_2_Clang_Multi_Abi-Debug
+$ mkdir build-kelakon-Android_for_armeabi_v7a_arm64_v8a_x86_x86_64_Clang_Qt_5_15_2_android-Debug
+$ cd build-kelakon-Android_for_armeabi_v7a_arm64_v8a_x86_x86_64_Clang_Qt_5_15_2_android-Debug
 ```
 
 and then 
 
 ```sh
-$ /opt/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-ndk ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=arm64-v8a QT_ANDROID_LIBDIR=/opt/Qt/5.15.2/android/lib API=21 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=arm64-v8a
+$ /usr/local/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-sdk-update-manager/ndk/21.3.6528147 ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=arm64-v8a QT_ANDROID_LIBDIR=/usr/local/Qt/5.15.2/android/lib API=21 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=arm64-v8a
 ```
 
 or
 
 ```sh
-$ /opt/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-ndk ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=armeabi-v7a QT_ANDROID_LIBDIR=/opt/Qt/5.15.2/android/lib API=16 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=armeabi-v7a
+$ /usr/local/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-sdk-update-manager/ndk/21.3.6528147 ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=armeabi-v7a QT_ANDROID_LIBDIR=/usr/local/Qt/5.15.2/android/lib API=16 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=armeabi-v7a
 ```
 
 or
 
 ```sh
-$ /opt/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-ndk ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=x86 QT_ANDROID_LIBDIR=/opt/Qt/5.15.2/android/lib API=16 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=x86
+$ /usr/local/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-sdk-update-manager/ndk/21.3.6528147 ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=x86 QT_ANDROID_LIBDIR=/usr/local/Qt/5.15.2/android/lib API=16 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=x86
 ```
 
 or
 
 ```sh
-$ /opt/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-ndk ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=x86_64 QT_ANDROID_LIBDIR=/opt/Qt/5.15.2/android/lib API=21 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=x86_64
+$ /usr/local/Qt/5.15.2/android/bin/qmake ../kelakon/kelakon.pro -spec android-clang CONFIG+='debug qml_debug' ANDROID_NDK_PATH=/opt/android-sdk-update-manager/ndk/21.3.6528147 ANDROID_NDK_HOST=linux-x86_64 ANDROID_TARGET_ARCH=x86_64 QT_ANDROID_LIBDIR=/usr/local/Qt/5.15.2/android/lib API=21 CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt ANDROID_ABIS=x86_64
 ```
 
 or so on.
@@ -62,7 +62,7 @@ and if for Android:
 ```sh
 $ make install INSTALL_ROOT=android-build
 $ export ANDROID_SDK_ROOT=/opt/android-sdk-update-manager
-$ /opt/Qt/5.15.2/android/bin/androiddeployqt --input android-kelakon-deployment-settings.json --output android-build --android-platform android-28
+$ /usr/local/Qt/5.15.2/android/bin/androiddeployqt --input android-kelakon-deployment-settings.json --output android-build --android-platform android-30
 ```
 
 and if on FreeBSD:
