@@ -1,6 +1,3 @@
-[submodule "qrtclient"]
-	path = qrtclient
-	url = git://darapsa.co.id/qrtclient.git
 [submodule "larva"]
 	path = larva
 	url = git://darapsa.co.id/larva.git
