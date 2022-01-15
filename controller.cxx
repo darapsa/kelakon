@@ -3,7 +3,7 @@
 #endif
 #include <QQmlApplicationEngine>
 #include <QtQml>
-#include <qrtclient/client.hxx>
+#include <qrtclient.hxx>
 #include <qrtclient/user.hxx>
 #include "controller.hxx"
 
