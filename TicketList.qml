@@ -7,13 +7,12 @@ TaskListForm {
 		model: ticketList
 		delegate: ListItemSingleTextForm {
 			title.text: subject
-			/*
-			itemDelegate.onClicked: {
+			delegate.onClicked: {
 				window.ticketHistory(id, true)
-				pageView.push("TicketHistory.qml"
-						, {"subject": subject})
+				pageView.push("TicketHistory.qml", {
+					"subject": subject
+				})
 			}
-			*/
 		}
 	}
 }
