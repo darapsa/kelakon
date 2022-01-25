@@ -1,5 +1,7 @@
 <RCC>
     <qresource prefix="/">
+        <file>larva/components/ListItemSingleTextForm.ui.qml</file>
+	<file>larva/fonts/RobotoMono-Bold.ttf</file>
         <file>larva/features/OnboardingForm.ui.qml</file>
         <file>larva/features/LoginForm.ui.qml</file>
         <file>larva/features/LoginEmailForm.ui.qml</file>
