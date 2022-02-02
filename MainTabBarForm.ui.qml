@@ -23,6 +23,7 @@ TabBar {
 
 		Image {
 			anchors.centerIn: parent
+			source: "active-indicator.png"
 		}
 	}
 
