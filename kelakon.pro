@@ -38,5 +38,8 @@ macx {
 	INCLUDEPATH += /usr/local/include
 	LIBS += -L/usr/local/lib
 }
-wasm: QMAKE_CXXFLAGS += -std=c++11
+wasm {
+	QT += svg
+	QMAKE_CXXFLAGS += -std=c++11
+}
 !wasm: LIBS += -lcurl
