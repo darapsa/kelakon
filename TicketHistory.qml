@@ -6,12 +6,12 @@ TaskDetailForm {
 	property string subject
 
 	backButton.onClicked: pageView.pop()
-
+/*
 	ticketBriefForm {
 		ticketSubject.text: subject
-//		ticketCreator.text: creator
+		ticketCreator.text: creator
 	}
-
+*/
 	listView {
 		height: 1000
 		model: historyList
