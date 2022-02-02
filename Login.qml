@@ -1,4 +1,4 @@
-import QtQuick 2.12
+import QtQuick 2.15
 import KelakonUser 0.1
 import "larva/features"
 
