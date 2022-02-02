@@ -1,90 +1,60 @@
-#ifdef ANDROID
 #include <QStringBuilder>
-#endif
 #include <QQmlApplicationEngine>
 #include <QtQml>
-#include <qrtclient.hxx>
 #include <qrtclient/user.hxx>
 #include "controller.hxx"
 
-Controller::Controller(QObject* parent)
-	: QObject{parent}
+Controller::Controller(QObject* parent) : QObject{parent}
 {
-#ifdef ANDROID
-	QDir location{QStandardPaths::writableLocation(QStandardPaths
-			::AppDataLocation)};
-	QString path{location.absolutePath() % "/ca-certificates.crt"};
-	QFile file{"assets:/certs/ca-certificates.crt"};
-	file.copy(path);
+	auto dir = QDir{QStandardPaths::writableLocation(
+			QStandardPaths::AppDataLocation)};
+	auto dirPath = dir.absolutePath();
+#ifdef __ANDROID__
+	QString cert{CA_BUNDLE};
+	QString certPath{dirPath % cert.remove(0, cert.lastIndexOf("/"))};
+	QFile{"assets:" % cert}.copy(certPath);
+#else
+	dir.mkpath(dirPath);
 #endif
-	using RTClient::Client;
-	auto client = new Client{"https://rt.darapsa.co.id"
-#ifdef ANDROID
-		, path.toLatin1().constData()
+	rt = new Client{SERVER_URL,
+		QString{dirPath % "/cookies.txt"}.toLatin1().constData()
+#ifdef __ANDROID__
+		, certPath.toLatin1().constData()
 #endif
 	};
-	client->moveToThread(&thread);
-	connect(&thread, &QThread::finished, client, &QObject::deleteLater);
-
 	auto engine = static_cast<QQmlApplicationEngine*>(parent);
-	auto rootObjects = engine->rootObjects();
-	auto appWindow = rootObjects[0];
-
-	using RTClient::User;
-	auto typeId = qmlRegisterSingletonType<User>("KelakonUser", 0, 1, "User"
-			, [](QQmlEngine *engine
-				, QJSEngine *scriptEngine) -> QObject* {
-				Q_UNUSED(engine)
-				Q_UNUSED(scriptEngine)
-				return new User;
-			});
-	auto qUser = engine->singletonInstance<User*>(typeId);
-
-	using RTClient::TicketList;
-	ticketList = new TicketList;
-	engine->rootContext()->setContextProperty("ticketList", ticketList);
-
-	using RTClient::TicketHistoryList;
-	ticketHistoryList = new TicketHistoryList;
-	engine->rootContext()->setContextProperty("ticketHistoryList"
-			, ticketHistoryList);
-
-	connect(appWindow, SIGNAL(logIn(QString, QString))
-			, client, SLOT(logIn(QString, QString)));
-
-	connect(client, &Client::loggedIn
-			, client, static_cast<void (Client::*)(QString const&)>
+	engine->load(QUrl(QStringLiteral("qrc:/main.qml")));
+	auto context = engine->rootContext();
+	auto window = engine->rootObjects()[0];
+	connect(window, SIGNAL(logIn(QString, QString)),
+			rt, SLOT(logIn(QString, QString)));
+	connect(rt, &Client::loggedIn,
+			rt, static_cast<void (Client::*)(QString const&)>
 			(&Client::userShow));
-
-	connect(client, &Client::userShown
-			, [this,qUser,appWindow](rtclient_user* user) {
-			if (user) {
-				emit checked(QString{user->name});
-				qUser->update(user);
-				QMetaObject::invokeMethod(appWindow, "pushHome");
-			}
+	connect(rt, &Client::userShown, [this](User const& user) {
+			rt->searchTicket(user.name());
 		});
-
-	connect(this, &Controller::checked, client, &Client::searchTicket);
-
-	connect(client, &Client::searchedTicket, ticketList, &TicketList::update);
-
-	connect(appWindow, SIGNAL(ticketHistory(int, bool))
-			, client, SLOT(ticketHistory(int, bool)));
-
-	connect(client, &Client::gotTicketHistory
-			, ticketHistoryList, &TicketHistoryList::update);
-
-	connect(appWindow, SIGNAL(ticketNew(QString, QString))
-			, client, SLOT(ticketNew(QString, QString)));
-
-	thread.start();
+	connect(rt, &Client::searchedTicket,
+		[this,context,window](TicketList const& list) {
+			ticketList = new TicketList{list};
+			context->setContextProperty("ticketList", ticketList);
+			QMetaObject::invokeMethod(window, "pushHome");
+		});
+	connect(window, SIGNAL(ticketHistoryList(int, bool)),
+			rt, SLOT(ticketHistoryList(int, bool)));
+	connect(rt, &Client::gotTicketHistoryList,
+		[this,context,window](TicketHistoryList const& list) {
+			historyList = new TicketHistoryList{list};
+			context->setContextProperty("historyList", historyList);
+			QMetaObject::invokeMethod(window, "pushTicketHistory");
+		});
+	connect(window, SIGNAL(ticketNew(QString, QString)),
+			rt, SLOT(ticketNew(QString, QString)));
 }
 
 Controller::~Controller()
 {
-	thread.quit();
-	thread.wait();
-	delete ticketHistoryList;
-	delete ticketList;
+	if (historyList) delete historyList;
+	if (ticketList) delete ticketList;
+	if (rt) delete rt;
 }

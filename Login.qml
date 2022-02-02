@@ -1,5 +1,4 @@
 import QtQuick 2.15
-import KelakonUser 0.1
 import "larva/features"
 
 LoginForm {
@@ -16,8 +15,9 @@ LoginForm {
 		}
 
 		continueButton.onClicked: {
-			User.name = emailTextField.text
-			contentView.push("LoginPassword.qml")
+			contentView.push("LoginPassword.qml", {
+				"name": emailTextField.text
+			})
 		}
 	}
 }

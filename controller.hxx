@@ -1,25 +1,22 @@
 #ifndef CONTROLLER_HXX
 #define CONTROLLER_HXX
 
-#include <QThread>
+#include <qrtclient.hxx>
 #include <qrtclient/ticket.hxx>
 #include <qrtclient/tickethistory.hxx>
+
+using namespace RTClient;
 
 class Controller : public QObject
 {
 	Q_OBJECT
-
 	public:
 		Controller(QObject* parent = nullptr);
 		~Controller();
-
-	signals:
-		void checked(QString const& name);
-
 	private:
-		QThread thread;
-		RTClient::TicketList* ticketList;
-		RTClient::TicketHistoryList* ticketHistoryList;
+		Client* rt;
+		TicketList* ticketList;
+		TicketHistoryList* historyList;
 };
 
-#endif // CONTROLLER_HXX
+#endif

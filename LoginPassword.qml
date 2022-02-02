@@ -1,15 +1,13 @@
 import QtQuick 2.15
-import KelakonUser 0.1
 import "larva/features"
 
 LoginPasswordForm {
-	emailTextLabel.text: User.name
+	property string name
+
+	emailTextLabel.text: name
 	passwordTextField.onTextChanged:
 		if (!passwordTextField.text || !continueButton.enabled)
 			continueButton.enabled = !continueButton.enabled
 
-	continueButton.onClicked: {
-			User.password = passwordTextField.text
-			window.logIn(User.name, User.password)
-		}
+	continueButton.onClicked: window.logIn(name, passwordTextField.text)
 }
