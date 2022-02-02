@@ -14,5 +14,6 @@
 		<file>qtquickcontrols2.conf</file>
 		<file>kelakon-logo.png</file>
 		<file>onboarding-1.png</file>
+		<file>MainTabBarForm.ui.qml</file>
 	</qresource>
 </RCC>
