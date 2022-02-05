@@ -1,38 +1,84 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 
-TabBar {
+Rectangle {
 	property alias leftTabButton: leftTabButton
 	property alias middleTabButton: middleTabButton
 	property alias rightTabButton: rightTabButton
 
-	id: tabBar
+	color: "#fcfcfc"
 	width: 360
+	height: 80
 
-	TabButton {
-		id: leftTabButton
-
-		Image {
-			anchors.centerIn: parent
-		}
+	FontLoader {
+		id: robotoMono
+		source: "fonts/RobotoMono-Regular.ttf"
 	}
 
-	TabButton {
-		id: middleTabButton
-		x: tabBar.width / 3
+	TabBar {
+		anchors.fill: parent
 
-		Image {
-			anchors.centerIn: parent
-			source: "active-indicator.png"
+		TabButton {
+			id: leftTabButton
+			height: parent.height
+			anchors.verticalCenter: parent.verticalCenter
+
+			Image {
+				source: "circle.png"
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.top: parent.top
+				anchors.topMargin: 22
+			}
+
+			Text {
+				text: qsTr("Today")
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.bottom: parent.bottom
+				anchors.bottomMargin: 16
+				font.family: robotoMono.name
+			}
 		}
-	}
 
-	TabButton {
-		id: rightTabButton
-		x: tabBar.width * 2 / 3
+		TabButton {
+			id: middleTabButton
+			height: parent.height
+			anchors.verticalCenter: parent.verticalCenter
 
-		Image {
-			anchors.centerIn: parent
+			Image {
+				source: "triangle.png"
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.top: parent.top
+				anchors.topMargin: 22
+			}
+
+			Text {
+				text: qsTr("Projects")
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.bottom: parent.bottom
+				anchors.bottomMargin: 16
+				font.family: robotoMono.name
+			}
+		}
+
+		TabButton {
+			id: rightTabButton
+			height: parent.height
+			anchors.verticalCenter: parent.verticalCenter
+
+			Image {
+				source: "square.png"
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.top: parent.top
+				anchors.topMargin: 22
+			}
+
+			Text {
+				text: qsTr("Label")
+				anchors.horizontalCenter: parent.horizontalCenter
+				anchors.bottom: parent.bottom
+				anchors.bottomMargin: 16
+				font.family: robotoMono.name
+			}
 		}
 	}
 }

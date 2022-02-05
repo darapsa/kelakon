@@ -7,7 +7,10 @@ ApplicationWindow {
 	signal ticketHistoryList(int id, bool longFormat)
 	signal ticketNew(string queue, string requestor)
 	function pushHome() {
-		pageView.push("Home.qml")
+		pageView.push("Home.qml", {
+			"width": window.width,
+			"height": window.height
+		})
 	}
 	function pushTicketHistory() {
 		pageView.push("TicketHistory.qml")

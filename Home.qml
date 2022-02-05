@@ -35,7 +35,6 @@ HomeForm {
 	}
 
 	footer: MainTabBarForm {
-		id: tabBar
 		width: parent.width
 		leftTabButton.onClicked: layout.currentIndex = 0
 		middleTabButton.onClicked: layout.currentIndex = 1
