@@ -22,6 +22,8 @@ Controller::Controller(QObject* parent) : QObject{parent}
 		, certPath.toLatin1().constData()
 #endif
 	};
+	ticketList = nullptr;
+	historyList = nullptr;
 	auto engine = static_cast<QQmlApplicationEngine*>(parent);
 	engine->load(QUrl(QStringLiteral("qrc:/main.qml")));
 	auto context = engine->rootContext();
