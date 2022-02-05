@@ -30,10 +30,6 @@ HomeForm {
 		Page {}
 	}
 
-	contentView.initialItem: TicketList {
-		title: qsTr("Projects")
-	}
-
 	footer: MainTabBarForm {
 		width: parent.width
 		leftTabButton.onClicked: layout.currentIndex = 0
