@@ -1,29 +1,24 @@
 import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
-import "larva/features"
 
-HomeForm {
-	//menuButton.onClicked: drawer.open()
-	//profileButton.onClicked: pageView.push("Profile.qml")
-
+Page {
 	StackLayout {
 		id: layout
 		anchors.fill: parent
 
 		Page {}
 
-		TaskListForm {
-			listView {
-				model: ticketList
-				delegate: TicketForm {
-					title.text: subject
-					delegate.onClicked: {
-						window.ticketHistoryList(id,
-						true)
-					}
+		ListView {
+			model: ticketList
+			delegate: TicketForm {
+				width: layout.width
+				title.text: subject
+				delegate.onClicked: {
+					window.ticketHistoryList(id, true)
 				}
 			}
+			ScrollBar.vertical: ScrollBar {}
 		}
 
 		Page {}
