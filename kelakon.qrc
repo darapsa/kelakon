@@ -4,7 +4,7 @@
 		<file>Login.qml</file>
 		<file>LoginPassword.qml</file>
 		<file>Home.qml</file>
-		<file>TicketList.qml</file>
+		<file>TicketForm.ui.qml</file>
 		<file>TicketHistory.qml</file>
 		<file>Profile.qml</file>
 		<file>Email.qml</file>
@@ -20,5 +20,6 @@
 		<file>square.png</file>
 		<file>active-indicator.png</file>
 		<file>fonts/RobotoMono-Regular.ttf</file>
+		<file>fonts/RobotoMono-Bold.ttf</file>
 	</qresource>
 </RCC>

@@ -2,7 +2,6 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 1.15
 import "larva/features"
-import "larva/components"
 
 HomeForm {
 	//menuButton.onClicked: drawer.open()
@@ -17,7 +16,7 @@ HomeForm {
 		TaskListForm {
 			listView {
 				model: ticketList
-				delegate: ListItemSingleTextForm {
+				delegate: TicketForm {
 					title.text: subject
 					delegate.onClicked: {
 						window.ticketHistoryList(id,
